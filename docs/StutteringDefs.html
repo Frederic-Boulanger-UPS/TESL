@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Theory StutteringDefs (Isabelle2018: August 2018)</title>
+<link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
+</head>
+
+<body>
+<div class="head"><h1>Theory StutteringDefs</h1>
+
+<span class="command">theory</span> <span class="name">StutteringDefs</span><br/>
+<span class="keyword">imports</span> <a href="Denotational.html"><span class="name">Denotational</span></a><br/>
+
+</div>
+<div class="source">
+<pre class="source"><span class="keyword1"><span class="command">chapter</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;Properties of TESL&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;Stuttering Invariance&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">theory</span></span><span> </span><span>StutteringDefs</span><span>
+</span><span>
+</span><span class="keyword2"><span class="keyword">imports</span></span><span> </span><span>Denotational</span><span>
+</span><span>
+</span><span class="keyword2"><span class="keyword">begin</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  When composing systems into more complex systems, it may happen that one system 
+  has to perform some action while the rest of the complex system does nothing.
+  In order to support the composition of TESL specifications, we want to be able 
+  to insert stuttering instants in a run without breaking the conformance of a run 
+  to its specification. This is what we call the &#8727;&#8249;stuttering invariance&#8250; of TESL.
+&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">subsection</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;Definition of stuttering&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  We consider stuttering as the insertion of empty instants (instants at which no 
+  clock ticks) in a run. We caracterize this insertion with a dilating function,
+  which maps the instant indices of the original run to the corresponding instant
+  indices of the dilated run.
+  The properties of a dilating function are:
+  &#9642; it is strictly increasing because instants are inserted into the run,
+  &#9642; the image of an instant index is greater than it because stuttering instants 
+    can only delay the original instants of the run, 
+  &#9642; no instant is inserted before the first one in order to have a well defined 
+    initial date on each clock,
+  &#9642; if @{term &#8249;n&#8250;} is not in the image of the function, no clock ticks at 
+    instant @{term &#8249;n&#8250;} and the date on the clocks do not change.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>dilating_fun</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;dilating_fun (f::nat &#8658; nat) (r::&#39;a::linordered_field run)
+    &#8801; strict_mono f &#8743; (f 0 = 0) &#8743; (&#8704;n. f n &#8805; n
+    &#8743; ((&#8708;n<span class="hidden">&#8681;</span><sub>0</sub>. f n<span class="hidden">&#8681;</span><sub>0</sub> = n) &#10230; (&#8704;c. &#172;(hamlet ((Rep_run r) n c))))
+    &#8743; ((&#8708;n<span class="hidden">&#8681;</span><sub>0</sub>. f n<span class="hidden">&#8681;</span><sub>0</sub> = (Suc n)) &#10230; (&#8704;c. time ((Rep_run r) (Suc n) c)
+                                      = time ((Rep_run r) n c)))
+   )&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  A run @{term r} is a dilation of a run @{term sub} by 
+  function @{term f} if:
+  &#9642; @{term f} is a dilating function for @{term r} 
+  &#9642; the time in @{term r} is the time in @{term sub} dilated by @{term f}
+  &#9642; the hamlet in @{term r} is the hamlet in sub dilated by @{term f}
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>dilating</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;dilating f sub r &#8801; dilating_fun f r
+                    &#8743; (&#8704;n c. time ((Rep_run sub) n c) = time ((Rep_run r) (f n) c))
+                    &#8743; (&#8704;n c. hamlet ((Rep_run sub) n c) = hamlet ((Rep_run r) (f n) c))&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  A &#8727;&#8249;run&#8250; is a &#8727;&#8249;subrun&#8250; of another run if there exists a dilation between them.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>is_subrun</span><span> </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;a::linordered_field run &#8658; &#39;a run &#8658; bool&#8250;</span></span></span><span> </span><span class="delimiter">(</span><span class="keyword2"><span class="keyword">infixl</span></span><span> </span><span class="string"><span class="delete"><span class="delete">&quot;&#8810;&quot;</span></span></span><span> </span><span>60</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;sub &#8810; r &#8801; (&#8707;f. dilating f sub r)&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  A contracting function is the reverse of a dilating fun, it maps an instant index 
+  of a dilated run to the index of the last instant of a non stuttering run that
+  precedes it. Since several successive stuttering instants are mapped to the same
+  instant of the non stuttering run, such a function is monotonous, but not strictly.
+  The image of the first instant of the dilated run is necessarily the first instant
+  of the non stuttering run, and the image of an instant index is less that this 
+  index because we remove stuttering instants. 
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>contracting_fun</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;contracting_fun g &#8801; mono g &#8743; g 0 = 0 &#8743; (&#8704;n. g n &#8804; n)&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  \autoref{fig:dilating-run} illustrates the relations between the instants of 
+  a run and the instants of a dilated run, with the mappings by the dilating 
+  function @{term &#8249;f&#8250;} and the contracting function @{term &#8249;g&#8250;}:
+  \begin{figure}
+    \centering
+    \includegraphics{dilating.pdf}
+    \caption{Dilating and contracting functions}\label{fig:dilating-run}
+  \end{figure}
+&#8250;</span></span></span><span>
+</span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&lt;*)</span></span></span></span></span><span>
+</span><span class="comment">&#8213; &#8249;Constants and notation to be able to write what we want as Isabelle terms, not as LaTeX maths&#8250;</span><span>
+</span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>dummyf</span><span>    </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;nat &#8658; nat&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>dummyg</span><span>    </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;nat &#8658; nat&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>dummytwo</span><span>  </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;nat&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyf</span><span>    </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;f&quot;</span></span></span><span class="delimiter">)</span><span> 
+</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyg</span><span>    </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;g&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummytwo</span><span>  </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;2&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&gt;*)</span></span></span></span></span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  A function @{term &#8249;g&#8250;} is contracting with respect to the dilation of run
+  @{term &#8249;sub&#8250;} into run @{term &#8249;r&#8250;} by the dilating function @{term &#8249;f&#8250;} if:
+  &#9642; it is a contracting function ;
+  &#9642; @{term &#8249;(f &#8728; g) n&#8250;} is the index of the last original instant before instant 
+    @{term &#8249;n&#8250;} in run @{term &#8249;r&#8250;}, therefore:
+    &#9642; @{term &#8249;(f &#8728; g) n &#8804; n &#8250;}
+    &#9642; the time does not change on any clock between instants @{term &#8249;(f &#8728; g) n&#8250;}
+      and @{term &#8249;n&#8250;} of run @{term &#8249;r&#8250;};
+    &#9642; no clock ticks before @{term &#8249;n&#8250;} strictly after @{term &#8249;(f &#8728; g) n&#8250;} 
+      in run @{term &#8249;r&#8250;}.
+  See \autoref{fig:dilating-run} for a better understanding. Notice that in this 
+  example, @{term &#8249;2&#8250;} is equal to @{term &#8249;(f &#8728; g) 2&#8250;}, @{term &#8249;(f &#8728; g) 3&#8250;}, 
+  and @{term &#8249;(f &#8728; g) 4&#8250;}. 
+&#8250;</span></span></span><span>
+</span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&lt;*)</span></span></span></span></span><span>
+</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyf</span><span>      </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;f&quot;</span></span></span><span class="delimiter">)</span><span> 
+</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyg</span><span>      </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;g&quot;</span></span></span><span class="delimiter">)</span><span> 
+</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummytwo</span><span>    </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;2&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&gt;*)</span></span></span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>contracting</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span> 
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;contracting g r sub f &#8801;  contracting_fun g
+                          &#8743; (&#8704;n. f (g n) &#8804; n)
+                          &#8743; (&#8704;n c k. f (g n) &#8804; k &#8743; k &#8804; n
+                              &#10230; time ((Rep_run r) k c) = time ((Rep_run sub) (g n) c))
+                          &#8743; (&#8704;n c k. f (g n) &lt; k &#8743; k &#8804; n
+                              &#10230; &#172; hamlet ((Rep_run r) k c))&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  For any dilating function, we can build its &#8727;&#8249;inverse&#8250;, as illustrated on
+  \autoref{fig:dilating-run}, which is a contracting function:
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;dil_inverse f::(nat &#8658; nat) &#8801; (&#955;n. Max {i. f i &#8804; n})&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">subsection</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  Alternate definitions for counting ticks.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  For proving the stuttering invariance of TESL specifications, we will need
+  these alternate definitions for counting ticks, which are based on sets.
+&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  @{term &#8249;tick_count r c n&#8250;} is the number of ticks of clock @{term c} in 
+  run @{term r} upto instant @{term n}.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>tick_count</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;a::linordered_field run &#8658; clock &#8658; nat &#8658; nat&#8250;</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;tick_count r c n = card {i. i &#8804; n &#8743; hamlet ((Rep_run r) i c)}&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  @{term &#8249;tick_count_strict r c n&#8250;} is the number of ticks of clock @{term c} 
+  in run @{term r} upto but excluding instant @{term n}.
+&#8250;</span></span></span><span> 
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>tick_count_strict</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;a::linordered_field run &#8658; clock &#8658; nat &#8658; nat&#8250;</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;tick_count_strict r c n = card {i. i &lt; n &#8743; hamlet ((Rep_run r) i c)}&#8250;</span></span></span><span>
+</span><span>
+</span><span>
+</span><span class="keyword2"><span class="keyword">end</span></span><span>
+</span></pre>
+
+</div>
+</body>
+</html>

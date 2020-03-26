@@ -1,0 +1,773 @@
+%
+\begin{isabellebody}%
+\setisabellecontext{TESLStuttering}%
+%
+\isadelimtheory
+%
+\endisadelimtheory
+%
+\isatagtheory
+\isacommand{theory}\isamarkupfalse%
+\ TESLStuttering\isanewline
+\isakeyword{imports}\ TESLStutteringLemmas\isanewline
+\isanewline
+\isakeyword{begin}%
+\endisatagtheory
+{\isafoldtheory}%
+%
+\isadelimtheory
+%
+\endisadelimtheory
+%
+\begin{isamarkuptext}%
+Sporadic specifications are preserved in a dilated run.%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{lemma}\isamarkupfalse%
+\ sporadic{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}c\ sporadic\ {\isasymlparr}{\isasymtau}{\isasymrparr}\ on\ c{\isacharprime}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}r\ {\isasymin}\ {\isasymlbrakk}c\ sporadic\ {\isasymlparr}{\isasymtau}{\isasymrparr}\ on\ c{\isacharprime}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\isanewline
+\ \ \ \ \isakeyword{where}\ {\isachardoublequoteopen}dilating\ f\ sub\ r{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n\ c{\isachardot}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ c{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c{\isacharparenright}\ {\isacharequal}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ c{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def{\isacharparenright}\isanewline
+\ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymexists}\ n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}\ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharprime}{\isacharparenright}\ {\isacharequal}\ {\isasymtau}{\isacharbraceright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ this\ \isacommand{obtain}\isamarkupfalse%
+\ k\ \isakeyword{where}\ {\isachardoublequoteopen}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharprime}{\isacharparenright}\ {\isacharequal}\ {\isasymtau}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ auto\isanewline
+\ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharprime}{\isacharparenright}\ {\isacharequal}\ {\isasymtau}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ auto\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\begin{isamarkuptext}%
+Implications are preserved in a dilated run.%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{theorem}\isamarkupfalse%
+\ implies{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}c\isactrlsub {\isadigit{1}}\ implies\ c\isactrlsub {\isadigit{2}}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}r\ {\isasymin}\ {\isasymlbrakk}c\isactrlsub {\isadigit{1}}\ implies\ c\isactrlsub {\isadigit{2}}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\ \isakeyword{where}\ {\isachardoublequoteopen}dilating\ f\ sub\ r{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharbraceright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk\ ticks{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{theorem}\isamarkupfalse%
+\ implies{\isacharunderscore}not{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}c\isactrlsub {\isadigit{1}}\ implies\ not\ c\isactrlsub {\isadigit{2}}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}r\ {\isasymin}\ {\isasymlbrakk}c\isactrlsub {\isadigit{1}}\ implies\ not\ c\isactrlsub {\isadigit{2}}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\ \isakeyword{where}\ {\isachardoublequoteopen}dilating\ f\ sub\ r{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharbraceright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk\ ticks{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\begin{isamarkuptext}%
+Precedence relations are preserved in a dilated run.%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{theorem}\isamarkupfalse%
+\ weakly{\isacharunderscore}precedes{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}c\isactrlsub {\isadigit{1}}\ weakly\ precedes\ c\isactrlsub {\isadigit{2}}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}r\ {\isasymin}\ {\isasymlbrakk}c\isactrlsub {\isadigit{1}}\ weakly\ precedes\ c\isactrlsub {\isadigit{2}}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\ \isakeyword{where}\ {\isacharasterisk}{\isacharcolon}{\isachardoublequoteopen}dilating\ f\ sub\ r{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ n{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isacharbraceright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ n{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ dil{\isacharunderscore}tick{\isacharunderscore}count{\isacharbrackleft}OF\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ this{\isacharbrackright}\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ n{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{theorem}\isamarkupfalse%
+\ strictly{\isacharunderscore}precedes{\isacharunderscore}sub{\isadigit{2}}{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}c\isactrlsub {\isadigit{1}}\ strictly\ precedes\ c\isactrlsub {\isadigit{2}}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}r\ {\isasymin}\ {\isasymlbrakk}c\isactrlsub {\isadigit{1}}\ strictly\ precedes\ c\isactrlsub {\isadigit{2}}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\ \isakeyword{where}\ {\isacharasterisk}{\isacharcolon}{\isachardoublequoteopen}dilating\ f\ sub\ r{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isacharbraceleft}\ {\isasymrho}{\isachardot}\ {\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ c\isactrlsub {\isadigit{2}}\ n{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count{\isacharunderscore}strictly\ {\isasymrho}\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}\ {\isacharbraceright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{with}\isamarkupfalse%
+\ strictly{\isacharunderscore}precedes{\isacharunderscore}alt{\isacharunderscore}def{\isadigit{2}}{\isacharbrackleft}of\ {\isachardoublequoteopen}c\isactrlsub {\isadigit{2}}{\isachardoublequoteclose}\ {\isachardoublequoteopen}c\isactrlsub {\isadigit{1}}{\isachardoublequoteclose}{\isacharbrackright}\ \ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isacharbraceleft}\ {\isasymrho}{\isachardot}\ {\isacharparenleft}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\ {\isasymand}\ {\isacharparenleft}{\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isacharparenright}\ {\isacharbraceright}{\isachardoublequoteclose}\isanewline
+\ \ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isacharparenleft}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\ {\isasymand}\ {\isacharparenleft}{\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isadigit{1}}{\isacharcolon}{\isachardoublequoteopen}{\isacharparenleft}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\ {\isasymand}\ {\isacharparenleft}{\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ tick{\isacharunderscore}count{\isacharunderscore}is{\isacharunderscore}fun{\isacharparenright}\isanewline
+\ \ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \ \ \isacommand{{\isacharbraceleft}}\isamarkupfalse%
+\ \isacommand{fix}\isamarkupfalse%
+\ n{\isacharcolon}{\isacharcolon}nat\isanewline
+\ \ \ \ \ \ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymle}\ tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{1}}\ n{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isacommand{proof}\isamarkupfalse%
+\ {\isacharparenleft}cases\ {\isachardoublequoteopen}{\isasymexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ n{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
+\ True\ \isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ this\ \isacommand{obtain}\isamarkupfalse%
+\ n\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ fn{\isacharcolon}{\isachardoublequoteopen}f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ n{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}thesis\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{proof}\isamarkupfalse%
+\ {\isacharparenleft}cases\ {\isachardoublequoteopen}{\isasymexists}sn\isactrlsub {\isadigit{0}}{\isachardot}\ f\ sn\isactrlsub {\isadigit{0}}\ {\isacharequal}\ Suc\ n{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
+\ True\ \isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ this\ \isacommand{obtain}\isamarkupfalse%
+\ sn\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ fsn{\isacharcolon}{\isachardoublequoteopen}f\ sn\isactrlsub {\isadigit{0}}\ {\isacharequal}\ Suc\ n{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{with}\isamarkupfalse%
+\ fn\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}sn\isactrlsub {\isadigit{0}}\ {\isacharequal}\ Suc\ n\isactrlsub {\isadigit{0}}{\isachardoublequoteclose}\ \isacommand{using}\isamarkupfalse%
+\ strict{\isacharunderscore}mono{\isacharunderscore}suc\ {\isacharasterisk}\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{with}\isamarkupfalse%
+\ {\isadigit{1}}\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ sn\isactrlsub {\isadigit{0}}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n\isactrlsub {\isadigit{0}}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
+\ fn\ fsn\ tick{\isacharunderscore}count{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{next}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
+\ False\ \isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
+\ {\isacharasterisk}\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isacharequal}\ tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ n{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ tick{\isacharunderscore}count{\isacharunderscore}suc{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{also}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ n\isactrlsub {\isadigit{0}}{\isachardoublequoteclose}\ \isacommand{using}\isamarkupfalse%
+\ fn\ tick{\isacharunderscore}count{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{finally}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isacharequal}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ n\isactrlsub {\isadigit{0}}{\isachardoublequoteclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ n\isactrlsub {\isadigit{0}}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n\isactrlsub {\isadigit{0}}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ tick{\isacharunderscore}count{\isacharunderscore}suc{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n\isactrlsub {\isadigit{0}}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n\isactrlsub {\isadigit{0}}{\isachardoublequoteclose}\ \isacommand{using}\isamarkupfalse%
+\ {\isadigit{1}}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n\isactrlsub {\isadigit{0}}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
+\ tick{\isacharunderscore}count{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ fn\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{qed}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \isacommand{next}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
+\ False\ \isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ greatest{\isacharunderscore}prev{\isacharunderscore}image{\isacharbrackleft}OF\ {\isacharasterisk}\ this{\isacharbrackright}\ \isacommand{obtain}\isamarkupfalse%
+\ n\isactrlsub p\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \isakeyword{where}\ np{\isacharunderscore}prop{\isacharcolon}{\isachardoublequoteopen}f\ n\isactrlsub p\ {\isacharless}\ n\ {\isasymand}\ {\isacharparenleft}{\isasymforall}k{\isachardot}\ f\ n\isactrlsub p\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ n\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymnexists}k\isactrlsub {\isadigit{0}}{\isachardot}\ f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ tick{\isacharunderscore}count{\isacharunderscore}latest{\isacharbrackleft}OF\ {\isacharasterisk}\ this{\isacharbrackright}\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{1}}\ n\ {\isacharequal}\ tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{1}}\ {\isacharparenleft}f\ n\isactrlsub p{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
+\ \isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ a{\isacharcolon}{\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{1}}\ n\ {\isacharequal}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n\isactrlsub p{\isachardoublequoteclose}\ \isacommand{using}\isamarkupfalse%
+\ tick{\isacharunderscore}count{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{have}\isamarkupfalse%
+\ b{\isacharcolon}\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n\isactrlsub p{\isacharparenright}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n\isactrlsub p{\isachardoublequoteclose}\ \isacommand{using}\isamarkupfalse%
+\ {\isadigit{1}}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}thesis\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{proof}\isamarkupfalse%
+\ {\isacharparenleft}cases\ {\isachardoublequoteopen}{\isasymexists}sn\isactrlsub {\isadigit{0}}{\isachardot}\ f\ sn\isactrlsub {\isadigit{0}}\ {\isacharequal}\ Suc\ n{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
+\ True\ \isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ this\ \isacommand{obtain}\isamarkupfalse%
+\ sn\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ fsn{\isacharcolon}{\isachardoublequoteopen}f\ sn\isactrlsub {\isadigit{0}}\ {\isacharequal}\ Suc\ n{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ next{\isacharunderscore}non{\isacharunderscore}stuttering{\isacharbrackleft}OF\ {\isacharasterisk}\ np{\isacharunderscore}prop\ this{\isacharbrackright}\ \ \isacommand{have}\isamarkupfalse%
+\ sn{\isacharunderscore}prop{\isacharcolon}{\isachardoublequoteopen}sn\isactrlsub {\isadigit{0}}\ {\isacharequal}\ Suc\ n\isactrlsub p{\isachardoublequoteclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{with}\isamarkupfalse%
+\ b\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ sn\isactrlsub {\isadigit{0}}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n\isactrlsub p{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
+\ tick{\isacharunderscore}count{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ fsn\ a\ \isacommand{by}\isamarkupfalse%
+\ auto\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{next}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
+\ False\ \isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
+\ {\isacharasterisk}\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isacharequal}\ tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ n{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ tick{\isacharunderscore}count{\isacharunderscore}suc{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{also}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ n\isactrlsub p{\isachardoublequoteclose}\ \isacommand{using}\isamarkupfalse%
+\ np{\isacharunderscore}prop\ tick{\isacharunderscore}count{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ tick{\isacharunderscore}count{\isacharunderscore}latest{\isacharbrackleft}OF\ {\isacharasterisk}\ np{\isacharunderscore}prop{\isacharbrackright}{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{finally}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isacharequal}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ n\isactrlsub p{\isachardoublequoteclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ n\isactrlsub p\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n\isactrlsub p{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ tick{\isacharunderscore}count{\isacharunderscore}suc{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n\isactrlsub p{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n\isactrlsub p{\isacharparenright}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n\isactrlsub p{\isachardoublequoteclose}\ \isacommand{using}\isamarkupfalse%
+\ {\isadigit{1}}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymle}\ tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n\isactrlsub p{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
+\ np{\isacharunderscore}prop\ mono{\isacharunderscore}tick{\isacharunderscore}count\ \ \isacommand{using}\isamarkupfalse%
+\ a\ \isacommand{by}\isamarkupfalse%
+\ linarith\isanewline
+\ \ \ \ \ \ \ \ \ \ \isacommand{qed}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \isacommand{qed}\isamarkupfalse%
+\isanewline
+\ \ \ \ \isacommand{{\isacharbraceright}}\isamarkupfalse%
+\ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{{\isachardot}{\isachardot}}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{qed}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ {\isadigit{1}}\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isacharasterisk}{\isachardoublequoteclose}\ empty{\isacharunderscore}dilated{\isacharunderscore}prefix\ ticks{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
+\ fastforce\isanewline
+\ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ tick{\isacharunderscore}count{\isacharunderscore}is{\isacharunderscore}fun\ strictly{\isacharunderscore}precedes{\isacharunderscore}alt{\isacharunderscore}def{\isadigit{2}}{\isacharparenright}\ \isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\begin{isamarkuptext}%
+Time delayed relations are preserved in a dilated run.%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{theorem}\isamarkupfalse%
+\ time{\isacharunderscore}delayed{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}\ a\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ ms\ implies\ b\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}r\ {\isasymin}\ {\isasymlbrakk}\ a\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ ms\ implies\ b\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\ \isakeyword{where}\ {\isacharasterisk}{\isacharcolon}{\isachardoublequoteopen}dilating\ f\ sub\ r{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ a{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymexists}m\ {\isasymge}\ n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ m\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ m\ ms{\isacharparenright}\ {\isacharequal}\ \ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{6}}{\isacharparenright}{\isacharbrackleft}of\ {\isachardoublequoteopen}a{\isachardoublequoteclose}\ {\isachardoublequoteopen}{\isasymdelta}{\isasymtau}{\isachardoublequoteclose}\ {\isachardoublequoteopen}ms{\isachardoublequoteclose}\ {\isachardoublequoteopen}b{\isachardoublequoteclose}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isacharasterisk}{\isacharasterisk}{\isacharcolon}{\isachardoublequoteopen}{\isasymforall}n\isactrlsub {\isadigit{0}}{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ a{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymexists}m\isactrlsub {\isadigit{0}}\ {\isasymge}\ n\isactrlsub {\isadigit{0}}{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ \ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ {\isacharasterisk}\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def{\isacharparenright}\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymexists}m\ {\isasymge}\ n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \ \ \isacommand{{\isacharbraceleft}}\isamarkupfalse%
+\ \isacommand{fix}\isamarkupfalse%
+\ n\ \isacommand{assume}\isamarkupfalse%
+\ assm{\isacharcolon}{\isachardoublequoteopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ ticks{\isacharunderscore}image{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}\ assm{\isacharbrackright}\ \isacommand{obtain}\isamarkupfalse%
+\ n\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ nfn{\isadigit{0}}{\isacharcolon}{\isachardoublequoteopen}n\ {\isacharequal}\ f\ n\isactrlsub {\isadigit{0}}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \isacommand{with}\isamarkupfalse%
+\ {\isacharasterisk}{\isacharasterisk}\ assm\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \ \ {\isachardoublequoteopen}{\isacharparenleft}{\isasymexists}m\isactrlsub {\isadigit{0}}\ {\isasymge}\ n\isactrlsub {\isadigit{0}}{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ \ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isacharparenleft}{\isasymexists}m\ {\isasymge}\ n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ \ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
+\ {\isacharasterisk}\ nfn{\isadigit{0}}\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}metis\ strict{\isacharunderscore}mono{\isacharunderscore}less{\isacharunderscore}eq{\isacharparenright}\isanewline
+\ \ \ \ \isacommand{{\isacharbraceright}}\isamarkupfalse%
+\ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{qed}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\begin{isamarkuptext}%
+Time relations are preserved by contraction%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{lemma}\isamarkupfalse%
+\ tagrel{\isacharunderscore}sub{\isacharunderscore}inv{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}r\ {\isasymin}\ {\isasymlbrakk}\ time{\isacharminus}relation\ {\isasymlfloor}c\isactrlsub {\isadigit{1}}{\isacharcomma}\ c\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}\ time{\isacharminus}relation\ {\isasymlfloor}c\isactrlsub {\isadigit{1}}{\isacharcomma}\ c\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\ \isakeyword{where}\ df{\isacharcolon}{\isachardoublequoteopen}dilating\ f\ sub\ r{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{3}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isachardoublequoteopen}r\ {\isasymin}\ {\isacharbraceleft}{\isasymrho}{\isachardot}\ {\isasymforall}n{\isachardot}\ R\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacharcomma}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacharbraceright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ R\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacharcomma}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ {\isacharparenleft}{\isasymexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ n{\isacharparenright}\ {\isasymlongrightarrow}\ R\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacharcomma}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n\isactrlsub {\isadigit{0}}{\isachardot}\ R\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacharcomma}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ dilating{\isacharunderscore}def\ df\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isachardoublequoteopen}{\isasymforall}n\ c{\isachardot}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ c{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n\isactrlsub {\isadigit{0}}{\isachardot}\ R\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\isactrlsub {\isadigit{0}}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacharcomma}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\isactrlsub {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ auto\isanewline
+\ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\begin{isamarkuptext}%
+A time relation is preserved through dilation of a run.%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{lemma}\isamarkupfalse%
+\ tagrel{\isacharunderscore}sub{\isacharprime}{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}\ time{\isacharminus}relation\ {\isasymlfloor}c\isactrlsub {\isadigit{1}}{\isacharcomma}c\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}R\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacharcomma}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\ \isakeyword{where}\ {\isacharasterisk}{\isacharcolon}{\isachardoublequoteopen}dilating\ f\ sub\ r{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{3}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ R\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacharcomma}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacharbraceright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isadigit{1}}{\isacharcolon}{\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ R\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacharcomma}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}thesis\isanewline
+\ \ \isacommand{proof}\isamarkupfalse%
+\ {\isacharparenleft}induction\ n{\isacharparenright}\isanewline
+\ \ \ \ \isacommand{case}\isamarkupfalse%
+\ {\isadigit{0}}\isanewline
+\ \ \ \ \isacommand{then}\isamarkupfalse%
+\ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}case\isanewline
+\ \ \ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}metis\ {\isacharparenleft}no{\isacharunderscore}types{\isacharcomma}\ lifting{\isacharparenright}\ {\isachardoublequoteopen}{\isadigit{1}}{\isachardoublequoteclose}\ calculation\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def{\isacharparenright}\isanewline
+\ \ \isacommand{next}\isamarkupfalse%
+\isanewline
+\ \ \ \ \isacommand{case}\isamarkupfalse%
+\ {\isacharparenleft}Suc\ n{\isacharparenright}\isanewline
+\ \ \ \ \isacommand{then}\isamarkupfalse%
+\ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}case\isanewline
+\ \ \ \ \isacommand{proof}\isamarkupfalse%
+\ {\isacharparenleft}cases\ {\isachardoublequoteopen}{\isasymnexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ Suc\ n{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
+\ True\isanewline
+\ \ \ \ \ \ \ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}metis\ Suc{\isachardot}IH\ calculation\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def{\isacharparenright}\isanewline
+\ \ \ \ \isacommand{next}\isamarkupfalse%
+\isanewline
+\ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
+\ False\isanewline
+\ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ this\ \isacommand{obtain}\isamarkupfalse%
+\ n\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ n\isactrlsub {\isadigit{0}}prop{\isacharcolon}{\isachardoublequoteopen}f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ Suc\ n{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ {\isadigit{1}}\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}R\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\isactrlsub {\isadigit{0}}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacharcomma}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\isactrlsub {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ n\isactrlsub {\isadigit{0}}prop\ {\isacharasterisk}\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\isactrlsub {\isadigit{0}}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def{\isacharparenright}\isanewline
+\ \ \ \ \ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ n\isactrlsub {\isadigit{0}}prop\ {\isacharasterisk}\ \isacommand{have}\isamarkupfalse%
+\ {\isachardoublequoteopen}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\isactrlsub {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def{\isacharparenright}\isanewline
+\ \ \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \isacommand{qed}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{qed}\isamarkupfalse%
+\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{corollary}\isamarkupfalse%
+\ tagrel{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}\ time{\isacharminus}relation\ {\isasymlfloor}c\isactrlsub {\isadigit{1}}{\isacharcomma}c\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}r\ {\isasymin}\ {\isasymlbrakk}\ time{\isacharminus}relation\ {\isasymlfloor}c\isactrlsub {\isadigit{1}}{\isacharcomma}c\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{using}\isamarkupfalse%
+\ tagrel{\isacharunderscore}sub{\isacharprime}{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{unfolding}\isamarkupfalse%
+\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{3}}{\isacharparenright}\ \isacommand{by}\isamarkupfalse%
+\ simp%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{theorem}\isamarkupfalse%
+\ kill{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isachardoublequoteopen}sub\ {\isasymlless}\ r{\isachardoublequoteclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isachardoublequoteopen}sub\ {\isasymin}\ {\isasymlbrakk}\ c\isactrlsub {\isadigit{1}}\ kills\ c\isactrlsub {\isadigit{2}}\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isachardoublequoteopen}r\ {\isasymin}\ {\isasymlbrakk}\ c\isactrlsub {\isadigit{1}}\ kills\ c\isactrlsub {\isadigit{2}}\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isachardoublequoteclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\ \isakeyword{where}\ {\isacharasterisk}{\isacharcolon}{\isachardoublequoteopen}dilating\ f\ sub\ r{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{9}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ n{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ m{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ n{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}\ {\isacharparenleft}f\ n{\isacharparenright}{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}metis\ {\isachardoublequoteopen}{\isacharasterisk}{\isachardoublequoteclose}\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def\ strict{\isacharunderscore}mono{\isacharunderscore}less{\isacharunderscore}eq{\isacharparenright}\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isachardoublequoteopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m\ {\isasymge}\ n{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
+\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{9}}{\isacharparenright}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+%
+\isadelimtheory
+\isanewline
+%
+\endisadelimtheory
+%
+\isatagtheory
+\isacommand{end}\isamarkupfalse%
+%
+\endisatagtheory
+{\isafoldtheory}%
+%
+\isadelimtheory
+%
+\endisadelimtheory
+%
+\end{isabellebody}%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "root"
+%%% End:

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Theory Run (Isabelle2018: August 2018)</title>
+<link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
+</head>
+
+<body>
+<div class="head"><h1>Theory Run</h1>
+
+<span class="command">theory</span> <span class="name">Run</span><br/>
+<span class="keyword">imports</span> <a href="TESL.html"><span class="name">TESL</span></a><br/>
+
+</div>
+<div class="source">
+<pre class="source"><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249; Defining Runs &#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">theory</span></span><span> </span><span>Run</span><span>
+</span><span class="keyword2"><span class="keyword">imports</span></span><span> </span><span>TESL</span><span>
+</span><span>      
+</span><span class="keyword2"><span class="keyword">begin</span></span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  Runs are sequences of instants, and each instant maps a clock to a pair 
+  @{term &#8249;(h, t)&#8250;} where @{term &#8249;h&#8250;} indicates whether the clock ticks or not, 
+  and @{term &#8249;t&#8250;} is the current time on this clock.
+  The first element of the pair is called the &#8727;&#8249;hamlet&#8250; of the clock (to tick or 
+  not to tick), the second element is called the &#8727;&#8249;time&#8250;.
+&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>hamlet</span><span> </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;hamlet &#8801; fst&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>time</span><span>   </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;time &#8801; snd&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">type_synonym</span></span><span> </span><span class="tfree">&#39;&#964;</span><span> </span><span>instant</span><span> </span><span class="delimiter">=</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;clock &#8658; (bool &#215; &#39;&#964; tag_const)&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  Runs have the additional constraint that time cannot go backwards on any clock
+  in the sequence of instants.
+  Therefore, for any clock, the time projection of a run is monotonous.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">typedef</span></span><span> </span><span class="delimiter">(</span><span class="keyword2"><span class="keyword">overloaded</span></span><span class="delimiter">)</span><span> </span><span class="tfree">&#39;&#964;</span><span class="delimiter">::</span><span>linordered_field</span><span> </span><span>run</span><span> </span><span class="delimiter">=</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;{ &#961;::nat &#8658; &#39;&#964; instant. &#8704;c. mono (&#955;n. time (&#961; n c)) }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span>
+</span><span>  </span><span class="keyword3"><span class="command">show</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#955;_ _. (True, &#964;<span class="hidden">&#8681;</span><sub>c</sub><span class="hidden">&#8681;</span><sub>s</sub><span class="hidden">&#8681;</span><sub>t</sub> 0)) &#8712; {&#961;. &#8704;c. mono (&#955;n. time (&#961; n c))}&#8250;</span></span></span><span> 
+</span><span>    </span><span class="keyword1"><span class="command">unfolding</span></span><span> </span><span>mono_def</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Abs_run_inverse_rewrite</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#8704;c. mono (&#955;n. time (&#961; n c)) &#10233; Rep_run (Abs_run &#961;) = &#961;&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>Abs_run_inverse</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  A &#8727;&#8249;dense&#8250; run is a run in which something happens (at least one clock ticks) 
+  at every instant.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;dense_run &#961; &#8801; (&#8704;n. &#8707;c. hamlet ((Rep_run &#961;) n c))&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  @{term &#8249;run_tick_count &#961; K n&#8250;} counts the number of ticks on clock @{term &#8249;K&#8250;} 
+  in the interval &#9641;&#8249;[0, n]&#8250; of run @{term &#8249;&#961;&#8250;}.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">fun</span></span><span> </span><span>run_tick_count</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) run &#8658; clock &#8658; nat &#8658; nat&#8250;</span></span></span><span>
+</span><span>  </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;#<span class="hidden">&#8681;</span><sub>&#8804;</sub> _ _ _&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K 0)       = (if hamlet ((Rep_run &#961;) 0 K)
+                       then 1
+                       else 0)&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K (Suc n)) = (if hamlet ((Rep_run &#961;) (Suc n) K)
+                       then 1 + (#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K n)
+                       else (#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K n))&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  @{term &#8249;run_tick_count_strictly &#961; K n&#8250;} counts the number of ticks on
+  clock @{term &#8249;K&#8250;} in the interval &#9641;&#8249;[0, n[&#8250; of run @{term &#8249;&#961;&#8250;}.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">fun</span></span><span> </span><span>run_tick_count_strictly</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) run &#8658; clock &#8658; nat &#8658; nat&#8250;</span></span></span><span>
+</span><span>  </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;#<span class="hidden">&#8681;</span><sub>&lt;</sub> _ _ _&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&lt;</sub> &#961; K 0)       = 0&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&lt;</sub> &#961; K (Suc n)) = #<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K n&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  @{term &#8249;first_time &#961; K n &#964;&#8250;} tells whether instant @{term &#8249;n&#8250;} in run @{term&#8249;&#961;&#8250;}
+  is the first one where the time on clock @{term &#8249;K&#8250;} reaches @{term &#8249;&#964;&#8250;}.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>first_time</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;a::linordered_field run &#8658; clock &#8658; nat &#8658; &#39;a tag_const
+                          &#8658; bool&#8250;</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;first_time &#961; K n &#964; &#8801; (time ((Rep_run &#961;) n K) = &#964;)
+                      &#8743; (&#8708;n&#39;. n&#39; &lt; n &#8743; time ((Rep_run &#961;) n&#39; K) = &#964;)&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  The time on a clock is necessarily less than @{term &#8249;&#964;&#8250;} before the first instant
+  at which it reaches @{term &#8249;&#964;&#8250;}.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>before_first_time</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;first_time &#961; K n &#964;&#8250;</span></span></span><span>
+</span><span>      </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;m &lt; n&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;time ((Rep_run &#961;) m K) &lt; &#964;&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span>-</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;mono (&#955;n. time (Rep_run &#961; n K))&#8250;</span></span></span><span> </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>Rep_run</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">moreover</span></span><span> </span><span class="keyword1"><span class="command">from</span></span><span> </span><span>assms</span><span class="delimiter">(</span><span>2</span><span class="delimiter">)</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;m &#8804; n&#8250;</span></span></span><span> </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>less_imp_le</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">moreover</span></span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;mono (&#955;n. time (Rep_run &#961; n K))&#8250;</span></span></span><span> </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>Rep_run</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">ultimately</span></span><span> </span><span class="keyword1"><span class="command">have</span></span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;time ((Rep_run &#961;) m K) &#8804; time ((Rep_run &#961;) n K)&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span>mono_def</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">moreover</span></span><span> </span><span class="keyword1"><span class="command">from</span></span><span> </span><span>assms</span><span class="delimiter">(</span><span>1</span><span class="delimiter">)</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;time ((Rep_run &#961;) n K) = &#964;&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>first_time_def</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">moreover</span></span><span> </span><span class="keyword1"><span class="command">from</span></span><span> </span><span>assms</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;time ((Rep_run &#961;) m K) &#8800; &#964;&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>first_time_def</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">ultimately</span></span><span> </span><span class="keyword3"><span class="command">show</span></span><span> </span><span class="var">?thesis</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  This leads to an alternate definition of @{term &#8249;first_time&#8250;}:
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>alt_first_time_def</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#8704;m &lt; n. time ((Rep_run &#961;) m K) &lt; &#964;&#8250;</span></span></span><span>
+</span><span>      </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;time ((Rep_run &#961;) n K) = &#964;&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;first_time &#961; K n &#964;&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span>-</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">from</span></span><span> </span><span>assms</span><span class="delimiter">(</span><span>1</span><span class="delimiter">)</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#8704;m &lt; n. time ((Rep_run &#961;) m K) &#8800; &#964;&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>less_le</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">with</span></span><span> </span><span>assms</span><span class="delimiter">(</span><span>2</span><span class="delimiter">)</span><span> </span><span class="keyword3"><span class="command">show</span></span><span> </span><span class="var">?thesis</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>first_time_def</span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span>
+</span><span class="keyword2"><span class="keyword">end</span></span><span>
+</span></pre>
+
+</div>
+</body>
+</html>

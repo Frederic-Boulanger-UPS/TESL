@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Theory Operational (Isabelle2018: August 2018)</title>
+<link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
+</head>
+
+<body>
+<div class="head"><h1>Theory Operational</h1>
+
+<span class="command">theory</span> <span class="name">Operational</span><br/>
+<span class="keyword">imports</span> <a href="SymbolicPrimitive.html"><span class="name">SymbolicPrimitive</span></a><br/>
+
+</div>
+<div class="source">
+<pre class="source"><span class="keyword1"><span class="command">chapter</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;Operational Semantics&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;\label{chap:operational_semantics}&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">theory</span></span><span> </span><span>Operational</span><span>
+</span><span class="keyword2"><span class="keyword">imports</span></span><span>
+</span><span>  </span><span>SymbolicPrimitive</span><span>
+</span><span>
+</span><span class="keyword2"><span class="keyword">begin</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  The operational semantics defines rules to build symbolic runs from a TESL 
+  specification (a set of TESL formulae).
+  Symbolic runs are described using the symbolic primitives presented in the 
+  previous chapter.
+  Therefore, the operational semantics compiles a set of constraints on runs, 
+  as defined by the denotational semantics, into a set of symbolic constraints 
+  on the instants of the runs. Concrete runs can then be obtained by solving the 
+  constraints at each instant.
+&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">section</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;Operational steps&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  We introduce a notation to describe configurations:
+  &#9642; @{term &#8249;&#915;&#8250;} is the context, the set of symbolic constraints on past instants of the run;
+  &#9642; @{term &#8249;n&#8250;} is the index of the current instant, the present;
+  &#9642; @{term &#8249;&#936;&#8250;} is the TESL formula that must be satisfied at the current instant (present);
+  &#9642; @{term &#8249;&#934;&#8250;} is the TESL formula that must be satisfied for the following instants (the future).
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>uncurry_conf</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) system &#8658; instant_index &#8658; &#39;&#964; TESL_formula &#8658; &#39;&#964; TESL_formula
+      &#8658; &#39;&#964; config&#8250;</span></span></span><span>                                                  </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;_, _ &#8866; _ &#9657; _&quot;</span></span></span><span> </span><span>80</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#915;, n &#8866; &#936; &#9657; &#934; &#8801; (&#915;, n, &#936;, &#934;)&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  The only introduction rule allows us to progress to the next instant 
+  when there are no more constraints to satisfy for the present instant.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">inductive</span></span><span> </span><span>operational_semantics_intro</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) config &#8658; &#39;&#964; config &#8658; bool&#8250;</span></span></span><span>              </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;_ &#8618;<span class="hidden">&#8681;</span><sub>i</sub> _&quot;</span></span></span><span> </span><span>70</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span>instant_i</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; [] &#9657; &#934;) &#8618;<span class="hidden">&#8681;</span><sub>i</sub>  (&#915;, Suc n &#8866; &#934; &#9657; [])&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  The elimination rules describe how TESL formulae for the present are transformed 
+  into constraints on the past and on the future.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">inductive</span></span><span> </span><span>operational_semantics_elim</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) config &#8658; &#39;&#964; config &#8658; bool&#8250;</span></span></span><span>              </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;_ &#8618;<span class="hidden">&#8681;</span><sub>e</sub> _&quot;</span></span></span><span> </span><span>70</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span>sporadic_on_e1</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;A sporadic constraint can be ignored in the present and rejected into the future.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (&#915;, n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>sporadic_on_e2</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;It can also be handled in the present by making the clock tick and have 
+  the expected time. Once it has been handled, it is no longer a constraint 
+  to satisfy, so it disappears from the future.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> &#8659; n @ &#964;) # &#915;), n &#8866; &#936; &#9657; &#934;)&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>tagrel_e</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;A relation between time scales has to be obeyed at every instant.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((time-relation &#8970;K<span class="hidden">&#8681;</span><sub>1</sub>, K<span class="hidden">&#8681;</span><sub>2</sub>&#8971; &#8712; R) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((&#8970;&#964;<span class="hidden">&#8681;</span><sub>v</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>r</sub>(K<span class="hidden">&#8681;</span><sub>1</sub>, n), &#964;<span class="hidden">&#8681;</span><sub>v</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>r</sub>(K<span class="hidden">&#8681;</span><sub>2</sub>, n)&#8971; &#8712; R) # &#915;), n
+              &#8866; &#936; &#9657; ((time-relation &#8970;K<span class="hidden">&#8681;</span><sub>1</sub>, K<span class="hidden">&#8681;</span><sub>2</sub>&#8971; &#8712; R) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>implies_e1</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;An implication can be handled in the present by forbidding a tick of the master
+  clock. The implication is copied back into the future because it holds for 
+  the whole run.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((K<span class="hidden">&#8681;</span><sub>1</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>implies_e2</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;It can also be handled in the present by making both the master and the slave
+    clocks tick.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> &#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>implies_not_e1</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;A negative implication can be handled in the present by forbidding a tick of 
+  the master clock. The implication is copied back into the future because 
+  it holds for the whole run.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies not K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((K<span class="hidden">&#8681;</span><sub>1</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies not K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>implies_not_e2</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;It can also be handled in the present by making the master clock ticks and 
+    forbidding a tick on the slave clock.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies not K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies not K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>timedelayed_e1</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;A timed delayed implication can be handled by forbidding a tick on 
+    the master clock.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> time-delayed by &#948;&#964; on K<span class="hidden">&#8681;</span><sub>2</sub> implies K<span class="hidden">&#8681;</span><sub>3</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((K<span class="hidden">&#8681;</span><sub>1</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> time-delayed by &#948;&#964; on K<span class="hidden">&#8681;</span><sub>2</sub> implies K<span class="hidden">&#8681;</span><sub>3</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>timedelayed_e2</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;It can also be handled by making the master clock tick and adding a constraint 
+    that makes the slave clock tick when the delay has elapsed on the measuring clock.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> time-delayed by &#948;&#964; on K<span class="hidden">&#8681;</span><sub>2</sub> implies K<span class="hidden">&#8681;</span><sub>3</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> @ n &#8853; &#948;&#964; &#8658; K<span class="hidden">&#8681;</span><sub>3</sub>) # &#915;), n
+            &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> time-delayed by &#948;&#964; on K<span class="hidden">&#8681;</span><sub>2</sub> implies K<span class="hidden">&#8681;</span><sub>3</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>weakly_precedes_e</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;A weak precedence relation has to hold at every instant.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> weakly precedes K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((&#8968;#<span class="hidden">&#8679;</span><sup>&#8804;</sup> K<span class="hidden">&#8681;</span><sub>2</sub> n, #<span class="hidden">&#8679;</span><sup>&#8804;</sup> K<span class="hidden">&#8681;</span><sub>1</sub> n&#8969; &#8712; (&#955;(x,y). x&#8804;y)) # &#915;), n
+            &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> weakly precedes K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>strictly_precedes_e</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;A strict precedence relation has to hold at every instant.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> strictly precedes K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((&#8968;#<span class="hidden">&#8679;</span><sup>&#8804;</sup> K<span class="hidden">&#8681;</span><sub>2</sub> n, #<span class="hidden">&#8679;</span><sup>&lt;</sup> K<span class="hidden">&#8681;</span><sub>1</sub> n&#8969; &#8712; (&#955;(x,y). x&#8804;y)) # &#915;), n
+            &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> strictly precedes K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>kills_e1</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;A kill can be handled by forbidding a tick of the triggering clock.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((K<span class="hidden">&#8681;</span><sub>1</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>kills_e2</span><span class="delimiter">:</span><span>
+</span><span class="comment">&#8213; &#8249;It can also be handled by making the triggering clock tick and by forbidding 
+    any further tick of the killed clock.&#8250;</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;)
+     &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> &#172;&#8657; &#8805; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;))&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  A step of the operational semantics is either the application of the introduction 
+  rule or the application of an elimination rule.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">inductive</span></span><span> </span><span>operational_semantics_step</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) config &#8658; &#39;&#964; config &#8658; bool&#8250;</span></span></span><span>              </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;_ &#8618; _&quot;</span></span></span><span> </span><span>70</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span>intro_part</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;<span class="hidden">&#8681;</span><sub>1</sub>, n<span class="hidden">&#8681;</span><sub>1</sub> &#8866; &#936;<span class="hidden">&#8681;</span><sub>1</sub> &#9657; &#934;<span class="hidden">&#8681;</span><sub>1</sub>)  &#8618;<span class="hidden">&#8681;</span><sub>i</sub>  (&#915;<span class="hidden">&#8681;</span><sub>2</sub>, n<span class="hidden">&#8681;</span><sub>2</sub> &#8866; &#936;<span class="hidden">&#8681;</span><sub>2</sub> &#9657; &#934;<span class="hidden">&#8681;</span><sub>2</sub>)
+    &#10233; (&#915;<span class="hidden">&#8681;</span><sub>1</sub>, n<span class="hidden">&#8681;</span><sub>1</sub> &#8866; &#936;<span class="hidden">&#8681;</span><sub>1</sub> &#9657; &#934;<span class="hidden">&#8681;</span><sub>1</sub>)  &#8618;  (&#915;<span class="hidden">&#8681;</span><sub>2</sub>, n<span class="hidden">&#8681;</span><sub>2</sub> &#8866; &#936;<span class="hidden">&#8681;</span><sub>2</sub> &#9657; &#934;<span class="hidden">&#8681;</span><sub>2</sub>)&#8250;</span></span></span><span>
+</span><span class="delimiter">|</span><span> </span><span>elims_part</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#915;<span class="hidden">&#8681;</span><sub>1</sub>, n<span class="hidden">&#8681;</span><sub>1</sub> &#8866; &#936;<span class="hidden">&#8681;</span><sub>1</sub> &#9657; &#934;<span class="hidden">&#8681;</span><sub>1</sub>)  &#8618;<span class="hidden">&#8681;</span><sub>e</sub>  (&#915;<span class="hidden">&#8681;</span><sub>2</sub>, n<span class="hidden">&#8681;</span><sub>2</sub> &#8866; &#936;<span class="hidden">&#8681;</span><sub>2</sub> &#9657; &#934;<span class="hidden">&#8681;</span><sub>2</sub>)
+    &#10233; (&#915;<span class="hidden">&#8681;</span><sub>1</sub>, n<span class="hidden">&#8681;</span><sub>1</sub> &#8866; &#936;<span class="hidden">&#8681;</span><sub>1</sub> &#9657; &#934;<span class="hidden">&#8681;</span><sub>1</sub>)  &#8618;  (&#915;<span class="hidden">&#8681;</span><sub>2</sub>, n<span class="hidden">&#8681;</span><sub>2</sub> &#8866; &#936;<span class="hidden">&#8681;</span><sub>2</sub> &#9657; &#934;<span class="hidden">&#8681;</span><sub>2</sub>)&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  We introduce notations for the reflexive transitive closure of the operational 
+  semantic step, its transitive closure and its reflexive closure.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>operational_semantics_step_rtranclp</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) config &#8658; &#39;&#964; config &#8658; bool&#8250;</span></span></span><span>              </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;_ &#8618;<span class="hidden">&#8679;</span><sup>*</sup><span class="hidden">&#8679;</span><sup>*</sup> _&quot;</span></span></span><span> </span><span>70</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#8618;<span class="hidden">&#8679;</span><sup>*</sup><span class="hidden">&#8679;</span><sup>*</sup> &#119966;<span class="hidden">&#8681;</span><sub>2</sub> &#8801; operational_semantics_step<span class="hidden">&#8679;</span><sup>*</sup><span class="hidden">&#8679;</span><sup>*</sup> &#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#119966;<span class="hidden">&#8681;</span><sub>2</sub>&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>operational_semantics_step_tranclp</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) config &#8658; &#39;&#964; config &#8658; bool&#8250;</span></span></span><span>              </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;_ &#8618;<span class="hidden">&#8679;</span><sup>+</sup><span class="hidden">&#8679;</span><sup>+</sup> _&quot;</span></span></span><span> </span><span>70</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#8618;<span class="hidden">&#8679;</span><sup>+</sup><span class="hidden">&#8679;</span><sup>+</sup> &#119966;<span class="hidden">&#8681;</span><sub>2</sub> &#8801; operational_semantics_step<span class="hidden">&#8679;</span><sup>+</sup><span class="hidden">&#8679;</span><sup>+</sup> &#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#119966;<span class="hidden">&#8681;</span><sub>2</sub>&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>operational_semantics_step_reflclp</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) config &#8658; &#39;&#964; config &#8658; bool&#8250;</span></span></span><span>              </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;_ &#8618;<span class="hidden">&#8679;</span><sup>=</sup><span class="hidden">&#8679;</span><sup>=</sup> _&quot;</span></span></span><span> </span><span>70</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#8618;<span class="hidden">&#8679;</span><sup>=</sup><span class="hidden">&#8679;</span><sup>=</sup> &#119966;<span class="hidden">&#8681;</span><sub>2</sub> &#8801; operational_semantics_step<span class="hidden">&#8679;</span><sup>=</sup><span class="hidden">&#8679;</span><sup>=</sup> &#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#119966;<span class="hidden">&#8681;</span><sub>2</sub>&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>operational_semantics_step_relpowp</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) config &#8658; nat &#8658; &#39;&#964; config &#8658; bool&#8250;</span></span></span><span>       </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;_ &#8618;<span class="hidden">&#8663;</span><sup>_<span class="hidden">&#8662;</span></sup> _&quot;</span></span></span><span> </span><span>70</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#8618;<span class="hidden">&#8663;</span><sup>n<span class="hidden">&#8662;</span></sup> &#119966;<span class="hidden">&#8681;</span><sub>2</sub> &#8801; (operational_semantics_step ^^ n) &#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#119966;<span class="hidden">&#8681;</span><sub>2</sub>&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>operational_semantics_elim_inv</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) config &#8658; &#39;&#964; config &#8658; bool&#8250;</span></span></span><span>              </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;_ &#8618;<span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8679;</span><sup>&#8592;</sup> _&quot;</span></span></span><span> </span><span>70</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#8618;<span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8679;</span><sup>&#8592;</sup> &#119966;<span class="hidden">&#8681;</span><sub>2</sub> &#8801; &#119966;<span class="hidden">&#8681;</span><sub>2</sub> &#8618;<span class="hidden">&#8681;</span><sub>e</sub> &#119966;<span class="hidden">&#8681;</span><sub>1</sub>&#8250;</span></span></span><span>
+</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">section</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;Basic Lemmas&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  If a configuration can be reached in @{term &#8249;m&#8250;} steps from a configuration that 
+  can be reached in @{term &#8249;n&#8250;} steps from an original configuration, then it can be 
+  reached in @{term &#8249;n+m&#8250;} steps from the original configuration.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>operational_semantics_trans_generalized</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#8618;<span class="hidden">&#8663;</span><sup>n<span class="hidden">&#8662;</span></sup> &#119966;<span class="hidden">&#8681;</span><sub>2</sub>&#8250;</span></span></span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#119966;<span class="hidden">&#8681;</span><sub>2</sub> &#8618;<span class="hidden">&#8663;</span><sup>m<span class="hidden">&#8662;</span></sup> &#119966;<span class="hidden">&#8681;</span><sub>3</sub>&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#119966;<span class="hidden">&#8681;</span><sub>1</sub> &#8618;<span class="hidden">&#8663;</span><sup>n + m<span class="hidden">&#8662;</span></sup> &#119966;<span class="hidden">&#8681;</span><sub>3</sub>&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">using</span></span><span> </span><span>relcompp.relcompI</span><span class="delimiter">[</span><span>of</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;operational_semantics_step ^^ n&#8250;</span></span></span><span> </span><span>_</span><span> </span><span>_</span><span> 
+</span><span>                            </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;operational_semantics_step ^^ m&#8250;</span></span></span><span class="delimiter">,</span><span> </span><span>OF</span><span> </span><span>assms</span><span class="delimiter">]</span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>relpowp_add</span><span class="delimiter">)</span><span> 
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  We consider the set of configurations that can be reached in one operational
+  step from a given configuration.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>Cnext_solve</span><span>
+</span><span>  </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) config &#8658; &#39;&#964; config set&#8250;</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> _&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> &#119982; &#8801; { &#119982;&#39;. &#119982; &#8618; &#119982;&#39; }&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  Advancing to the next instant is possible when there are no more constraints 
+  on the current instant.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Cnext_solve_instant</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> (&#915;, n &#8866; [] &#9657; &#934;)) &#8839; { &#915;, Suc n &#8866; &#934; &#9657; [] }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>operational_semantics_step.simps</span><span> </span><span>operational_semantics_intro.instant_i</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  The following lemmas state that the configurations produced by the elimination 
+  rules of the operational semantics belong to the configurations that can be 
+  reached in one step.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Cnext_solve_sporadicon</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> (&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;))
+    &#8839; { &#915;, n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;),
+        ((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> &#8659; n @ &#964;) # &#915;), n &#8866; &#936; &#9657; &#934; }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>operational_semantics_step.simps</span><span>
+</span><span>              </span><span>operational_semantics_elim.sporadic_on_e1</span><span>
+</span><span>              </span><span>operational_semantics_elim.sporadic_on_e2</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Cnext_solve_tagrel</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> (&#915;, n &#8866; ((time-relation &#8970;K<span class="hidden">&#8681;</span><sub>1</sub>, K<span class="hidden">&#8681;</span><sub>2</sub>&#8971; &#8712; R) # &#936;) &#9657; &#934;))
+    &#8839; { ((&#8970;&#964;<span class="hidden">&#8681;</span><sub>v</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>r</sub>(K<span class="hidden">&#8681;</span><sub>1</sub>, n), &#964;<span class="hidden">&#8681;</span><sub>v</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>r</sub>(K<span class="hidden">&#8681;</span><sub>2</sub>, n)&#8971; &#8712; R) # &#915;),n
+          &#8866; &#936; &#9657; ((time-relation &#8970;K<span class="hidden">&#8681;</span><sub>1</sub>, K<span class="hidden">&#8681;</span><sub>2</sub>&#8971; &#8712; R) # &#934;) }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>operational_semantics_step.simps</span><span> </span><span>operational_semantics_elim.tagrel_e</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Cnext_solve_implies</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> (&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;))
+    &#8839; { ((K<span class="hidden">&#8681;</span><sub>1</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;),
+         ((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> &#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;) }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>operational_semantics_step.simps</span><span> </span><span>operational_semantics_elim.implies_e1</span><span>
+</span><span>              </span><span>operational_semantics_elim.implies_e2</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Cnext_solve_implies_not</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> (&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies not K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;))
+    &#8839; { ((K<span class="hidden">&#8681;</span><sub>1</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies not K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;),
+        ((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> implies not K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;) }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>operational_semantics_step.simps</span><span>
+</span><span>              </span><span>operational_semantics_elim.implies_not_e1</span><span>
+</span><span>              </span><span>operational_semantics_elim.implies_not_e2</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Cnext_solve_timedelayed</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> (&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> time-delayed by &#948;&#964; on K<span class="hidden">&#8681;</span><sub>2</sub> implies K<span class="hidden">&#8681;</span><sub>3</sub>) # &#936;) &#9657; &#934;))
+    &#8839; { ((K<span class="hidden">&#8681;</span><sub>1</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> time-delayed by &#948;&#964; on K<span class="hidden">&#8681;</span><sub>2</sub> implies K<span class="hidden">&#8681;</span><sub>3</sub>) # &#934;),
+        ((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> @ n &#8853; &#948;&#964; &#8658; K<span class="hidden">&#8681;</span><sub>3</sub>) # &#915;), n
+          &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> time-delayed by &#948;&#964; on K<span class="hidden">&#8681;</span><sub>2</sub> implies K<span class="hidden">&#8681;</span><sub>3</sub>) # &#934;) }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>operational_semantics_step.simps</span><span>
+</span><span>              </span><span>operational_semantics_elim.timedelayed_e1</span><span>
+</span><span>              </span><span>operational_semantics_elim.timedelayed_e2</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Cnext_solve_weakly_precedes</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> (&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> weakly precedes K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;))
+    &#8839; { ((&#8968;#<span class="hidden">&#8679;</span><sup>&#8804;</sup> K<span class="hidden">&#8681;</span><sub>2</sub> n, #<span class="hidden">&#8679;</span><sup>&#8804;</sup> K<span class="hidden">&#8681;</span><sub>1</sub> n&#8969; &#8712; (&#955;(x,y). x&#8804;y)) # &#915;), n
+          &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> weakly precedes K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;) }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>operational_semantics_step.simps</span><span>
+</span><span>              </span><span>operational_semantics_elim.weakly_precedes_e</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Cnext_solve_strictly_precedes</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> (&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> strictly precedes K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;))
+    &#8839; { ((&#8968;#<span class="hidden">&#8679;</span><sup>&#8804;</sup> K<span class="hidden">&#8681;</span><sub>2</sub> n, #<span class="hidden">&#8679;</span><sup>&lt;</sup> K<span class="hidden">&#8681;</span><sub>1</sub> n&#8969; &#8712; (&#955;(x,y). x&#8804;y)) # &#915;), n
+          &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> strictly precedes K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;) }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>operational_semantics_step.simps</span><span>
+</span><span>              </span><span>operational_semantics_elim.strictly_precedes_e</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>Cnext_solve_kills</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#119966;<span class="hidden">&#8681;</span><sub>n</sub><span class="hidden">&#8681;</span><sub>e</sub><span class="hidden">&#8681;</span><sub>x</sub><span class="hidden">&#8681;</span><sub>t</sub> (&#915;, n &#8866; ((K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub>) # &#936;) &#9657; &#934;))
+    &#8839; { ((K<span class="hidden">&#8681;</span><sub>1</sub> &#172;&#8657; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;),
+        ((K<span class="hidden">&#8681;</span><sub>1</sub> &#8657; n) # (K<span class="hidden">&#8681;</span><sub>2</sub> &#172;&#8657; &#8805; n) # &#915;), n &#8866; &#936; &#9657; ((K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub>) # &#934;) }&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>operational_semantics_step.simps</span><span> </span><span>operational_semantics_elim.kills_e1</span><span>
+</span><span>              </span><span>operational_semantics_elim.kills_e2</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  An empty specification can be reduced to an empty specification for 
+  an arbitrary number of steps.
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>empty_spec_reductions</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;([], 0 &#8866; [] &#9657; []) &#8618;<span class="hidden">&#8663;</span><sup>k<span class="hidden">&#8662;</span></sup> ([], k &#8866; [] &#9657; [])&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span class="delimiter">(</span><span>induct</span><span> </span><span>k</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword3"><span class="command">case</span></span><span> </span><span>0</span><span> </span><span class="keyword3"><span class="command">thus</span></span><span> </span><span class="var">?case</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span class="keyword1"><span class="command">next</span></span><span>
+</span><span>  </span><span class="keyword3"><span class="command">case</span></span><span> </span><span>Suc</span><span> </span><span class="keyword3"><span class="command">thus</span></span><span> </span><span class="var">?case</span><span>
+</span><span>    </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>instant_i</span><span> </span><span>operational_semantics_step.simps</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>fastforce</span><span> 
+</span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span>
+</span><span class="keyword2"><span class="keyword">end</span></span><span>
+</span></pre>
+
+</div>
+</body>
+</html>

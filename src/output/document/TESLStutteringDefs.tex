@@ -1,0 +1,99 @@
+%
+\begin{isabellebody}%
+\setisabellecontext{TESLStutteringDefs}%
+%
+\isadelimtheory
+%
+\endisadelimtheory
+%
+\isatagtheory
+\isacommand{theory}\isamarkupfalse%
+\ TESLStutteringDefs\isanewline
+\isanewline
+\isakeyword{imports}\ Denotational\isanewline
+\isanewline
+\isakeyword{begin}%
+\endisatagtheory
+{\isafoldtheory}%
+%
+\isadelimtheory
+%
+\endisadelimtheory
+%
+\isamarkupsection{Invariance of specifications by stuttering%
+}
+\isamarkuptrue%
+%
+\isamarkupsubsection{Definition of stuttering%
+}
+\isamarkuptrue%
+%
+\begin{isamarkuptext}%
+A dilating function inserts empty instants in a run.
+  It is strictly increasing, the image of a nat is greater than it,
+  no instant is inserted before the first one 
+  and if n is not in the image of the function, no clock ticks at instant n.%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{definition}\isamarkupfalse%
+\ dilating{\isacharunderscore}fun\isanewline
+\isakeyword{where}\isanewline
+\ \ {\isachardoublequoteopen}dilating{\isacharunderscore}fun\ {\isacharparenleft}f{\isacharcolon}{\isacharcolon}nat\ {\isasymRightarrow}\ nat{\isacharparenright}\ {\isacharparenleft}r{\isacharcolon}{\isacharcolon}{\isacharprime}a{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field\ run{\isacharparenright}\isanewline
+\ \ \ \ {\isasymequiv}\ strict{\isacharunderscore}mono\ f\ {\isasymand}\ {\isacharparenleft}f\ {\isadigit{0}}\ {\isacharequal}\ {\isadigit{0}}{\isacharparenright}\ {\isasymand}\ {\isacharparenleft}{\isasymforall}n{\isachardot}\ f\ n\ {\isasymge}\ n\isanewline
+\ \ \ \ {\isasymand}\ {\isacharparenleft}{\isacharparenleft}{\isasymnexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ n{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}c{\isachardot}\ {\isasymnot}{\isacharparenleft}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacharparenright}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymand}\ {\isacharparenleft}{\isacharparenleft}{\isasymnexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}c{\isachardot}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ {\isacharparenright}{\isachardoublequoteclose}%
+\begin{isamarkuptext}%
+Dilating a run. A run r is a dilation of a run sub by function f if:
+    * f is a dilating function on the hamlet of r
+    * time is preserved in stuttering instants
+    * the time in r is the time in sub dilated by f
+    * the hamlet in r is the hamlet in sub dilated by f%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{definition}\isamarkupfalse%
+\ dilating\isanewline
+\ \ \isakeyword{where}\ {\isachardoublequoteopen}dilating\ f\ sub\ r\ {\isasymequiv}\ \ \ dilating{\isacharunderscore}fun\ f\ r\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ {\isacharparenleft}{\isasymforall}n\ c{\isachardot}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ c{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ {\isacharparenleft}{\isasymforall}n\ c{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c{\isacharparenright}\ {\isacharequal}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ c{\isacharparenright}{\isacharparenright}{\isachardoublequoteclose}%
+\begin{isamarkuptext}%
+A run is a subrun of another run if there exists a dilation between them.%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{definition}\isamarkupfalse%
+\ is{\isacharunderscore}subrun\ {\isacharcolon}{\isacharcolon}{\isachardoublequoteopen}{\isacharprime}a{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field\ run\ {\isasymRightarrow}\ {\isacharprime}a\ run\ {\isasymRightarrow}\ bool{\isachardoublequoteclose}\ {\isacharparenleft}\isakeyword{infixl}\ {\isachardoublequoteopen}{\isasymlless}{\isachardoublequoteclose}\ {\isadigit{6}}{\isadigit{0}}{\isacharparenright}\isanewline
+\isakeyword{where}\isanewline
+\ \ {\isachardoublequoteopen}sub\ {\isasymlless}\ r\ {\isasymequiv}\ {\isacharparenleft}{\isasymexists}f{\isachardot}\ dilating\ f\ sub\ r{\isacharparenright}{\isachardoublequoteclose}%
+\begin{isamarkuptext}%
+tick_count r c n = number of ticks of clock c in run r upto instant n%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{definition}\isamarkupfalse%
+\ tick{\isacharunderscore}count\ {\isacharcolon}{\isacharcolon}\ {\isachardoublequoteopen}{\isacharprime}a{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field\ run\ {\isasymRightarrow}\ clock\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ nat{\isachardoublequoteclose}\isanewline
+\isakeyword{where}\isanewline
+\ \ {\isachardoublequoteopen}tick{\isacharunderscore}count\ r\ c\ n\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isachardoublequoteclose}%
+\begin{isamarkuptext}%
+tick_count_strict r c n = number of ticks of clock c in run r upto but excluding instant n%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{definition}\isamarkupfalse%
+\ tick{\isacharunderscore}count{\isacharunderscore}strict\ {\isacharcolon}{\isacharcolon}\ {\isachardoublequoteopen}{\isacharprime}a{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field\ run\ {\isasymRightarrow}\ clock\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ nat{\isachardoublequoteclose}\isanewline
+\isakeyword{where}\isanewline
+\ \ {\isachardoublequoteopen}tick{\isacharunderscore}count{\isacharunderscore}strict\ r\ c\ n\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isachardoublequoteclose}\isanewline
+\isanewline
+%
+\isadelimtheory
+\isanewline
+%
+\endisadelimtheory
+%
+\isatagtheory
+\isacommand{end}\isamarkupfalse%
+%
+\endisatagtheory
+{\isafoldtheory}%
+%
+\isadelimtheory
+%
+\endisadelimtheory
+%
+\end{isabellebody}%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "root"
+%%% End:
