@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Theory StutteringLemmas (Isabelle2018: August 2018)</title>
+<title>Theory StutteringLemmas (Isabelle2019: June 2019)</title>
 <link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
 </head>
 
@@ -1311,6 +1311,19 @@
 </span><span>  </span><span class="keyword1"><span class="command">from</span></span><span> </span><span>1</span><span> </span><span>2</span><span> </span><span class="keyword3"><span class="command">show</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#8896;n. g n = (dil_inverse f) n&#8250;</span></span></span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>not_less_iff_gr_or_eq</span><span class="delimiter">)</span><span>
 </span><span class="keyword1"><span class="command">qed</span></span><span>
 </span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>counted_ticks_sub</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;dilating f sub r&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;counted_ticks sub c n m d = counted_ticks r c (f n) (f m) d&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span>-</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">have</span></span><span> </span><span>1</span><span class="delimiter">:</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;n &#8804; m = ((f n) &#8804; (f m))&#8250;</span></span></span><span> </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>assms</span><span>
+</span><span>    </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>dilating_fun_def</span><span> </span><span>dilating_def</span><span> </span><span>strict_mono_less_eq</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">have</span></span><span> </span><span>2</span><span class="delimiter">:</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(run_tick_count sub c m = run_tick_count sub c n + d) = (run_tick_count r c (f m) = run_tick_count r c (f n) + d)&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>run_tick_count_sub</span><span class="delimiter">[</span><span>OF</span><span> </span><span>assms</span><span class="delimiter">]</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">have</span></span><span> </span><span>3</span><span class="delimiter">:</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#8708;m&#39;. (n &#8804; m&#39;) &#8743; (m&#39; &lt; m) &#8743; run_tick_count sub c m&#39; = run_tick_count sub c n + d)
+      = (&#8708;m&#39;. ((f n) &#8804; m&#39;) &#8743; (m&#39; &lt; (f m)) &#8743; run_tick_count r c m&#39; = run_tick_count r c (f n) + d)&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword1"><span class="command">sorry</span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">from</span></span><span> </span><span>1</span><span> </span><span>2</span><span> </span><span>3</span><span> </span><span class="keyword3"><span class="command">show</span></span><span> </span><span class="var">?thesis</span><span> </span><span class="keyword1"><span class="command">unfolding</span></span><span> </span><span>counted_ticks_def</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>
 </span><span class="keyword2"><span class="keyword">end</span></span><span>
 </span></pre>
 

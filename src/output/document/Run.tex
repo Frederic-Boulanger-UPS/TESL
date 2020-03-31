@@ -111,21 +111,39 @@ A \emph{dense} run is a run in which something happens (at least one clock ticks
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{fun}\isamarkupfalse%
 \ run{\isacharunderscore}tick{\isacharunderscore}count\ {\isacharcolon}{\isacharcolon}\ {\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ run\ {\isasymRightarrow}\ clock\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ nat{\isacartoucheclose}\isanewline
-\ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharhash}\isactrlsub {\isasymle}\ {\isacharunderscore}\ {\isacharunderscore}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ {\isacharparenleft}{\isacartoucheopen}{\isacharhash}\isactrlsub {\isasymle}\ {\isacharunderscore}\ {\isacharunderscore}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ {\isadigit{0}}{\isacharparenright}\ \ \ \ \ \ \ {\isacharequal}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isadigit{0}}\ K{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ then\ {\isadigit{1}}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ {\isadigit{0}}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ {\isacartoucheopen}{\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ K{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ then\ {\isadigit{1}}\ {\isacharplus}\ {\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ n{\isacharparenright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ {\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ n{\isacharparenright}{\isacharparenright}{\isacartoucheclose}%
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ {\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ n{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\isanewline
+\isacommand{lemma}\isamarkupfalse%
+\ run{\isacharunderscore}tick{\isacharunderscore}count{\isacharunderscore}mono{\isacharcolon}\ {\isacartoucheopen}mono\ {\isacharparenleft}{\isasymlambda}n{\isachardot}\ run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ n{\isacharparenright}{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+\ \ %
+\endisadelimproof
+%
+\isatagproof
+\isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ mono{\isacharunderscore}iff{\isacharunderscore}le{\isacharunderscore}Suc{\isacharparenright}%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+%
+\endisadelimproof
+%
 \begin{isamarkuptext}%
 \isa{run{\isacharunderscore}tick{\isacharunderscore}count{\isacharunderscore}strictly\ {\isasymrho}\ K\ n} counts the number of ticks on
   clock \isa{K} in the interval \isatt{[0{\char`\,}\ n[} of run \isa{{\isasymrho}}.%
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{fun}\isamarkupfalse%
 \ run{\isacharunderscore}tick{\isacharunderscore}count{\isacharunderscore}strictly\ {\isacharcolon}{\isacharcolon}\ {\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ run\ {\isasymRightarrow}\ clock\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ nat{\isacartoucheclose}\isanewline
-\ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharhash}\isactrlsub {\isacharless}\ {\isacharunderscore}\ {\isacharunderscore}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ {\isacharparenleft}{\isacartoucheopen}{\isacharhash}\isactrlsub {\isacharless}\ {\isacharunderscore}\ {\isacharunderscore}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isacharparenleft}{\isacharhash}\isactrlsub {\isacharless}\ {\isasymrho}\ K\ {\isadigit{0}}{\isacharparenright}\ \ \ \ \ \ \ {\isacharequal}\ {\isadigit{0}}{\isacartoucheclose}\isanewline
 {\isacharbar}\ {\isacartoucheopen}{\isacharparenleft}{\isacharhash}\isactrlsub {\isacharless}\ {\isasymrho}\ K\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ {\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ n{\isacartoucheclose}%
@@ -139,6 +157,243 @@ A \emph{dense} run is a run in which something happens (at least one clock ticks
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}first{\isacharunderscore}time\ {\isasymrho}\ K\ n\ {\isasymtau}\ {\isasymequiv}\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ n\ K{\isacharparenright}\ {\isacharequal}\ {\isasymtau}{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ {\isacharparenleft}{\isasymnexists}n{\isacharprime}{\isachardot}\ n{\isacharprime}\ {\isacharless}\ n\ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ n{\isacharprime}\ K{\isacharparenright}\ {\isacharequal}\ {\isasymtau}{\isacharparenright}{\isacartoucheclose}%
+\begin{isamarkuptext}%
+\isa{counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m\ d} tells whether clock K has ticked d times for the
+  first time in interval ]n, m].%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{definition}\isamarkupfalse%
+\ counted{\isacharunderscore}ticks\ {\isacharcolon}{\isacharcolon}\ {\isacartoucheopen}{\isacharprime}a{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field\ run\ {\isasymRightarrow}\ clock\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ bool{\isacartoucheclose}\isanewline
+\isakeyword{where}\isanewline
+\ \ {\isacartoucheopen}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m\ d\ {\isasymequiv}\ {\isacharparenleft}n\ {\isasymle}\ m{\isacharparenright}\ {\isasymand}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ m\ {\isacharequal}\ run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ n\ {\isacharplus}\ d{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ {\isacharparenleft}{\isasymnexists}m{\isacharprime}{\isachardot}\ {\isacharparenleft}n\ {\isasymle}\ m{\isacharprime}{\isacharparenright}\ {\isasymand}\ {\isacharparenleft}m{\isacharprime}\ {\isacharless}\ m{\isacharparenright}\ {\isasymand}\ run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ m{\isacharprime}\ {\isacharequal}\ run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ n\ {\isacharplus}\ d{\isacharparenright}\isanewline
+\ \ {\isacartoucheclose}%
+\begin{isamarkuptext}%
+Obviously, a clock cannot tick in ]n, n]%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{lemma}\isamarkupfalse%
+\ counted{\isacharunderscore}immediate{\isacharcolon}\ {\isacartoucheopen}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ n\ {\isadigit{0}}{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+\ \ %
+\endisadelimproof
+%
+\isatagproof
+\isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ counted{\isacharunderscore}ticks{\isacharunderscore}def{\isacharparenright}%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\begin{isamarkuptext}%
+Because \isa{counted{\isacharunderscore}ticks\ {\isasymrho}\ n\ m\ d} is true only the first time the count is reached,
+  when \isa{counted{\isacharunderscore}ticks\ {\isasymrho}\ n\ m\ {\isadigit{0}}}, the interval is necessarily of the form ]n, n].%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{lemma}\isamarkupfalse%
+\ counted{\isacharunderscore}zero{\isacharunderscore}same{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isacartoucheopen}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m\ {\isadigit{0}}{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}n\ {\isacharequal}\ m{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{consider}\isamarkupfalse%
+\ {\isacharparenleft}a{\isacharparenright}\ {\isacartoucheopen}n\ {\isacharless}\ m{\isacartoucheclose}\ {\isacharbar}\ {\isacharparenleft}b{\isacharparenright}\ {\isacartoucheopen}n\ {\isachargreater}\ m{\isacartoucheclose}\ {\isacharbar}\ {\isacharparenleft}c{\isacharparenright}\ {\isacartoucheopen}n\ {\isacharequal}\ m{\isacartoucheclose}\ \ \isacommand{using}\isamarkupfalse%
+\ nat{\isacharunderscore}neq{\isacharunderscore}iff\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{then}\isamarkupfalse%
+\ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}thesis\isanewline
+\ \ \isacommand{proof}\isamarkupfalse%
+\ cases\isanewline
+\ \ \ \ \isacommand{case}\isamarkupfalse%
+\ a\isanewline
+\ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymnot}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m\ {\isadigit{0}}{\isacartoucheclose}\ \isanewline
+\ \ \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
+\ counted{\isacharunderscore}ticks{\isacharunderscore}def\ add{\isacharunderscore}cancel{\isacharunderscore}right{\isacharunderscore}right\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \isacommand{with}\isamarkupfalse%
+\ assms\ \isacommand{have}\isamarkupfalse%
+\ False\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{{\isachardot}{\isachardot}}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{next}\isamarkupfalse%
+\isanewline
+\ \ \ \ \isacommand{case}\isamarkupfalse%
+\ b\isanewline
+\ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymnot}{\isacharparenleft}n\ {\isasymle}\ m{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymnot}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m\ {\isadigit{0}}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ counted{\isacharunderscore}ticks{\isacharunderscore}def\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \isacommand{with}\isamarkupfalse%
+\ assms\ \isacommand{have}\isamarkupfalse%
+\ False\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \ \ \ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{{\isachardot}{\isachardot}}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{next}\isamarkupfalse%
+\isanewline
+\ \ \ \ \isacommand{case}\isamarkupfalse%
+\ c\ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{{\isachardot}}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{qed}\isamarkupfalse%
+\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{lemma}\isamarkupfalse%
+\ tick{\isacharunderscore}count{\isacharunderscore}progress{\isacharcolon}\isanewline
+\ \ {\isacartoucheopen}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ {\isacharparenleft}n{\isacharplus}k{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ n{\isacharparenright}\ {\isacharplus}\ k{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharparenleft}induction\ k{\isacharparenright}\isanewline
+\ \ \isacommand{case}\isamarkupfalse%
+\ {\isadigit{0}}\ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}case\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\isacommand{next}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{case}\isamarkupfalse%
+\ {\isacharparenleft}Suc\ k{\isacharprime}{\isacharparenright}\isanewline
+\ \ \ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}case\ \isacommand{using}\isamarkupfalse%
+\ Suc{\isachardot}IH\ \isacommand{by}\isamarkupfalse%
+\ auto\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{lemma}\isamarkupfalse%
+\ counted{\isacharunderscore}suc{\isacharunderscore}diff{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isacartoucheopen}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m\ {\isacharparenleft}Suc\ i{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ {\isacartoucheopen}n{\isacharplus}i\ {\isacharless}\ m{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms\ \isacommand{have}\isamarkupfalse%
+\ {\isacartoucheopen}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ m\ {\isacharequal}\ run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ n\ {\isacharplus}\ {\isacharparenleft}Suc\ i{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \isacommand{unfolding}\isamarkupfalse%
+\ counted{\isacharunderscore}ticks{\isacharunderscore}def\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ tick{\isacharunderscore}count{\isacharunderscore}progress\ \isacommand{have}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymforall}k{\isachardot}\ run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ {\isacharparenleft}n{\isacharplus}k{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ n{\isacharparenright}\ {\isacharplus}\ k{\isacartoucheclose}\ \isacommand{{\isachardot}{\isachardot}}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{ultimately}\isamarkupfalse%
+\ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isanewline
+\ \ \ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}metis\ {\isacharparenleft}no{\isacharunderscore}types{\isacharparenright}\ add{\isacharunderscore}le{\isacharunderscore}cancel{\isacharunderscore}left\ assms\ counted{\isacharunderscore}ticks{\isacharunderscore}def\ leI\ le{\isacharunderscore}Suc{\isacharunderscore}ex\ not{\isacharunderscore}less{\isacharunderscore}eq{\isacharunderscore}eq\ tick{\isacharunderscore}count{\isacharunderscore}progress{\isacharparenright}\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{lemma}\isamarkupfalse%
+\ counted{\isacharunderscore}suc{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isacartoucheopen}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m\ {\isacharparenleft}Suc\ i{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}n\ {\isacharless}\ m{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{using}\isamarkupfalse%
+\ assms\ counted{\isacharunderscore}suc{\isacharunderscore}diff\ \isacommand{by}\isamarkupfalse%
+\ fastforce%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{lemma}\isamarkupfalse%
+\ counted{\isacharunderscore}one{\isacharunderscore}now{\isacharunderscore}later{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isacartoucheopen}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m\ {\isacharparenleft}Suc\ {\isadigit{0}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isacartoucheopen}m{\isacharprime}\ {\isachargreater}\ m{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}{\isasymnot}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m{\isacharprime}\ {\isacharparenleft}Suc\ {\isadigit{0}}{\isacharparenright}{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}meson\ assms\ counted{\isacharunderscore}ticks{\isacharunderscore}def{\isacharparenright}%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{lemma}\isamarkupfalse%
+\ counted{\isacharunderscore}one{\isacharunderscore}now{\isacharunderscore}ticks{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isacartoucheopen}counted{\isacharunderscore}ticks\ {\isasymrho}\ K\ n\ m\ {\isacharparenleft}Suc\ {\isadigit{0}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ m\ K{\isacharparenright}{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{sorry}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+%
+\endisadelimproof
+%
 \begin{isamarkuptext}%
 The time on a clock is necessarily less than \isa{{\isasymtau}} before the first instant
   at which it reaches \isa{{\isasymtau}}.%
@@ -255,7 +510,7 @@ This leads to an alternate definition of \isa{first{\isacharunderscore}time}:%
 %
 \end{isabellebody}%
 \endinput
-%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/reiher/src/Run.thy%:%
+%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL/src/Run.thy%:%
 %:%11=1%:%
 %:%27=3%:%
 %:%28=3%:%
@@ -308,87 +563,234 @@ This leads to an alternate definition of \isa{first{\isacharunderscore}time}:%
 %:%116=49%:%
 %:%118=51%:%
 %:%119=52%:%
-%:%123=57%:%
-%:%124=58%:%
-%:%126=60%:%
-%:%127=60%:%
-%:%128=61%:%
-%:%129=62%:%
-%:%130=63%:%
-%:%131=64%:%
-%:%133=67%:%
-%:%134=68%:%
-%:%136=70%:%
-%:%137=70%:%
-%:%138=71%:%
-%:%139=72%:%
-%:%140=73%:%
-%:%143=77%:%
-%:%144=78%:%
-%:%146=80%:%
-%:%147=80%:%
-%:%148=81%:%
-%:%149=82%:%
-%:%150=83%:%
-%:%157=84%:%
-%:%158=84%:%
-%:%159=85%:%
-%:%160=85%:%
-%:%161=85%:%
-%:%162=85%:%
-%:%163=86%:%
-%:%164=86%:%
-%:%165=86%:%
-%:%166=86%:%
-%:%167=86%:%
-%:%168=86%:%
-%:%169=87%:%
-%:%170=87%:%
-%:%171=87%:%
-%:%172=87%:%
-%:%173=87%:%
-%:%174=88%:%
-%:%175=88%:%
-%:%176=88%:%
-%:%177=89%:%
-%:%178=89%:%
-%:%179=90%:%
-%:%180=90%:%
-%:%181=90%:%
-%:%182=90%:%
-%:%183=91%:%
-%:%184=91%:%
-%:%185=91%:%
-%:%186=92%:%
-%:%187=92%:%
-%:%188=92%:%
-%:%189=92%:%
-%:%190=93%:%
-%:%191=93%:%
-%:%192=93%:%
-%:%193=94%:%
-%:%194=94%:%
-%:%195=94%:%
-%:%196=94%:%
-%:%197=95%:%
-%:%207=98%:%
-%:%209=100%:%
-%:%210=100%:%
-%:%211=101%:%
+%:%121=54%:%
+%:%122=55%:%
+%:%123=56%:%
+%:%124=56%:%
+%:%127=57%:%
+%:%131=57%:%
+%:%132=57%:%
+%:%141=60%:%
+%:%142=61%:%
+%:%144=63%:%
+%:%145=63%:%
+%:%146=64%:%
+%:%147=65%:%
+%:%148=66%:%
+%:%149=67%:%
+%:%151=70%:%
+%:%152=71%:%
+%:%154=73%:%
+%:%155=73%:%
+%:%156=74%:%
+%:%157=75%:%
+%:%158=76%:%
+%:%161=80%:%
+%:%162=81%:%
+%:%164=83%:%
+%:%165=83%:%
+%:%166=84%:%
+%:%167=85%:%
+%:%171=89%:%
+%:%173=90%:%
+%:%174=90%:%
+%:%177=91%:%
+%:%181=91%:%
+%:%182=91%:%
+%:%191=94%:%
+%:%192=95%:%
+%:%194=97%:%
+%:%195=97%:%
+%:%196=98%:%
+%:%197=99%:%
+%:%204=100%:%
+%:%205=100%:%
+%:%206=101%:%
+%:%207=101%:%
+%:%208=101%:%
+%:%209=101%:%
+%:%210=102%:%
+%:%211=102%:%
 %:%212=102%:%
 %:%213=103%:%
-%:%220=104%:%
-%:%221=104%:%
-%:%222=105%:%
-%:%223=105%:%
-%:%224=105%:%
-%:%225=106%:%
-%:%226=106%:%
-%:%227=107%:%
-%:%228=107%:%
-%:%229=107%:%
-%:%230=107%:%
-%:%231=108%:%
-%:%237=108%:%
-%:%242=109%:%
-%:%247=110%:%
+%:%214=103%:%
+%:%215=104%:%
+%:%216=104%:%
+%:%217=105%:%
+%:%218=105%:%
+%:%219=106%:%
+%:%220=106%:%
+%:%221=106%:%
+%:%222=107%:%
+%:%223=107%:%
+%:%224=107%:%
+%:%225=107%:%
+%:%226=108%:%
+%:%227=108%:%
+%:%228=108%:%
+%:%229=109%:%
+%:%230=109%:%
+%:%231=110%:%
+%:%232=110%:%
+%:%233=111%:%
+%:%234=111%:%
+%:%235=111%:%
+%:%236=112%:%
+%:%237=112%:%
+%:%238=112%:%
+%:%239=112%:%
+%:%240=113%:%
+%:%241=113%:%
+%:%242=113%:%
+%:%243=113%:%
+%:%244=114%:%
+%:%245=114%:%
+%:%246=114%:%
+%:%247=115%:%
+%:%248=115%:%
+%:%249=116%:%
+%:%250=116%:%
+%:%251=116%:%
+%:%252=116%:%
+%:%253=117%:%
+%:%254=117%:%
+%:%255=118%:%
+%:%261=118%:%
+%:%264=119%:%
+%:%265=120%:%
+%:%266=120%:%
+%:%267=121%:%
+%:%274=122%:%
+%:%275=122%:%
+%:%276=123%:%
+%:%277=123%:%
+%:%278=123%:%
+%:%279=123%:%
+%:%280=124%:%
+%:%281=124%:%
+%:%282=125%:%
+%:%283=125%:%
+%:%284=126%:%
+%:%285=126%:%
+%:%286=126%:%
+%:%287=126%:%
+%:%288=127%:%
+%:%294=127%:%
+%:%297=128%:%
+%:%298=129%:%
+%:%299=129%:%
+%:%300=130%:%
+%:%301=131%:%
+%:%308=132%:%
+%:%309=132%:%
+%:%310=133%:%
+%:%311=133%:%
+%:%312=133%:%
+%:%313=134%:%
+%:%314=134%:%
+%:%315=134%:%
+%:%316=135%:%
+%:%317=135%:%
+%:%318=135%:%
+%:%319=135%:%
+%:%320=135%:%
+%:%321=136%:%
+%:%322=136%:%
+%:%323=136%:%
+%:%324=137%:%
+%:%325=137%:%
+%:%326=138%:%
+%:%332=138%:%
+%:%335=139%:%
+%:%336=140%:%
+%:%337=140%:%
+%:%338=141%:%
+%:%339=142%:%
+%:%346=143%:%
+%:%347=143%:%
+%:%348=143%:%
+%:%353=143%:%
+%:%356=144%:%
+%:%357=145%:%
+%:%358=145%:%
+%:%359=146%:%
+%:%360=147%:%
+%:%361=148%:%
+%:%368=149%:%
+%:%369=149%:%
+%:%374=149%:%
+%:%377=150%:%
+%:%378=151%:%
+%:%379=151%:%
+%:%380=152%:%
+%:%381=153%:%
+%:%388=154%:%
+%:%398=157%:%
+%:%399=158%:%
+%:%401=160%:%
+%:%402=160%:%
+%:%403=161%:%
+%:%404=162%:%
+%:%405=163%:%
+%:%412=164%:%
+%:%413=164%:%
+%:%414=165%:%
+%:%415=165%:%
+%:%416=165%:%
+%:%417=165%:%
+%:%418=166%:%
+%:%419=166%:%
+%:%420=166%:%
+%:%421=166%:%
+%:%422=166%:%
+%:%423=166%:%
+%:%424=167%:%
+%:%425=167%:%
+%:%426=167%:%
+%:%427=167%:%
+%:%428=167%:%
+%:%429=168%:%
+%:%430=168%:%
+%:%431=168%:%
+%:%432=169%:%
+%:%433=169%:%
+%:%434=170%:%
+%:%435=170%:%
+%:%436=170%:%
+%:%437=170%:%
+%:%438=171%:%
+%:%439=171%:%
+%:%440=171%:%
+%:%441=172%:%
+%:%442=172%:%
+%:%443=172%:%
+%:%444=172%:%
+%:%445=173%:%
+%:%446=173%:%
+%:%447=173%:%
+%:%448=174%:%
+%:%449=174%:%
+%:%450=174%:%
+%:%451=174%:%
+%:%452=175%:%
+%:%462=178%:%
+%:%464=180%:%
+%:%465=180%:%
+%:%466=181%:%
+%:%467=182%:%
+%:%468=183%:%
+%:%475=184%:%
+%:%476=184%:%
+%:%477=185%:%
+%:%478=185%:%
+%:%479=185%:%
+%:%480=186%:%
+%:%481=186%:%
+%:%482=187%:%
+%:%483=187%:%
+%:%484=187%:%
+%:%485=187%:%
+%:%486=188%:%
+%:%492=188%:%
+%:%497=189%:%
+%:%502=190%:%

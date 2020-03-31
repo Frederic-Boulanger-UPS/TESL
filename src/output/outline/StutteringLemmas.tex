@@ -3787,9 +3787,50 @@ The only possible contracting function toward a dense run (a run with no empty
 \isanewline
 %
 \endisadelimproof
+\isanewline
+\isacommand{lemma}\isamarkupfalse%
+\ counted{\isacharunderscore}ticks{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}counted{\isacharunderscore}ticks\ sub\ c\ n\ m\ d\ {\isacharequal}\ counted{\isacharunderscore}ticks\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}\ {\isacharparenleft}f\ m{\isacharparenright}\ d{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{have}\isamarkupfalse%
+\ {\isadigit{1}}{\isacharcolon}{\isacartoucheopen}n\ {\isasymle}\ m\ {\isacharequal}\ {\isacharparenleft}{\isacharparenleft}f\ n{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}f\ m{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ assms\isanewline
+\ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}fun{\isacharunderscore}def\ dilating{\isacharunderscore}def\ strict{\isacharunderscore}mono{\isacharunderscore}less{\isacharunderscore}eq{\isacharparenright}\isanewline
+\ \ \isacommand{have}\isamarkupfalse%
+\ {\isadigit{2}}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\ m\ {\isacharequal}\ run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\ n\ {\isacharplus}\ d{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ m{\isacharparenright}\ {\isacharequal}\ run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}\ {\isacharplus}\ d{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ run{\isacharunderscore}tick{\isacharunderscore}count{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{have}\isamarkupfalse%
+\ {\isadigit{3}}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isasymnexists}m{\isacharprime}{\isachardot}\ {\isacharparenleft}n\ {\isasymle}\ m{\isacharprime}{\isacharparenright}\ {\isasymand}\ {\isacharparenleft}m{\isacharprime}\ {\isacharless}\ m{\isacharparenright}\ {\isasymand}\ run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\ m{\isacharprime}\ {\isacharequal}\ run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\ n\ {\isacharplus}\ d{\isacharparenright}\isanewline
+\ \ \ \ \ \ {\isacharequal}\ {\isacharparenleft}{\isasymnexists}m{\isacharprime}{\isachardot}\ {\isacharparenleft}{\isacharparenleft}f\ n{\isacharparenright}\ {\isasymle}\ m{\isacharprime}{\isacharparenright}\ {\isasymand}\ {\isacharparenleft}m{\isacharprime}\ {\isacharless}\ {\isacharparenleft}f\ m{\isacharparenright}{\isacharparenright}\ {\isasymand}\ run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\ m{\isacharprime}\ {\isacharequal}\ run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}\ {\isacharplus}\ d{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \isacommand{sorry}\isamarkupfalse%
+\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ {\isadigit{1}}\ {\isadigit{2}}\ {\isadigit{3}}\ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{unfolding}\isamarkupfalse%
+\ counted{\isacharunderscore}ticks{\isacharunderscore}def\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
 %
 \isadelimtheory
-\isanewline
 %
 \endisadelimtheory
 %
@@ -3805,7 +3846,7 @@ The only possible contracting function toward a dense run (a run with no empty
 %
 \end{isabellebody}%
 \endinput
-%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/reiher/src/StutteringLemmas.thy%:%
+%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL/src/StutteringLemmas.thy%:%
 %:%11=1%:%
 %:%27=3%:%
 %:%28=3%:%
@@ -6513,5 +6554,33 @@ The only possible contracting function toward a dense run (a run with no empty
 %:%3780=1294%:%
 %:%3781=1295%:%
 %:%3787=1295%:%
-%:%3792=1296%:%
-%:%3797=1297%:%
+%:%3790=1296%:%
+%:%3791=1297%:%
+%:%3792=1297%:%
+%:%3793=1298%:%
+%:%3794=1299%:%
+%:%3801=1300%:%
+%:%3802=1300%:%
+%:%3803=1301%:%
+%:%3804=1301%:%
+%:%3805=1301%:%
+%:%3806=1302%:%
+%:%3807=1302%:%
+%:%3808=1303%:%
+%:%3809=1303%:%
+%:%3810=1304%:%
+%:%3811=1304%:%
+%:%3812=1304%:%
+%:%3813=1305%:%
+%:%3814=1305%:%
+%:%3815=1306%:%
+%:%3816=1307%:%
+%:%3817=1307%:%
+%:%3818=1308%:%
+%:%3819=1308%:%
+%:%3820=1308%:%
+%:%3821=1308%:%
+%:%3822=1308%:%
+%:%3823=1309%:%
+%:%3829=1309%:%
+%:%3838=1310%:%

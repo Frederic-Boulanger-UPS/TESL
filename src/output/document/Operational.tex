@@ -86,7 +86,7 @@ We introduce a notation to describe configurations:
 \isacommand{abbreviation}\isamarkupfalse%
 \ uncurry{\isacharunderscore}conf\isanewline
 \ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ system\ {\isasymRightarrow}\ instant{\isacharunderscore}index\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ TESL{\isacharunderscore}formula\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ TESL{\isacharunderscore}formula\isanewline
-\ \ \ \ \ \ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}{\isacharcomma}\ {\isacharunderscore}\ {\isasymturnstile}\ {\isacharunderscore}\ {\isasymtriangleright}\ {\isacharunderscore}{\isachardoublequoteclose}\ {\isadigit{8}}{\isadigit{0}}{\isacharparenright}\isanewline
+\ \ \ \ \ \ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}{\isacharcomma}\ {\isacharunderscore}\ {\isasymturnstile}\ {\isacharunderscore}\ {\isasymtriangleright}\ {\isacharunderscore}{\isacartoucheclose}\ {\isadigit{8}}{\isadigit{0}}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isasymPhi}\ {\isasymequiv}\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n{\isacharcomma}\ {\isasymPsi}{\isacharcomma}\ {\isasymPhi}{\isacharparenright}{\isacartoucheclose}%
 \begin{isamarkuptext}%
@@ -95,7 +95,7 @@ The only introduction rule allows us to progress to the next instant
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{inductive}\isamarkupfalse%
 \ operational{\isacharunderscore}semantics{\isacharunderscore}intro\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsub i\ {\isacharunderscore}{\isachardoublequoteclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsub i\ {\isacharunderscore}{\isacartoucheclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ instant{\isacharunderscore}i{\isacharcolon}\isanewline
 \ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharbrackleft}{\isacharbrackright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\ {\isasymhookrightarrow}\isactrlsub i\ \ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ Suc\ n\ {\isasymturnstile}\ {\isasymPhi}\ {\isasymtriangleright}\ {\isacharbrackleft}{\isacharbrackright}{\isacharparenright}{\isacartoucheclose}%
@@ -105,7 +105,7 @@ The elimination rules describe how TESL formulae for the present are transformed
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{inductive}\isamarkupfalse%
 \ operational{\isacharunderscore}semantics{\isacharunderscore}elim\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsub e\ {\isacharunderscore}{\isachardoublequoteclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsub e\ {\isacharunderscore}{\isacartoucheclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ sporadic{\isacharunderscore}on{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
 %
@@ -173,6 +173,50 @@ The elimination rules describe how TESL formulae for the present are transformed
 \ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
 \ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isacharat}\ n\ {\isasymoplus}\ {\isasymdelta}{\isasymtau}\ {\isasymRightarrow}\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ delayed{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
+%
+\isamarkupcmt{A delayed implication can be handled by forbidding a tick on 
+    the master clock.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ delayed\ by\ d\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ delayed\ by\ d\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ delayed{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
+%
+\isamarkupcmt{It can also be handled by making the master clock tick and adding a constraint 
+    that makes the slave clock tick when the delay has elapsed on the counting clock.%
+}\isanewline
+%
+\isamarkupcmt{Special case for 0 delays.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ delayed\ by\ {\isadigit{0}}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{3}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ delayed\ by\ {\isadigit{0}}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ delayed{\isacharunderscore}e{\isadigit{3}}{\isacharcolon}\isanewline
+%
+\isamarkupcmt{It can also be handled by making the master clock tick and adding a constraint 
+    that makes the slave clock tick when the delay has elapsed on the counting clock.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ delayed\ by\ {\isacharparenleft}Suc\ d{\isacharparenright}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}from\ n\ delay\ count\ {\isacharparenleft}Suc\ d{\isacharparenright}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{1}}\ delayed\ by\ {\isacharparenleft}Suc\ d{\isacharparenright}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ delay{\isacharunderscore}count{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
+%
+\isamarkupcmt{A delay count can be handled by making the counter clock not tick.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}from\ m\ delay\ count\ d\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}from\ m\ delay\ count\ d\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ delay{\isacharunderscore}count{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
+%
+\isamarkupcmt{If we make the counter clock tick and the delay was 1, the slave clock has to tick too.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}from\ m\ delay\ count\ {\isacharparenleft}Suc\ {\isadigit{0}}{\isacharparenright}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{3}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ delay{\isacharunderscore}count{\isacharunderscore}e{\isadigit{3}}{\isacharcolon}\isanewline
+%
+\isamarkupcmt{If the delay was greater than 1, we simply decrement it when the counter clock ticks.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}from\ m\ delay\ count\ {\isacharparenleft}Suc\ {\isacharparenleft}Suc\ d{\isacharparenright}{\isacharparenright}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}from\ n\ delay\ count\ {\isacharparenleft}Suc\ d{\isacharparenright}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ weakly{\isacharunderscore}precedes{\isacharunderscore}e{\isacharcolon}\isanewline
 %
 \isamarkupcmt{A weak precedence relation has to hold at every instant.%
@@ -206,7 +250,7 @@ A step of the operational semantics is either the application of the introductio
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{inductive}\isamarkupfalse%
 \ operational{\isacharunderscore}semantics{\isacharunderscore}step\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymhookrightarrow}\ {\isacharunderscore}{\isachardoublequoteclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymhookrightarrow}\ {\isacharunderscore}{\isacartoucheclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ intro{\isacharunderscore}part{\isacharcolon}\isanewline
 \ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}\isactrlsub {\isadigit{1}}{\isacharcomma}\ n\isactrlsub {\isadigit{1}}\ {\isasymturnstile}\ {\isasymPsi}\isactrlsub {\isadigit{1}}\ {\isasymtriangleright}\ {\isasymPhi}\isactrlsub {\isadigit{1}}{\isacharparenright}\ \ {\isasymhookrightarrow}\isactrlsub i\ \ {\isacharparenleft}{\isasymGamma}\isactrlsub {\isadigit{2}}{\isacharcomma}\ n\isactrlsub {\isadigit{2}}\ {\isasymturnstile}\ {\isasymPsi}\isactrlsub {\isadigit{2}}\ {\isasymtriangleright}\ {\isasymPhi}\isactrlsub {\isadigit{2}}{\isacharparenright}\isanewline
@@ -220,31 +264,31 @@ We introduce notations for the reflexive transitive closure of the operational
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{abbreviation}\isamarkupfalse%
 \ operational{\isacharunderscore}semantics{\isacharunderscore}step{\isacharunderscore}rtranclp\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsup {\isacharasterisk}\isactrlsup {\isacharasterisk}\ {\isacharunderscore}{\isachardoublequoteclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsup {\isacharasterisk}\isactrlsup {\isacharasterisk}\ {\isacharunderscore}{\isacartoucheclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymC}\isactrlsub {\isadigit{1}}\ {\isasymhookrightarrow}\isactrlsup {\isacharasterisk}\isactrlsup {\isacharasterisk}\ {\isasymC}\isactrlsub {\isadigit{2}}\ {\isasymequiv}\ operational{\isacharunderscore}semantics{\isacharunderscore}step\isactrlsup {\isacharasterisk}\isactrlsup {\isacharasterisk}\ {\isasymC}\isactrlsub {\isadigit{1}}\ {\isasymC}\isactrlsub {\isadigit{2}}{\isacartoucheclose}\isanewline
 \isanewline
 \isacommand{abbreviation}\isamarkupfalse%
 \ operational{\isacharunderscore}semantics{\isacharunderscore}step{\isacharunderscore}tranclp\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsup {\isacharplus}\isactrlsup {\isacharplus}\ {\isacharunderscore}{\isachardoublequoteclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsup {\isacharplus}\isactrlsup {\isacharplus}\ {\isacharunderscore}{\isacartoucheclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymC}\isactrlsub {\isadigit{1}}\ {\isasymhookrightarrow}\isactrlsup {\isacharplus}\isactrlsup {\isacharplus}\ {\isasymC}\isactrlsub {\isadigit{2}}\ {\isasymequiv}\ operational{\isacharunderscore}semantics{\isacharunderscore}step\isactrlsup {\isacharplus}\isactrlsup {\isacharplus}\ {\isasymC}\isactrlsub {\isadigit{1}}\ {\isasymC}\isactrlsub {\isadigit{2}}{\isacartoucheclose}\isanewline
 \isanewline
 \isacommand{abbreviation}\isamarkupfalse%
 \ operational{\isacharunderscore}semantics{\isacharunderscore}step{\isacharunderscore}reflclp\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsup {\isacharequal}\isactrlsup {\isacharequal}\ {\isacharunderscore}{\isachardoublequoteclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsup {\isacharequal}\isactrlsup {\isacharequal}\ {\isacharunderscore}{\isacartoucheclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymC}\isactrlsub {\isadigit{1}}\ {\isasymhookrightarrow}\isactrlsup {\isacharequal}\isactrlsup {\isacharequal}\ {\isasymC}\isactrlsub {\isadigit{2}}\ {\isasymequiv}\ operational{\isacharunderscore}semantics{\isacharunderscore}step\isactrlsup {\isacharequal}\isactrlsup {\isacharequal}\ {\isasymC}\isactrlsub {\isadigit{1}}\ {\isasymC}\isactrlsub {\isadigit{2}}{\isacartoucheclose}\isanewline
 \isanewline
 \isacommand{abbreviation}\isamarkupfalse%
 \ operational{\isacharunderscore}semantics{\isacharunderscore}step{\isacharunderscore}relpowp\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlbsup {\isacharunderscore}\isactrlesup \ {\isacharunderscore}{\isachardoublequoteclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlbsup {\isacharunderscore}\isactrlesup \ {\isacharunderscore}{\isacartoucheclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymC}\isactrlsub {\isadigit{1}}\ {\isasymhookrightarrow}\isactrlbsup n\isactrlesup \ {\isasymC}\isactrlsub {\isadigit{2}}\ {\isasymequiv}\ {\isacharparenleft}operational{\isacharunderscore}semantics{\isacharunderscore}step\ {\isacharcircum}{\isacharcircum}\ n{\isacharparenright}\ {\isasymC}\isactrlsub {\isadigit{1}}\ {\isasymC}\isactrlsub {\isadigit{2}}{\isacartoucheclose}\isanewline
 \isanewline
 \isacommand{definition}\isamarkupfalse%
 \ operational{\isacharunderscore}semantics{\isacharunderscore}elim{\isacharunderscore}inv\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsub e\isactrlsup {\isasymleftarrow}\ {\isacharunderscore}{\isachardoublequoteclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymhookrightarrow}\isactrlsub e\isactrlsup {\isasymleftarrow}\ {\isacharunderscore}{\isacartoucheclose}\ {\isadigit{7}}{\isadigit{0}}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymC}\isactrlsub {\isadigit{1}}\ {\isasymhookrightarrow}\isactrlsub e\isactrlsup {\isasymleftarrow}\ {\isasymC}\isactrlsub {\isadigit{2}}\ {\isasymequiv}\ {\isasymC}\isactrlsub {\isadigit{2}}\ {\isasymhookrightarrow}\isactrlsub e\ {\isasymC}\isactrlsub {\isadigit{1}}{\isacartoucheclose}%
 \isadelimdocument
@@ -298,7 +342,7 @@ We consider the set of configurations that can be reached in one operational
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{abbreviation}\isamarkupfalse%
 \ Cnext{\isacharunderscore}solve\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ set{\isacartoucheclose}\ {\isacharparenleft}{\isachardoublequoteopen}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ config\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ config\ set{\isacartoucheclose}\ {\isacharparenleft}{\isacartoucheopen}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isasymS}\ {\isasymequiv}\ {\isacharbraceleft}\ {\isasymS}{\isacharprime}{\isachardot}\ {\isasymS}\ {\isasymhookrightarrow}\ {\isasymS}{\isacharprime}\ {\isacharbraceright}{\isacartoucheclose}%
 \begin{isamarkuptext}%
@@ -560,7 +604,7 @@ An empty specification can be reduced to an empty specification for
 %
 \end{isabellebody}%
 \endinput
-%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/reiher/src/Operational.thy%:%
+%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL/src/Operational.thy%:%
 %:%11=1%:%
 %:%23=2%:%
 %:%31=4%:%
@@ -660,189 +704,224 @@ An empty specification can be reduced to an empty specification for
 %:%175=100%:%
 %:%176=101%:%
 %:%178=102%:%
-%:%179=102%:%
+%:%179=103%:%
 %:%180=103%:%
+%:%181=104%:%
 %:%182=105%:%
 %:%183=106%:%
 %:%185=107%:%
-%:%186=107%:%
+%:%186=108%:%
 %:%187=108%:%
-%:%189=110%:%
-%:%190=111%:%
-%:%192=112%:%
+%:%189=109%:%
+%:%190=109%:%
+%:%191=110%:%
 %:%193=112%:%
 %:%194=113%:%
-%:%195=114%:%
-%:%196=115%:%
-%:%198=116%:%
-%:%199=117%:%
-%:%200=117%:%
+%:%196=114%:%
+%:%197=115%:%
+%:%198=115%:%
+%:%199=116%:%
 %:%201=118%:%
-%:%204=122%:%
-%:%205=123%:%
-%:%207=125%:%
-%:%208=125%:%
-%:%209=126%:%
-%:%210=127%:%
-%:%211=128%:%
-%:%212=129%:%
-%:%213=130%:%
-%:%214=131%:%
-%:%215=132%:%
-%:%218=136%:%
-%:%219=137%:%
-%:%221=139%:%
-%:%222=139%:%
-%:%223=140%:%
-%:%224=141%:%
-%:%225=142%:%
-%:%226=143%:%
-%:%227=144%:%
-%:%228=144%:%
-%:%229=145%:%
-%:%230=146%:%
-%:%231=147%:%
-%:%232=148%:%
-%:%233=149%:%
-%:%234=149%:%
-%:%235=150%:%
-%:%236=151%:%
-%:%237=152%:%
-%:%238=153%:%
-%:%239=154%:%
-%:%240=154%:%
-%:%241=155%:%
-%:%242=156%:%
-%:%243=157%:%
-%:%244=158%:%
-%:%245=159%:%
-%:%246=159%:%
-%:%247=160%:%
-%:%248=161%:%
-%:%249=162%:%
-%:%256=165%:%
-%:%268=168%:%
-%:%269=169%:%
-%:%270=170%:%
-%:%272=172%:%
-%:%273=172%:%
-%:%274=173%:%
-%:%275=174%:%
-%:%276=175%:%
-%:%283=176%:%
-%:%284=176%:%
-%:%285=177%:%
-%:%286=178%:%
-%:%287=178%:%
-%:%296=181%:%
-%:%297=182%:%
-%:%299=184%:%
-%:%300=184%:%
-%:%301=185%:%
-%:%302=186%:%
-%:%303=187%:%
-%:%305=190%:%
-%:%306=191%:%
-%:%308=193%:%
-%:%309=193%:%
-%:%310=194%:%
-%:%317=195%:%
-%:%318=195%:%
-%:%327=198%:%
-%:%328=199%:%
-%:%329=200%:%
-%:%331=202%:%
-%:%332=202%:%
-%:%333=203%:%
-%:%335=205%:%
-%:%342=206%:%
-%:%343=206%:%
-%:%344=207%:%
-%:%345=208%:%
-%:%350=208%:%
-%:%353=209%:%
-%:%354=210%:%
-%:%355=210%:%
-%:%356=211%:%
-%:%358=213%:%
-%:%365=214%:%
-%:%366=214%:%
-%:%371=214%:%
-%:%374=215%:%
-%:%375=216%:%
-%:%376=216%:%
-%:%377=217%:%
-%:%379=219%:%
-%:%386=220%:%
-%:%387=220%:%
-%:%388=221%:%
-%:%393=221%:%
-%:%396=222%:%
-%:%397=223%:%
-%:%398=223%:%
-%:%399=224%:%
-%:%401=226%:%
-%:%408=227%:%
-%:%409=227%:%
-%:%410=228%:%
-%:%411=229%:%
-%:%416=229%:%
-%:%419=230%:%
-%:%420=231%:%
-%:%421=231%:%
-%:%422=232%:%
-%:%425=235%:%
-%:%432=236%:%
-%:%433=236%:%
-%:%434=237%:%
-%:%435=238%:%
-%:%440=238%:%
-%:%443=239%:%
-%:%444=240%:%
-%:%445=240%:%
-%:%446=241%:%
-%:%448=243%:%
-%:%455=244%:%
-%:%456=244%:%
-%:%457=245%:%
-%:%462=245%:%
-%:%465=246%:%
-%:%466=247%:%
-%:%467=247%:%
-%:%468=248%:%
-%:%470=250%:%
-%:%477=251%:%
-%:%478=251%:%
-%:%479=252%:%
-%:%484=252%:%
-%:%487=253%:%
-%:%488=254%:%
-%:%489=254%:%
-%:%490=255%:%
-%:%492=257%:%
-%:%499=258%:%
-%:%500=258%:%
-%:%501=259%:%
-%:%510=262%:%
-%:%511=263%:%
-%:%513=265%:%
-%:%514=265%:%
-%:%515=266%:%
-%:%522=267%:%
-%:%523=267%:%
-%:%524=268%:%
-%:%525=268%:%
-%:%526=268%:%
-%:%527=268%:%
-%:%528=269%:%
-%:%529=269%:%
-%:%530=270%:%
-%:%531=270%:%
-%:%532=270%:%
-%:%533=271%:%
-%:%534=271%:%
-%:%535=271%:%
-%:%536=272%:%
-%:%542=272%:%
-%:%547=273%:%
-%:%552=274%:%
+%:%202=119%:%
+%:%204=120%:%
+%:%205=120%:%
+%:%206=121%:%
+%:%207=122%:%
+%:%208=123%:%
+%:%210=124%:%
+%:%211=124%:%
+%:%212=125%:%
+%:%213=126%:%
+%:%214=127%:%
+%:%216=128%:%
+%:%217=128%:%
+%:%218=129%:%
+%:%219=130%:%
+%:%220=131%:%
+%:%222=132%:%
+%:%223=132%:%
+%:%224=133%:%
+%:%226=135%:%
+%:%227=136%:%
+%:%229=137%:%
+%:%230=137%:%
+%:%231=138%:%
+%:%233=140%:%
+%:%234=141%:%
+%:%236=142%:%
+%:%237=142%:%
+%:%238=143%:%
+%:%239=144%:%
+%:%240=145%:%
+%:%242=146%:%
+%:%243=147%:%
+%:%244=147%:%
+%:%245=148%:%
+%:%248=152%:%
+%:%249=153%:%
+%:%251=155%:%
+%:%252=155%:%
+%:%253=156%:%
+%:%254=157%:%
+%:%255=158%:%
+%:%256=159%:%
+%:%257=160%:%
+%:%258=161%:%
+%:%259=162%:%
+%:%262=166%:%
+%:%263=167%:%
+%:%265=169%:%
+%:%266=169%:%
+%:%267=170%:%
+%:%268=171%:%
+%:%269=172%:%
+%:%270=173%:%
+%:%271=174%:%
+%:%272=174%:%
+%:%273=175%:%
+%:%274=176%:%
+%:%275=177%:%
+%:%276=178%:%
+%:%277=179%:%
+%:%278=179%:%
+%:%279=180%:%
+%:%280=181%:%
+%:%281=182%:%
+%:%282=183%:%
+%:%283=184%:%
+%:%284=184%:%
+%:%285=185%:%
+%:%286=186%:%
+%:%287=187%:%
+%:%288=188%:%
+%:%289=189%:%
+%:%290=189%:%
+%:%291=190%:%
+%:%292=191%:%
+%:%293=192%:%
+%:%300=195%:%
+%:%312=198%:%
+%:%313=199%:%
+%:%314=200%:%
+%:%316=202%:%
+%:%317=202%:%
+%:%318=203%:%
+%:%319=204%:%
+%:%320=205%:%
+%:%327=206%:%
+%:%328=206%:%
+%:%329=207%:%
+%:%330=208%:%
+%:%331=208%:%
+%:%340=211%:%
+%:%341=212%:%
+%:%343=214%:%
+%:%344=214%:%
+%:%345=215%:%
+%:%346=216%:%
+%:%347=217%:%
+%:%349=220%:%
+%:%350=221%:%
+%:%352=223%:%
+%:%353=223%:%
+%:%354=224%:%
+%:%361=225%:%
+%:%362=225%:%
+%:%371=228%:%
+%:%372=229%:%
+%:%373=230%:%
+%:%375=232%:%
+%:%376=232%:%
+%:%377=233%:%
+%:%379=235%:%
+%:%386=236%:%
+%:%387=236%:%
+%:%388=237%:%
+%:%389=238%:%
+%:%394=238%:%
+%:%397=239%:%
+%:%398=240%:%
+%:%399=240%:%
+%:%400=241%:%
+%:%402=243%:%
+%:%409=244%:%
+%:%410=244%:%
+%:%415=244%:%
+%:%418=245%:%
+%:%419=246%:%
+%:%420=246%:%
+%:%421=247%:%
+%:%423=249%:%
+%:%430=250%:%
+%:%431=250%:%
+%:%432=251%:%
+%:%437=251%:%
+%:%440=252%:%
+%:%441=253%:%
+%:%442=253%:%
+%:%443=254%:%
+%:%445=256%:%
+%:%452=257%:%
+%:%453=257%:%
+%:%454=258%:%
+%:%455=259%:%
+%:%460=259%:%
+%:%463=260%:%
+%:%464=261%:%
+%:%465=261%:%
+%:%466=262%:%
+%:%469=265%:%
+%:%476=266%:%
+%:%477=266%:%
+%:%478=267%:%
+%:%479=268%:%
+%:%484=268%:%
+%:%487=269%:%
+%:%488=270%:%
+%:%489=270%:%
+%:%490=271%:%
+%:%492=273%:%
+%:%499=274%:%
+%:%500=274%:%
+%:%501=275%:%
+%:%506=275%:%
+%:%509=276%:%
+%:%510=277%:%
+%:%511=277%:%
+%:%512=278%:%
+%:%514=280%:%
+%:%521=281%:%
+%:%522=281%:%
+%:%523=282%:%
+%:%528=282%:%
+%:%531=283%:%
+%:%532=284%:%
+%:%533=284%:%
+%:%534=285%:%
+%:%536=287%:%
+%:%543=288%:%
+%:%544=288%:%
+%:%545=289%:%
+%:%554=292%:%
+%:%555=293%:%
+%:%557=295%:%
+%:%558=295%:%
+%:%559=296%:%
+%:%566=297%:%
+%:%567=297%:%
+%:%568=298%:%
+%:%569=298%:%
+%:%570=298%:%
+%:%571=298%:%
+%:%572=299%:%
+%:%573=299%:%
+%:%574=300%:%
+%:%575=300%:%
+%:%576=300%:%
+%:%577=301%:%
+%:%578=301%:%
+%:%579=301%:%
+%:%580=302%:%
+%:%586=302%:%
+%:%591=303%:%
+%:%596=304%:%

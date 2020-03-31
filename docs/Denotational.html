@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Theory Denotational (Isabelle2018: August 2018)</title>
+<title>Theory Denotational (Isabelle2019: June 2019)</title>
 <link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
 </head>
 
@@ -35,12 +35,12 @@
 </span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>dummyT0</span><span> </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;&#964; tag_const&#8250;</span></span></span><span>
 </span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>dummyDeltaT</span><span> </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;&#964; tag_const&#8250;</span></span></span><span>
 </span><span>
-</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyT0</span><span>     </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;t<span class="hidden">&#8681;</span><sub>0</sub>&quot;</span></span></span><span class="delimiter">)</span><span>
-</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyDeltaT</span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;&#948;t&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyT0</span><span>     </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;t<span class="hidden">&#8681;</span><sub>0</sub>&#8250;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyDeltaT</span><span> </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#948;t&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&gt;*)</span></span></span></span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">fun</span></span><span> </span><span>TESL_interpretation_atomic</span><span>
-</span><span>    </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) TESL_atomic &#8658; &#39;&#964; run set&#8250;</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;&#10214; _ &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub>&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span>    </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) TESL_atomic &#8658; &#39;&#964; run set&#8250;</span></span></span><span> </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; _ &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub>&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
 </span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that @{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} should tick at an 
       instant where the time on @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} is @{term &#8249;&#964;&#8250;}.&#8250;</span><span>
@@ -74,6 +74,16 @@
                             &#10230; hamlet ((Rep_run &#961;) m slave)
                  )
         }&#8250;</span></span></span><span>
+</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; master delayed by d on counter implies slave &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
+    &#8213; &#8249;
+      When master ticks, we count d ticks on measuring and we must have a tick on slave.
+    &#8250;
+        {&#961;. &#8704;n. hamlet ((Rep_run &#961;) n master) &#10230;
+                 (
+                  &#8704;m &#8805; n.  counted_ticks &#961; counter n m d
+                            &#10230; hamlet ((Rep_run &#961;) m slave)
+                 )
+        }&#8250;</span></span></span><span>
 </span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub> weakly precedes K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that each tick on @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;}
         must be preceded by or coincide with at least one tick on @{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub>&#8250;}.
         Therefore, at each instant @{term &#8249;n&#8250;}, the number of ticks on @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} 
@@ -92,6 +102,12 @@
 </span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
         {&#961;. &#8704;n::nat. hamlet ((Rep_run &#961;) n K<span class="hidden">&#8681;</span><sub>1</sub>)
                         &#10230; (&#8704;m&#8805;n. &#172; hamlet ((Rep_run &#961;) m K<span class="hidden">&#8681;</span><sub>2</sub>))}&#8250;</span></span></span><span>
+</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; from n delay count d on counter implies slave &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
+    &#8213; &#8249;
+     Count d ticks on counter from instant n and put a tick on slave.
+    &#8250;
+        {&#961;. &#8704;m &#8805; n. counted_ticks &#961; counter n m d
+                       &#10230; hamlet ((Rep_run &#961;) m slave)}&#8250;</span></span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;Denotational interpretation for TESL formulae&#8250;</span></span></span><span>
 </span><span>
@@ -101,7 +117,7 @@
   of the interpretations of its components.
 &#8250;</span></span></span><span>
 </span><span class="keyword1"><span class="command">fun</span></span><span> </span><span>TESL_interpretation</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) TESL_formula &#8658; &#39;&#964; run set&#8250;</span></span></span><span>
-</span><span>  </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;&#10214;&#10214; _ &#10215;&#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub>&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214;&#10214; _ &#10215;&#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub>&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
 </span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214;&#10214; [] &#10215;&#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> = {_. True}&#8250;</span></span></span><span>
 </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214;&#10214; &#966; # &#934; &#10215;&#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> = &#10214; &#966; &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> &#8745; &#10214;&#10214; &#934; &#10215;&#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub>&#8250;</span></span></span><span>
@@ -275,8 +291,8 @@
 </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>rule</span><span> </span><span>filter_is_subset</span><span class="delimiter">)</span><span>
 </span><span>
 </span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&lt;*)</span></span></span></span></span><span>
-</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyT0</span><span>    </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;t<span class="hidden">&#8681;</span><sub>0</sub>&quot;</span></span></span><span class="delimiter">)</span><span>
-</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyDeltaT</span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;&#948;t&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyT0</span><span>    </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;t<span class="hidden">&#8681;</span><sub>0</sub>&#8250;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyDeltaT</span><span> </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#948;t&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&gt;*)</span></span></span></span></span><span>
 </span><span>
 </span><span class="keyword2"><span class="keyword">end</span></span><span>

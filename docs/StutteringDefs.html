@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Theory StutteringDefs (Isabelle2018: August 2018)</title>
+<title>Theory StutteringDefs (Isabelle2019: June 2019)</title>
 <link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
 </head>
 
@@ -74,7 +74,7 @@
 </span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
   A &#8727;&#8249;run&#8250; is a &#8727;&#8249;subrun&#8250; of another run if there exists a dilation between them.
 &#8250;</span></span></span><span>
-</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>is_subrun</span><span> </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;a::linordered_field run &#8658; &#39;a run &#8658; bool&#8250;</span></span></span><span> </span><span class="delimiter">(</span><span class="keyword2"><span class="keyword">infixl</span></span><span> </span><span class="string"><span class="delete"><span class="delete">&quot;&#8810;&quot;</span></span></span><span> </span><span>60</span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>is_subrun</span><span> </span><span class="delimiter">::</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;a::linordered_field run &#8658; &#39;a run &#8658; bool&#8250;</span></span></span><span> </span><span class="delimiter">(</span><span class="keyword2"><span class="keyword">infixl</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#8810;&#8250;</span></span></span><span> </span><span>60</span><span class="delimiter">)</span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
 </span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;sub &#8810; r &#8801; (&#8707;f. dilating f sub r)&#8250;</span></span></span><span>
 </span><span>
@@ -105,9 +105,9 @@
 </span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>dummyf</span><span>    </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;nat &#8658; nat&#8250;</span></span></span><span>
 </span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>dummyg</span><span>    </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;nat &#8658; nat&#8250;</span></span></span><span>
 </span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>dummytwo</span><span>  </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;nat&#8250;</span></span></span><span>
-</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyf</span><span>    </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;f&quot;</span></span></span><span class="delimiter">)</span><span> 
-</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyg</span><span>    </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;g&quot;</span></span></span><span class="delimiter">)</span><span>
-</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummytwo</span><span>  </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;2&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyf</span><span>    </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;f&#8250;</span></span></span><span class="delimiter">)</span><span> 
+</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummyg</span><span>    </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;g&#8250;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">notation</span></span><span> </span><span>dummytwo</span><span>  </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;2&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&gt;*)</span></span></span></span></span><span>
 </span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
   A function @{term &#8249;g&#8250;} is contracting with respect to the dilation of run
@@ -125,9 +125,9 @@
   and @{term &#8249;(f &#8728; g) 4&#8250;}. 
 &#8250;</span></span></span><span>
 </span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&lt;*)</span></span></span></span></span><span>
-</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyf</span><span>      </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;f&quot;</span></span></span><span class="delimiter">)</span><span> 
-</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyg</span><span>      </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;g&quot;</span></span></span><span class="delimiter">)</span><span> 
-</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummytwo</span><span>    </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;2&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyf</span><span>      </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;f&#8250;</span></span></span><span class="delimiter">)</span><span> 
+</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummyg</span><span>      </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;g&#8250;</span></span></span><span class="delimiter">)</span><span> 
+</span><span class="keyword1"><span class="command">no_notation</span></span><span> </span><span>dummytwo</span><span>    </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;2&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="comment"><span class="delete"><span class="delete"><span class="delete"><span class="delete">(*&gt;*)</span></span></span></span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>contracting</span><span>

@@ -76,15 +76,24 @@ where
   \<open>first_time \<rho> K n \<tau> \<equiv> (time ((Rep_run \<rho>) n K) = \<tau>)
                       \<and> (\<nexists>n'. n' < n \<and> time ((Rep_run \<rho>) n' K) = \<tau>)\<close>
 
+text \<open>
+  @{term \<open>counted_ticks \<rho> K n m d\<close>} tells whether clock K has ticked d times for the
+  first time in interval ]n, m].
+\<close>
 definition counted_ticks :: \<open>'a::linordered_field run \<Rightarrow> clock \<Rightarrow> nat \<Rightarrow> nat \<Rightarrow> nat \<Rightarrow> bool\<close>
 where
   \<open>counted_ticks \<rho> K n m d \<equiv> (n \<le> m) \<and> (run_tick_count \<rho> K m = run_tick_count \<rho> K n + d)
             \<and> (\<nexists>m'. (n \<le> m') \<and> (m' < m) \<and> run_tick_count \<rho> K m' = run_tick_count \<rho> K n + d)
   \<close>
 
+text \<open>Obviously, a clock cannot tick in ]n, n]\<close>
 lemma counted_immediate: \<open>counted_ticks \<rho> K n n 0\<close>
   by (simp add: counted_ticks_def)
 
+text \<open>
+  Because @{term \<open>counted_ticks \<rho> n m d\<close>} is true only the first time the count is reached,
+  when @{term \<open>counted_ticks \<rho> n m 0\<close>}, the interval is necessarily of the form ]n, n].
+\<close>
 lemma counted_zero_same:
   assumes \<open>counted_ticks \<rho> K n m 0\<close>
     shows \<open>n = m\<close>

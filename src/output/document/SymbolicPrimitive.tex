@@ -58,8 +58,8 @@ Counter expressions are used to get the number of ticks of a clock up to
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{datatype}\isamarkupfalse%
 \ cnt{\isacharunderscore}expr\ {\isacharequal}\isanewline
-\ \ TickCountLess\ {\isacartoucheopen}clock{\isacartoucheclose}\ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ {\isacharparenleft}{\isachardoublequoteopen}{\isacharhash}\isactrlsup {\isacharless}{\isachardoublequoteclose}{\isacharparenright}\isanewline
-{\isacharbar}\ TickCountLeq\ {\isacartoucheopen}clock{\isacartoucheclose}\ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharhash}\isactrlsup {\isasymle}{\isachardoublequoteclose}{\isacharparenright}%
+\ \ TickCountLess\ {\isacartoucheopen}clock{\isacartoucheclose}\ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ {\isacharparenleft}{\isacartoucheopen}{\isacharhash}\isactrlsup {\isacharless}{\isacartoucheclose}{\isacharparenright}\isanewline
+{\isacharbar}\ TickCountLeq\ {\isacartoucheopen}clock{\isacartoucheclose}\ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ {\isacharparenleft}{\isacartoucheopen}{\isacharhash}\isactrlsup {\isasymle}{\isacartoucheclose}{\isacharparenright}%
 \isadelimdocument
 %
 \endisadelimdocument
@@ -82,7 +82,7 @@ Tag values are used to refer to the time on a clock at a given instant index.%
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{datatype}\isamarkupfalse%
 \ tag{\isacharunderscore}val\ {\isacharequal}\isanewline
-\ \ TSchematic\ {\isacartoucheopen}clock\ {\isacharasterisk}\ instant{\isacharunderscore}index{\isacartoucheclose}\ {\isacharparenleft}{\isachardoublequoteopen}{\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ TSchematic\ {\isacartoucheopen}clock\ {\isacharasterisk}\ instant{\isacharunderscore}index{\isacartoucheclose}\ {\isacharparenleft}{\isacartoucheopen}{\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacartoucheclose}{\isacharparenright}\isanewline
 \isanewline
 \isacommand{datatype}\isamarkupfalse%
 \ {\isacharprime}{\isasymtau}\ constr\ {\isacharequal}\isanewline
@@ -90,48 +90,48 @@ Tag values are used to refer to the time on a clock at a given instant index.%
 \isamarkupcmt{\isa{c\ {\isasymDown}\ n\ {\isacharat}\ {\isasymtau}} constrains clock \isa{c} to have time \isa{{\isasymtau}}
     at instant \isa{n} of the run.%
 }\isanewline
-\ \ Timestamp\ \ \ \ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ {\isacartoucheopen}{\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const{\isacartoucheclose}\ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymDown}\ {\isacharunderscore}\ {\isacharat}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ Timestamp\ \ \ \ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ {\isacartoucheopen}{\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const{\isacartoucheclose}\ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymDown}\ {\isacharunderscore}\ {\isacharat}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isamarkupcmt{\isa{m\ {\isacharat}\ n\ {\isasymoplus}\ {\isasymdelta}t\ {\isasymRightarrow}\ s} constrains clock \isa{s} to tick at the
     first instant at which the time on \isa{m} has increased by \isa{{\isasymdelta}t}
     from the value it had at instant \isa{n} of the run.%
 }\isanewline
-{\isacharbar}\ TimeDelay\ \ \ \ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ {\isacartoucheopen}{\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const{\isacartoucheclose}\ {\isacartoucheopen}clock{\isacartoucheclose}\ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isacharat}\ {\isacharunderscore}\ {\isasymoplus}\ {\isacharunderscore}\ {\isasymRightarrow}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+{\isacharbar}\ TimeDelay\ \ \ \ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ {\isacartoucheopen}{\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const{\isacartoucheclose}\ {\isacartoucheopen}clock{\isacartoucheclose}\ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isacharat}\ {\isacharunderscore}\ {\isasymoplus}\ {\isacharunderscore}\ {\isasymRightarrow}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isamarkupcmt{\isa{c\ {\isasymUp}\ n} constrains clock \isa{c} to tick
     at instant \isa{n} of the run.%
 }\isanewline
-{\isacharbar}\ Ticks\ \ \ \ \ \ \ \ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymUp}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+{\isacharbar}\ Ticks\ \ \ \ \ \ \ \ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymUp}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isamarkupcmt{\isa{c\ {\isasymnot}{\isasymUp}\ n} constrains clock \isa{c} not to tick
     at instant \isa{n} of the run.%
 }\isanewline
-{\isacharbar}\ NotTicks\ \ \ \ \ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymnot}{\isasymUp}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+{\isacharbar}\ NotTicks\ \ \ \ \ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymnot}{\isasymUp}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isamarkupcmt{\isa{c\ {\isasymnot}{\isasymUp}\ {\isacharless}\ n} constrains clock \isa{c} not to tick
     before instant \isa{n} of the run.%
 }\isanewline
-{\isacharbar}\ NotTicksUntil\ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymnot}{\isasymUp}\ {\isacharless}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+{\isacharbar}\ NotTicksUntil\ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymnot}{\isasymUp}\ {\isacharless}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isamarkupcmt{\isa{c\ {\isasymnot}{\isasymUp}\ {\isasymge}\ n} constrains clock \isa{c} not to tick
     at and after instant \isa{n} of the run.%
 }\isanewline
-{\isacharbar}\ NotTicksFrom\ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymnot}{\isasymUp}\ {\isasymge}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+{\isacharbar}\ NotTicksFrom\ \ {\isacartoucheopen}clock{\isacartoucheclose}\ \ \ {\isacartoucheopen}instant{\isacharunderscore}index{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymnot}{\isasymUp}\ {\isasymge}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isamarkupcmt{\isa{{\isasymlfloor}{\isasymtau}\isactrlsub {\isadigit{1}}{\isacharcomma}\ {\isasymtau}\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R} constrains tag variables \isa{{\isasymtau}\isactrlsub {\isadigit{1}}} and  \isa{{\isasymtau}\isactrlsub {\isadigit{2}}} 
     to be in relation \isa{R}.%
 }\isanewline
-{\isacharbar}\ TagArith\ \ \ \ \ \ {\isacartoucheopen}tag{\isacharunderscore}val{\isacartoucheclose}\ {\isacartoucheopen}tag{\isacharunderscore}val{\isacartoucheclose}\ {\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const\ {\isasymtimes}\ {\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const{\isacharparenright}\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ {\isacharparenleft}{\isachardoublequoteopen}{\isasymlfloor}{\isacharunderscore}{\isacharcomma}\ {\isacharunderscore}{\isasymrfloor}\ {\isasymin}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+{\isacharbar}\ TagArith\ \ \ \ \ \ {\isacartoucheopen}tag{\isacharunderscore}val{\isacartoucheclose}\ {\isacartoucheopen}tag{\isacharunderscore}val{\isacartoucheclose}\ {\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const\ {\isasymtimes}\ {\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const{\isacharparenright}\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ {\isacharparenleft}{\isacartoucheopen}{\isasymlfloor}{\isacharunderscore}{\isacharcomma}\ {\isacharunderscore}{\isasymrfloor}\ {\isasymin}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isamarkupcmt{\isa{{\isasymlceil}k\isactrlsub {\isadigit{1}}{\isacharcomma}\ k\isactrlsub {\isadigit{2}}{\isasymrceil}\ {\isasymin}\ R} constrains counter expressions \isa{k\isactrlsub {\isadigit{1}}} and  \isa{k\isactrlsub {\isadigit{2}}} 
     to be in relation \isa{R}.%
 }\isanewline
-{\isacharbar}\ TickCntArith\ \ {\isacartoucheopen}cnt{\isacharunderscore}expr{\isacartoucheclose}\ {\isacartoucheopen}cnt{\isacharunderscore}expr{\isacartoucheclose}\ {\isacartoucheopen}{\isacharparenleft}nat\ {\isasymtimes}\ nat{\isacharparenright}\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isasymlceil}{\isacharunderscore}{\isacharcomma}\ {\isacharunderscore}{\isasymrceil}\ {\isasymin}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+{\isacharbar}\ TickCntArith\ \ {\isacartoucheopen}cnt{\isacharunderscore}expr{\isacartoucheclose}\ {\isacartoucheopen}cnt{\isacharunderscore}expr{\isacartoucheclose}\ {\isacartoucheopen}{\isacharparenleft}nat\ {\isasymtimes}\ nat{\isacharparenright}\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isasymlceil}{\isacharunderscore}{\isacharcomma}\ {\isacharunderscore}{\isasymrceil}\ {\isasymin}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isamarkupcmt{\isa{k\isactrlsub {\isadigit{1}}\ {\isasympreceq}\ k\isactrlsub {\isadigit{2}}} constrains counter expression \isa{k\isactrlsub {\isadigit{1}}} to be less or equal 
     to counter expression \isa{k\isactrlsub {\isadigit{2}}}.%
 }\isanewline
-{\isacharbar}\ TickCntLeq\ \ \ \ {\isacartoucheopen}cnt{\isacharunderscore}expr{\isacartoucheclose}\ {\isacartoucheopen}cnt{\isacharunderscore}expr{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasympreceq}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+{\isacharbar}\ TickCntLeq\ \ \ \ {\isacartoucheopen}cnt{\isacharunderscore}expr{\isacartoucheclose}\ {\isacartoucheopen}cnt{\isacharunderscore}expr{\isacartoucheclose}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasympreceq}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 \isanewline
 \isacommand{type{\isacharunderscore}synonym}\isamarkupfalse%
 \ {\isacharprime}{\isasymtau}\ system\ {\isacharequal}\ {\isacartoucheopen}{\isacharprime}{\isasymtau}\ constr\ list{\isacartoucheclose}%
@@ -177,7 +177,7 @@ The semantics of the primitive constraints is defined in a way similar to
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{fun}\isamarkupfalse%
 \ counter{\isacharunderscore}expr{\isacharunderscore}eval\ {\isacharcolon}{\isacharcolon}\ {\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ run\ {\isasymRightarrow}\ cnt{\isacharunderscore}expr\ {\isasymRightarrow}\ nat{\isacartoucheclose}\isanewline
-\ \ {\isacharparenleft}{\isachardoublequoteopen}{\isasymlbrakk}\ {\isacharunderscore}\ {\isasymturnstile}\ {\isacharunderscore}\ {\isasymrbrakk}\isactrlsub c\isactrlsub n\isactrlsub t\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ {\isacharparenleft}{\isacartoucheopen}{\isasymlbrakk}\ {\isacharunderscore}\ {\isasymturnstile}\ {\isacharunderscore}\ {\isasymrbrakk}\isactrlsub c\isactrlsub n\isactrlsub t\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r{\isacartoucheclose}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymlbrakk}\ {\isasymrho}\ {\isasymturnstile}\ {\isacharhash}\isactrlsup {\isacharless}\ clk\ indx\ {\isasymrbrakk}\isactrlsub c\isactrlsub n\isactrlsub t\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r\ {\isacharequal}\ run{\isacharunderscore}tick{\isacharunderscore}count{\isacharunderscore}strictly\ {\isasymrho}\ clk\ indx{\isacartoucheclose}\isanewline
 {\isacharbar}\ {\isacartoucheopen}{\isasymlbrakk}\ {\isasymrho}\ {\isasymturnstile}\ {\isacharhash}\isactrlsup {\isasymle}\ clk\ indx\ {\isasymrbrakk}\isactrlsub c\isactrlsub n\isactrlsub t\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r\ {\isacharequal}\ run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ clk\ indx{\isacartoucheclose}\isanewline
@@ -185,7 +185,7 @@ The semantics of the primitive constraints is defined in a way similar to
 \isanewline
 \isacommand{fun}\isamarkupfalse%
 \ symbolic{\isacharunderscore}run{\isacharunderscore}interpretation{\isacharunderscore}primitive\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ constr\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ run\ set{\isacartoucheclose}\ {\isacharparenleft}{\isachardoublequoteopen}{\isasymlbrakk}\ {\isacharunderscore}\ {\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ constr\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ run\ set{\isacartoucheclose}\ {\isacharparenleft}{\isacartoucheopen}{\isasymlbrakk}\ {\isacharunderscore}\ {\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m{\isacartoucheclose}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymlbrakk}\ K\ {\isasymUp}\ n\ \ {\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m\ \ \ \ \ {\isacharequal}\ {\isacharbraceleft}{\isasymrho}{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ n\ K{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ {\isacartoucheopen}{\isasymlbrakk}\ K\ {\isacharat}\ n\isactrlsub {\isadigit{0}}\ {\isasymoplus}\ {\isasymdelta}t\ {\isasymRightarrow}\ K{\isacharprime}\ {\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m\ {\isacharequal}\isanewline
@@ -206,7 +206,7 @@ The composition of primitive constraints is their conjunction, and we get the
 \isacommand{fun}\isamarkupfalse%
 \ symbolic{\isacharunderscore}run{\isacharunderscore}interpretation\isanewline
 \ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ constr\ list\ {\isasymRightarrow}\ {\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ run\ set{\isacartoucheclose}\isanewline
-\ \ {\isacharparenleft}{\isachardoublequoteopen}{\isasymlbrakk}{\isasymlbrakk}\ {\isacharunderscore}\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ {\isacharparenleft}{\isacartoucheopen}{\isasymlbrakk}{\isasymlbrakk}\ {\isacharunderscore}\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m{\isacartoucheclose}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymlbrakk}{\isasymlbrakk}\ {\isacharbrackleft}{\isacharbrackright}\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m\ {\isacharequal}\ {\isacharbraceleft}{\isasymrho}{\isachardot}\ True\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ {\isacartoucheopen}{\isasymlbrakk}{\isasymlbrakk}\ {\isasymgamma}\ {\isacharhash}\ {\isasymGamma}\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m\ {\isacharequal}\ {\isasymlbrakk}\ {\isasymgamma}\ {\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m\ {\isasyminter}\ {\isasymlbrakk}{\isasymlbrakk}\ {\isasymGamma}\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub p\isactrlsub r\isactrlsub i\isactrlsub m{\isacartoucheclose}\isanewline
@@ -256,7 +256,7 @@ In order to build a run, we can start from an initial run in which no clock
   ticks and the time is always 0 on any clock.%
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{abbreviation}\isamarkupfalse%
-\ initial{\isacharunderscore}run\ {\isacharcolon}{\isacharcolon}\ {\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ run{\isacartoucheclose}\ {\isacharparenleft}{\isachardoublequoteopen}{\isasymrho}\isactrlsub {\isasymodot}{\isachardoublequoteclose}{\isacharparenright}\ \isakeyword{where}\isanewline
+\ initial{\isacharunderscore}run\ {\isacharcolon}{\isacharcolon}\ {\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ run{\isacartoucheclose}\ {\isacharparenleft}{\isacartoucheopen}{\isasymrho}\isactrlsub {\isasymodot}{\isacartoucheclose}{\isacharparenright}\ \isakeyword{where}\isanewline
 \ \ {\isacartoucheopen}{\isasymrho}\isactrlsub {\isasymodot}\ {\isasymequiv}\ Abs{\isacharunderscore}run\ {\isacharparenleft}{\isacharparenleft}{\isasymlambda}{\isacharunderscore}\ {\isacharunderscore}{\isachardot}\ {\isacharparenleft}False{\isacharcomma}\ {\isasymtau}\isactrlsub c\isactrlsub s\isactrlsub t\ {\isadigit{0}}{\isacharparenright}{\isacharparenright}\ {\isacharcolon}{\isacharcolon}nat\ {\isasymRightarrow}\ clock\ {\isasymRightarrow}\ {\isacharparenleft}bool\ {\isasymtimes}\ {\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const{\isacharparenright}{\isacharparenright}{\isacartoucheclose}%
 \begin{isamarkuptext}%
 To help avoiding that time flows backward, setting the time on a clock at a given 
@@ -311,7 +311,7 @@ To help avoiding that time flows backward, setting the time on a clock at a give
 \endisadelimproof
 \isacommand{inductive}\isamarkupfalse%
 \ context{\isacharunderscore}independency\isanewline
-\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ constr\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ constr\ list\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ {\isacharparenleft}{\isachardoublequoteopen}{\isacharunderscore}\ {\isasymbowtie}\ {\isacharunderscore}{\isachardoublequoteclose}{\isacharparenright}\isanewline
+\ \ {\isacharcolon}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ constr\ {\isasymRightarrow}\ {\isacharprime}{\isasymtau}\ constr\ list\ {\isasymRightarrow}\ bool{\isacartoucheclose}\ {\isacharparenleft}{\isacartoucheopen}{\isacharunderscore}\ {\isasymbowtie}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
 \ \ NotTicks{\isacharunderscore}independency{\isacharcolon}\isanewline
 \ \ {\isacartoucheopen}{\isacharparenleft}K\ {\isasymUp}\ n{\isacharparenright}\ {\isasymnotin}\ set\ {\isasymGamma}\ {\isasymLongrightarrow}\ {\isacharparenleft}K\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isasymbowtie}\ {\isasymGamma}{\isacartoucheclose}\isanewline
@@ -923,7 +923,7 @@ The interpretation of contexts is contravariant with regard to set inclusion.%
 %
 \end{isabellebody}%
 \endinput
-%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/reiher/src/SymbolicPrimitive.thy%:%
+%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL/src/SymbolicPrimitive.thy%:%
 %:%11=1%:%
 %:%27=3%:%
 %:%28=3%:%

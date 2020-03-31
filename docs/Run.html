@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Theory Run (Isabelle2018: August 2018)</title>
+<title>Theory Run (Isabelle2019: June 2019)</title>
 <link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
 </head>
 
@@ -61,7 +61,7 @@
   in the interval &#9641;&#8249;[0, n]&#8250; of run @{term &#8249;&#961;&#8250;}.
 &#8250;</span></span></span><span>
 </span><span class="keyword1"><span class="command">fun</span></span><span> </span><span>run_tick_count</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) run &#8658; clock &#8658; nat &#8658; nat&#8250;</span></span></span><span>
-</span><span>  </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;#<span class="hidden">&#8681;</span><sub>&#8804;</sub> _ _ _&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;#<span class="hidden">&#8681;</span><sub>&#8804;</sub> _ _ _&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
 </span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K 0)       = (if hamlet ((Rep_run &#961;) 0 K)
                        then 1
@@ -70,12 +70,15 @@
                        then 1 + (#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K n)
                        else (#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K n))&#8250;</span></span></span><span>
 </span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>run_tick_count_mono</span><span class="delimiter">:</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;mono (&#955;n. run_tick_count &#961; K n)&#8250;</span></span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>mono_iff_le_Suc</span><span class="delimiter">)</span><span>
+</span><span>
 </span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
   @{term &#8249;run_tick_count_strictly &#961; K n&#8250;} counts the number of ticks on
   clock @{term &#8249;K&#8250;} in the interval &#9641;&#8249;[0, n[&#8250; of run @{term &#8249;&#961;&#8250;}.
 &#8250;</span></span></span><span>
 </span><span class="keyword1"><span class="command">fun</span></span><span> </span><span>run_tick_count_strictly</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) run &#8658; clock &#8658; nat &#8658; nat&#8250;</span></span></span><span>
-</span><span>  </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">&quot;#<span class="hidden">&#8681;</span><sub>&lt;</sub> _ _ _&quot;</span></span></span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;#<span class="hidden">&#8681;</span><sub>&lt;</sub> _ _ _&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
 </span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&lt;</sub> &#961; K 0)       = 0&#8250;</span></span></span><span>
 </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&lt;</sub> &#961; K (Suc n)) = #<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K n&#8250;</span></span></span><span>
@@ -89,6 +92,83 @@
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
 </span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;first_time &#961; K n &#964; &#8801; (time ((Rep_run &#961;) n K) = &#964;)
                       &#8743; (&#8708;n&#39;. n&#39; &lt; n &#8743; time ((Rep_run &#961;) n&#39; K) = &#964;)&#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  @{term &#8249;counted_ticks &#961; K n m d&#8250;} tells whether clock K has ticked d times for the
+  first time in interval ]n, m].
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>counted_ticks</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;a::linordered_field run &#8658; clock &#8658; nat &#8658; nat &#8658; nat &#8658; bool&#8250;</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;counted_ticks &#961; K n m d &#8801; (n &#8804; m) &#8743; (run_tick_count &#961; K m = run_tick_count &#961; K n + d)
+            &#8743; (&#8708;m&#39;. (n &#8804; m&#39;) &#8743; (m&#39; &lt; m) &#8743; run_tick_count &#961; K m&#39; = run_tick_count &#961; K n + d)
+  &#8250;</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;Obviously, a clock cannot tick in ]n, n]&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>counted_immediate</span><span class="delimiter">:</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;counted_ticks &#961; K n n 0&#8250;</span></span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>counted_ticks_def</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
+  Because @{term &#8249;counted_ticks &#961; n m d&#8250;} is true only the first time the count is reached,
+  when @{term &#8249;counted_ticks &#961; n m 0&#8250;}, the interval is necessarily of the form ]n, n].
+&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>counted_zero_same</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;counted_ticks &#961; K n m 0&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;n = m&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span>-</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">consider</span></span><span> </span><span class="delimiter">(</span><span>a</span><span class="delimiter">)</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;n &lt; m&#8250;</span></span></span><span> </span><span class="delimiter">|</span><span> </span><span class="delimiter">(</span><span>b</span><span class="delimiter">)</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;n &gt; m&#8250;</span></span></span><span> </span><span class="delimiter">|</span><span> </span><span class="delimiter">(</span><span>c</span><span class="delimiter">)</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;n = m&#8250;</span></span></span><span>  </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>nat_neq_iff</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">then</span></span><span> </span><span class="keyword3"><span class="command">show</span></span><span> </span><span class="var">?thesis</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">proof</span></span><span> </span><span>cases</span><span>
+</span><span>    </span><span class="keyword3"><span class="command">case</span></span><span> </span><span>a</span><span>
+</span><span>      </span><span class="keyword1"><span class="command">hence</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#172;counted_ticks &#961; K n m 0&#8250;</span></span></span><span> 
+</span><span>        </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>counted_ticks_def</span><span> </span><span>add_cancel_right_right</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span>      </span><span class="keyword1"><span class="command">with</span></span><span> </span><span>assms</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span>False</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>      </span><span class="keyword3"><span class="command">thus</span></span><span> </span><span class="var">?thesis</span><span> </span><span class="keyword1"><span class="command">..</span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">next</span></span><span>
+</span><span>    </span><span class="keyword3"><span class="command">case</span></span><span> </span><span>b</span><span>
+</span><span>      </span><span class="keyword1"><span class="command">hence</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#172;(n &#8804; m)&#8250;</span></span></span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>      </span><span class="keyword1"><span class="command">hence</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#172;counted_ticks &#961; K n m 0&#8250;</span></span></span><span> </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>counted_ticks_def</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span>      </span><span class="keyword1"><span class="command">with</span></span><span> </span><span>assms</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span>False</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>      </span><span class="keyword3"><span class="command">thus</span></span><span> </span><span class="var">?thesis</span><span> </span><span class="keyword1"><span class="command">..</span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">next</span></span><span>
+</span><span>    </span><span class="keyword3"><span class="command">case</span></span><span> </span><span>c</span><span> </span><span class="keyword3"><span class="command">thus</span></span><span> </span><span class="var">?thesis</span><span> </span><span class="keyword1"><span class="command">.</span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>tick_count_progress</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;run_tick_count &#961; K (n+k) &#8804; (run_tick_count &#961; K n) + k&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span class="delimiter">(</span><span>induction</span><span> </span><span>k</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword3"><span class="command">case</span></span><span> </span><span>0</span><span> </span><span class="keyword3"><span class="command">thus</span></span><span> </span><span class="var">?case</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span class="keyword1"><span class="command">next</span></span><span>
+</span><span>  </span><span class="keyword3"><span class="command">case</span></span><span> </span><span class="delimiter">(</span><span>Suc</span><span> </span><span>k&#39;</span><span class="delimiter">)</span><span>
+</span><span>    </span><span class="keyword3"><span class="command">thus</span></span><span> </span><span class="var">?case</span><span> </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>Suc.IH</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>auto</span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>counted_suc_diff</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;counted_ticks &#961; K n m (Suc i)&#8250;</span></span></span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;n+i &lt; m&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span>-</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">from</span></span><span> </span><span>assms</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;run_tick_count &#961; K m = run_tick_count &#961; K n + (Suc i)&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword1"><span class="command">unfolding</span></span><span> </span><span>counted_ticks_def</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">moreover</span></span><span> </span><span class="keyword1"><span class="command">from</span></span><span> </span><span>tick_count_progress</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#8704;k. run_tick_count &#961; K (n+k) &#8804; (run_tick_count &#961; K n) + k&#8250;</span></span></span><span> </span><span class="keyword1"><span class="command">..</span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">ultimately</span></span><span> </span><span class="keyword3"><span class="command">show</span></span><span> </span><span class="var">?thesis</span><span> 
+</span><span>      </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>metis</span><span> </span><span class="delimiter">(</span><span>no_types</span><span class="delimiter">)</span><span> </span><span>add_le_cancel_left</span><span> </span><span>assms</span><span> </span><span>counted_ticks_def</span><span> </span><span>leI</span><span> </span><span>le_Suc_ex</span><span> </span><span>not_less_eq_eq</span><span> </span><span>tick_count_progress</span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>counted_suc</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;counted_ticks &#961; K n m (Suc i)&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;n &lt; m&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">using</span></span><span> </span><span>assms</span><span> </span><span>counted_suc_diff</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>fastforce</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>counted_one_now_later</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;counted_ticks &#961; K n m (Suc 0)&#8250;</span></span></span><span>
+</span><span>      </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;m&#39; &gt; m&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#172;counted_ticks &#961; K n m&#39; (Suc 0)&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>meson</span><span> </span><span>assms</span><span> </span><span>counted_ticks_def</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>counted_one_now_ticks</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;counted_ticks &#961; K n m (Suc 0)&#8250;</span></span></span><span>
+</span><span>    </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;hamlet ((Rep_run &#961;) m K)&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">sorry</span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
   The time on a clock is necessarily less than @{term &#8249;&#964;&#8250;} before the first instant

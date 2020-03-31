@@ -1,9 +1,10 @@
-Hygge
+TESL
 ===================
 
-**Hygge** (pronounced [ˈhyɡ̊ə]) is a library in [Isabelle/HOL](http://isabelle.in.tum.de/) of semantics for the [Tagged Events Specification Language (TESL)](http://wdi.supelec.fr/software/TESL/).
+This project defines a semantics for the [Tagged Events Specification Language (TESL)](http://wdi.centralesupelec.fr/software/TESL/) in   [Isabelle/HOL](http://isabelle.in.tum.de/).
 
-Getting started
--------------------
- - [Browse theories online](https://heron-solver.github.io/hygge/)
- - [Download archive](https://github.com/heron-solver/hygge/archive/master.zip) and open `src/Hygge_Theory.thy` with [Isabelle2018](http://isabelle.in.tum.de/installation.html)
+* [Index of the library](https://frederic-boulanger-ups.github.io/TESL/index.html)
+* [Outline (proofs are hidden)](https://frederic-boulanger-ups.github.io/TESL/outline.pdf)
+* [Complete document](https://frederic-boulanger-ups.github.io/TESL/document.pdf)
+
+Frédéric Boulanger <frederic.boulanger@universite-paris-saclay.fr>
