@@ -1,4 +1,4 @@
-ISABELLE=/usr/local/bin/isabelle2019
+ISABELLE=/usr/local/bin/isabelle2020
 
 browser_info:
 # 	rm -fr src/ROOT

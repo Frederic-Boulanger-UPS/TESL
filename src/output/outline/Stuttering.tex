@@ -65,21 +65,21 @@ Sporadic specifications are preserved in a dilated run.%
 \ blast\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
 \ {\isacartoucheopen}{\isasymforall}n\ c{\isachardot}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ c{\isacharparenright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c{\isacharparenright}\ {\isacharequal}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c{\isacharparenright}\ {\isacharequal}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def{\isacharparenright}\isanewline
 \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{from}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymexists}\ n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}\ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharprime}{\isacharparenright}\ {\isacharequal}\ {\isasymtau}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymexists}\ n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}\ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharprime}{\isacharparenright}\ {\isacharequal}\ {\isasymtau}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{from}\isamarkupfalse%
 \ this\ \isacommand{obtain}\isamarkupfalse%
-\ k\ \isakeyword{where}\ {\isacartoucheopen}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharprime}{\isacharparenright}\ {\isacharequal}\ {\isasymtau}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ k\ \isakeyword{where}\ {\isacartoucheopen}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharprime}{\isacharparenright}\ {\isacharequal}\ {\isasymtau}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ auto\isanewline
 \ \ \isacommand{ultimately}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharprime}{\isacharparenright}\ {\isacharequal}\ {\isasymtau}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharprime}{\isacharparenright}\ {\isacharequal}\ {\isasymtau}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{thus}\isamarkupfalse%
 \ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
@@ -117,14 +117,14 @@ Implications are preserved in a dilated run.%
 \ \isacommand{from}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{ultimately}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk\ ticks{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -162,14 +162,14 @@ Implications are preserved in a dilated run.%
 \ \isacommand{from}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{ultimately}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk\ ticks{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -257,18 +257,18 @@ Precedence relations are preserved in a dilated run.%
 \ \ \isacommand{with}\isamarkupfalse%
 \ strictly{\isacharunderscore}precedes{\isacharunderscore}alt{\isacharunderscore}def{\isadigit{2}}{\isacharbrackleft}of\ {\isacartoucheopen}c\isactrlsub {\isadigit{2}}{\isacartoucheclose}\ {\isacartoucheopen}c\isactrlsub {\isadigit{1}}{\isacartoucheclose}{\isacharbrackright}\ \ \isacommand{have}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}\ {\isasymrho}{\isachardot}\ {\isacharparenleft}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}\ {\isasymrho}{\isachardot}\ {\isacharparenleft}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\isanewline
 \ \ {\isasymand}\ {\isacharparenleft}{\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharparenleft}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\isanewline
+\ {\isacartoucheopen}{\isacharparenleft}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ {\isasymand}\ {\isacharparenleft}{\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isadigit{1}}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isadigit{1}}{\isacharcolon}{\isacartoucheopen}{\isacharparenleft}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\isanewline
 \ \ \ \ \ {\isasymand}\ {\isacharparenleft}{\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}tick{\isacharunderscore}count\ sub\ c\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ tick{\isacharunderscore}count{\isacharunderscore}is{\isacharunderscore}fun{\isacharparenright}\isanewline
@@ -324,7 +324,7 @@ Precedence relations are preserved in a dilated run.%
 \isamarkupcmt{Suc n is not in the image of f%
 }\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ {\isacharasterisk}\ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def{\isacharparenright}\isanewline
@@ -424,7 +424,7 @@ Precedence relations are preserved in a dilated run.%
 \isamarkupcmt{Suc n is not in the image of f%
 }\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ {\isacharasterisk}\ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def{\isacharparenright}\isanewline
@@ -480,7 +480,7 @@ Precedence relations are preserved in a dilated run.%
 \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{from}\isamarkupfalse%
 \ {\isadigit{1}}\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ {\isacharasterisk}\ empty{\isacharunderscore}dilated{\isacharunderscore}prefix\ ticks{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
 \ fastforce\isanewline
@@ -519,29 +519,29 @@ Time delayed relations are preserved in a dilated run.%
 \ blast\isanewline
 \ \ \isacommand{from}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ a{\isacharparenright}\isanewline
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ a{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m\ {\isasymge}\ n{\isachardot}\ first{\isacharunderscore}time\ sub\ ms\ m\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ m\ b{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ m\ b{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{5}}{\isacharparenright}{\isacharbrackleft}of\ {\isacartoucheopen}a{\isacartoucheclose}\ {\isacartoucheopen}{\isasymdelta}{\isasymtau}{\isacartoucheclose}\ {\isacartoucheopen}ms{\isacartoucheclose}\ {\isacartoucheopen}b{\isacartoucheclose}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacharasterisk}{\isacharasterisk}{\isacharcolon}{\isacartoucheopen}{\isasymforall}n\isactrlsub {\isadigit{0}}{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ a{\isacharparenright}\isanewline
+\ {\isacharasterisk}{\isacharasterisk}{\isacharcolon}{\isacartoucheopen}{\isasymforall}n\isactrlsub {\isadigit{0}}{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ a{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m\isactrlsub {\isadigit{0}}\ {\isasymge}\ n\isactrlsub {\isadigit{0}}{\isachardot}\ first{\isacharunderscore}time\ r\ ms\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}{\isacharparenright}\ \ {\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}{\isacharparenright}\ \ {\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ first{\isacharunderscore}time{\isacharunderscore}image{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ dilating{\isacharunderscore}def\ {\isacharasterisk}\ \isacommand{by}\isamarkupfalse%
 \ fastforce\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}\isanewline
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m\ {\isasymge}\ n{\isachardot}\ first{\isacharunderscore}time\ r\ ms\ m\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ b{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ b{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \isacommand{proof}\isamarkupfalse%
 \ {\isacharminus}\isanewline
 \ \ \ \ \isacommand{{\isacharbraceleft}}\isamarkupfalse%
 \ \isacommand{fix}\isamarkupfalse%
 \ n\ \isacommand{assume}\isamarkupfalse%
-\ assm{\isacharcolon}{\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}{\isacartoucheclose}\isanewline
+\ assm{\isacharcolon}{\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ ticks{\isacharunderscore}image{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}\ assm{\isacharbrackright}\ \isacommand{obtain}\isamarkupfalse%
 \ n\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ nfn{\isadigit{0}}{\isacharcolon}{\isacartoucheopen}n\ {\isacharequal}\ f\ n\isactrlsub {\isadigit{0}}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
@@ -550,11 +550,11 @@ Time delayed relations are preserved in a dilated run.%
 \ {\isacharasterisk}{\isacharasterisk}\ assm\ \isacommand{have}\isamarkupfalse%
 \ ft{\isadigit{0}}{\isacharcolon}\isanewline
 \ \ \ \ \ \ \ \ {\isacartoucheopen}{\isacharparenleft}{\isasymforall}m\isactrlsub {\isadigit{0}}\ {\isasymge}\ n\isactrlsub {\isadigit{0}}{\isachardot}\ first{\isacharunderscore}time\ r\ ms\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \ \ \isacommand{have}\isamarkupfalse%
 \ {\isacartoucheopen}{\isacharparenleft}{\isasymforall}m\ {\isasymge}\ n{\isachardot}\ first{\isacharunderscore}time\ r\ ms\ m\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}\ \isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ b{\isacharparenright}{\isacharparenright}\ {\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ b{\isacharparenright}{\isacharparenright}\ {\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{proof}\isamarkupfalse%
 \ {\isacharminus}\isanewline
 \ \ \ \ \ \ \isacommand{{\isacharbraceleft}}\isamarkupfalse%
@@ -562,7 +562,7 @@ Time delayed relations are preserved in a dilated run.%
 \ m\ \isacommand{assume}\isamarkupfalse%
 \ hyp{\isacharcolon}{\isacartoucheopen}m\ {\isasymge}\ n{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \ \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}first{\isacharunderscore}time\ r\ ms\ m\ {\isacharparenleft}time\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}\ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ b{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}first{\isacharunderscore}time\ r\ ms\ m\ {\isacharparenleft}time\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}\ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ b{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \ \ \isacommand{proof}\isamarkupfalse%
 \ {\isacharparenleft}cases\ {\isacartoucheopen}{\isasymexists}m\isactrlsub {\isadigit{0}}{\isachardot}\ f\ m\isactrlsub {\isadigit{0}}\ {\isacharequal}\ m{\isacartoucheclose}{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
@@ -669,13 +669,13 @@ Time delayed relations are preserved in a dilated run.%
 \endisadelimproof
 %
 \begin{isamarkuptext}%
-Count delayed relations are preserved in a dilated run.%
+Relaxed time delayed relations are preserved in a dilated run.%
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{theorem}\isamarkupfalse%
-\ count{\isacharunderscore}delayed{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ relaxed{\isacharunderscore}time{\isacharunderscore}delayed{\isacharunderscore}sub{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}sub\ {\isasymlless}\ r{\isacartoucheclose}\isanewline
-\ \ \ \ \ \ \isakeyword{and}\ {\isacartoucheopen}sub\ {\isasymin}\ {\isasymlbrakk}\ a\ delayed\ by\ k\ on\ c\ implies\ b\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
-\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}r\ {\isasymin}\ {\isasymlbrakk}\ a\ delayed\ by\ k\ on\ c\ implies\ b\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isacartoucheopen}sub\ {\isasymin}\ {\isasymlbrakk}\ a\ time{\isacharminus}delayed{\isasymbowtie}\ by\ {\isasymdelta}{\isasymtau}\ on\ ms\ implies\ b\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}r\ {\isasymin}\ {\isasymlbrakk}\ a\ time{\isacharminus}delayed{\isasymbowtie}\ by\ {\isasymdelta}{\isasymtau}\ on\ ms\ implies\ b\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -686,21 +686,71 @@ Count delayed relations are preserved in a dilated run.%
 \ {\isacharminus}\isanewline
 \ \ \isacommand{from}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
-\ f\ \isakeyword{where}\ {\isacharasterisk}{\isacharcolon}{\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ f\ \isakeyword{where}\ dilf{\isacharcolon}{\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
-\ \ \isacommand{moreover}\isamarkupfalse%
-\ \isacommand{from}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{6}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
-\isanewline
-\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ n\ a{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ counted{\isacharunderscore}ticks\ r\ c\ n\ m\ k\ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ b{\isacharparenright}{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\ \ \isacommand{hence}\isamarkupfalse%
-\ {\isadigit{1}}{\isacharcolon}{\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ n\ a{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ counted{\isacharunderscore}ticks\ sub\ c\ n\ m\ k\ {\isasymlongrightarrow}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ m\ b{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ a{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymexists}m\ {\isasymge}\ n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ m\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ m\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{6}}{\isacharparenright}{\isacharbrackleft}of\ {\isacartoucheopen}a{\isacartoucheclose}\ {\isacartoucheopen}{\isasymdelta}{\isasymtau}{\isacartoucheclose}\ {\isacartoucheopen}ms{\isacartoucheclose}\ {\isacartoucheopen}b{\isacartoucheclose}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isacharasterisk}{\isacharasterisk}{\isacharcolon}{\isacartoucheopen}{\isasymforall}n\isactrlsub {\isadigit{0}}{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ a{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymexists}m\isactrlsub {\isadigit{0}}\ {\isasymge}\ n\isactrlsub {\isadigit{0}}{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \isacommand{using}\isamarkupfalse%
+\ first{\isacharunderscore}time{\isacharunderscore}image{\isacharbrackleft}OF\ dilf{\isacharbrackright}\ dilating{\isacharunderscore}def\ dilf\ \isacommand{by}\isamarkupfalse%
+\ fastforce\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymexists}m\ {\isasymge}\ n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ \ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \ \ \isacommand{{\isacharbraceleft}}\isamarkupfalse%
+\ \isacommand{fix}\isamarkupfalse%
+\ n\ \isacommand{assume}\isamarkupfalse%
+\ assm{\isacharcolon}{\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ ticks{\isacharunderscore}image{\isacharunderscore}sub{\isacharbrackleft}OF\ dilf\ assm{\isacharbrackright}\ \isacommand{obtain}\isamarkupfalse%
+\ n\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ nfn{\isadigit{0}}{\isacharcolon}{\isacartoucheopen}n\ {\isacharequal}\ f\ n\isactrlsub {\isadigit{0}}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \isacommand{with}\isamarkupfalse%
+\ {\isacharasterisk}{\isacharasterisk}\ assm\ \isacommand{have}\isamarkupfalse%
+\ ft{\isadigit{0}}{\isacharcolon}\isanewline
+\ \ \ \ \ \ \ \ {\isacartoucheopen}{\isacharparenleft}{\isasymexists}m\isactrlsub {\isadigit{0}}\ {\isasymge}\ n\isactrlsub {\isadigit{0}}{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \isacommand{from}\isamarkupfalse%
+\ this\ \isacommand{obtain}\isamarkupfalse%
+\ m\isactrlsub {\isadigit{0}}\ \isakeyword{where}\isanewline
+\ \ \ \ \ \ \ \ {\isacartoucheopen}m\isactrlsub {\isadigit{0}}\ {\isasymge}\ n\isactrlsub {\isadigit{0}}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ {\isasymand}\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ nfn{\isadigit{0}}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isacartoucheopen}f\ m\isactrlsub {\isadigit{0}}\ {\isasymge}\ n{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \ \ \isakeyword{and}\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isasymand}\ {\isacharparenleft}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ m\isactrlsub {\isadigit{0}}{\isacharparenright}\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
+\ dilf\ nfn{\isadigit{0}}\isanewline
+\ \ \ \ \ \ \ \ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def\ strict{\isacharunderscore}mono{\isacharunderscore}less{\isacharunderscore}eq{\isacharcomma}\ simp{\isacharparenright}\isanewline
+\ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
+\ {\isacartoucheopen}{\isacharparenleft}{\isasymexists}m\ {\isasymge}\ n{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ b{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ m\ ms{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ ms{\isacharparenright}\ {\isacharplus}\ {\isasymdelta}{\isasymtau}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \ \ \isacommand{{\isacharbraceright}}\isamarkupfalse%
+\ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\ \ \isacommand{qed}\isamarkupfalse%
 \isanewline
-\ \ \isacommand{show}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{sorry}\isamarkupfalse%
-\isanewline
+\ \ \isacommand{thus}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
 \isacommand{qed}\isamarkupfalse%
 %
 \endisatagproof
@@ -928,27 +978,27 @@ Kill relations are preserved in a dilated run.%
 \ \ \isacommand{from}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{8}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ \ \ \ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ {\isasymnot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isadigit{1}}{\isacharcolon}{\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ n{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ m{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isadigit{1}}{\isacharcolon}{\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ n{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ {\isasymnot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ m{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ n{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}\ {\isacharparenleft}f\ n{\isacharparenright}{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ n{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}\ {\isacharparenleft}f\ n{\isacharparenright}{\isachardot}\ {\isasymnot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \isacommand{proof}\isamarkupfalse%
 \ {\isacharminus}\isanewline
 \ \ \ \ \isacommand{{\isacharbraceleft}}\isamarkupfalse%
 \ \isacommand{fix}\isamarkupfalse%
 \ n\ \isacommand{assume}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ n{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ n{\isacharparenright}\ c\isactrlsub {\isadigit{1}}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{with}\isamarkupfalse%
 \ {\isadigit{1}}\ \isacommand{have}\isamarkupfalse%
-\ {\isadigit{2}}{\isacharcolon}{\isacartoucheopen}{\isasymforall}\ m\ {\isasymge}\ n{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ m{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isadigit{2}}{\isacharcolon}{\isacartoucheopen}{\isasymforall}\ m\ {\isasymge}\ n{\isachardot}\ {\isasymnot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ {\isacharparenleft}f\ m{\isacharparenright}\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \ \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymforall}\ m{\isasymge}\ {\isacharparenleft}f\ n{\isacharparenright}{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymforall}\ m{\isasymge}\ {\isacharparenleft}f\ n{\isacharparenright}{\isachardot}\ {\isasymnot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{proof}\isamarkupfalse%
 \ {\isacharminus}\isanewline
 \ \ \ \ \ \ \ \ \isacommand{{\isacharbraceleft}}\isamarkupfalse%
@@ -956,7 +1006,7 @@ Kill relations are preserved in a dilated run.%
 \ m\ \isacommand{assume}\isamarkupfalse%
 \ h{\isacharcolon}{\isacartoucheopen}m\ {\isasymge}\ f\ n{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \ \ \ \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymnot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \ \ \ \ \isacommand{proof}\isamarkupfalse%
 \ {\isacharparenleft}cases\ {\isacartoucheopen}{\isasymexists}m\isactrlsub {\isadigit{0}}{\isachardot}\ f\ m\isactrlsub {\isadigit{0}}\ {\isacharequal}\ m{\isacartoucheclose}{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
@@ -998,7 +1048,7 @@ Kill relations are preserved in a dilated run.%
 \ \ \isacommand{qed}\isamarkupfalse%
 \isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m\ {\isasymge}\ n{\isachardot}\ {\isasymnot}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ n\ c\isactrlsub {\isadigit{1}}{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m\ {\isasymge}\ n{\isachardot}\ {\isasymnot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ c\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk{\isacharbrackleft}OF\ {\isacharasterisk}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -1012,6 +1062,48 @@ Kill relations are preserved in a dilated run.%
 {\isafoldproof}%
 %
 \isadelimproof
+%
+\endisadelimproof
+%
+\begin{isamarkuptext}%
+Count delayed relations are preserved in a dilated run.%
+\end{isamarkuptext}\isamarkuptrue%
+\isacommand{theorem}\isamarkupfalse%
+\ count{\isacharunderscore}delayed{\isacharunderscore}sub{\isacharcolon}\isanewline
+\ \ \isakeyword{assumes}\ {\isacartoucheopen}sub\ {\isasymlless}\ r{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isacartoucheopen}sub\ {\isasymin}\ {\isasymlbrakk}\ a\ delayed\ by\ k\ on\ c\ implies\ b\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}r\ {\isasymin}\ {\isasymlbrakk}\ a\ delayed\ by\ k\ on\ c\ implies\ b\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{proof}\isamarkupfalse%
+\ {\isacharminus}\isanewline
+\ \ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ is{\isacharunderscore}subrun{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
+\ f\ \isakeyword{where}\ {\isacharasterisk}{\isacharcolon}{\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{moreover}\isamarkupfalse%
+\ \isacommand{from}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ TESL{\isacharunderscore}interpretation{\isacharunderscore}atomic{\isachardot}simps{\isacharparenleft}{\isadigit{1}}{\isadigit{0}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\isanewline
+\ \ \ \ {\isacartoucheopen}sub\ {\isasymin}\ {\isacharbraceleft}r{\isachardot}\ {\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ n\ a{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ counted{\isacharunderscore}ticks\ r\ c\ n\ m\ k\ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ m\ b{\isacharparenright}{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ blast\isanewline
+\ \ \isacommand{hence}\isamarkupfalse%
+\ {\isadigit{1}}{\isacharcolon}{\isacartoucheopen}{\isasymforall}n{\isachardot}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ n\ a{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}m{\isasymge}n{\isachardot}\ counted{\isacharunderscore}ticks\ sub\ c\ n\ m\ k\ {\isasymlongrightarrow}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ sub\ m\ b{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
+\isanewline
+\ \ \isacommand{show}\isamarkupfalse%
+\ {\isacharquery}thesis\ \isacommand{sorry}\isamarkupfalse%
+\isanewline
+\isacommand{qed}\isamarkupfalse%
+%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
 \isanewline
 %
 \endisadelimproof
@@ -1019,7 +1111,7 @@ Kill relations are preserved in a dilated run.%
 \isacommand{lemmas}\isamarkupfalse%
 \ atomic{\isacharunderscore}sub{\isacharunderscore}lemmas\ {\isacharequal}\ sporadic{\isacharunderscore}sub\ tagrel{\isacharunderscore}sub\ implies{\isacharunderscore}sub\ implies{\isacharunderscore}not{\isacharunderscore}sub\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ time{\isacharunderscore}delayed{\isacharunderscore}sub\ weakly{\isacharunderscore}precedes{\isacharunderscore}sub\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strictly{\isacharunderscore}precedes{\isacharunderscore}sub\ kill{\isacharunderscore}sub\ count{\isacharunderscore}delayed{\isacharunderscore}sub%
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strictly{\isacharunderscore}precedes{\isacharunderscore}sub\ kill{\isacharunderscore}sub\ relaxed{\isacharunderscore}time{\isacharunderscore}delayed{\isacharunderscore}sub\ count{\isacharunderscore}delayed{\isacharunderscore}sub%
 \begin{isamarkuptext}%
 We can now prove that all atomic specification formulae are preserved
   by the dilation of runs.%
@@ -1027,7 +1119,7 @@ We can now prove that all atomic specification formulae are preserved
 \isacommand{lemma}\isamarkupfalse%
 \ atomic{\isacharunderscore}sub{\isacharcolon}\ \isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}sub\ {\isasymlless}\ r{\isacartoucheclose}\isanewline
-\ \ \ \ \ \ \isakeyword{and}\ {\isacartoucheopen}spec{\isacharunderscore}atom\ {\isasymphi}{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \isakeyword{and}\ {\isacartoucheopen}is{\isacharunderscore}public{\isacharunderscore}atom\ {\isasymphi}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isakeyword{and}\ {\isacartoucheopen}sub\ {\isasymin}\ {\isasymlbrakk}\ {\isasymphi}\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
 \ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}r\ {\isasymin}\ {\isasymlbrakk}\ {\isasymphi}\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
 %
@@ -1036,91 +1128,9 @@ We can now prove that all atomic specification formulae are preserved
 \endisadelimproof
 %
 \isatagproof
-\isacommand{proof}\isamarkupfalse%
-\ {\isacharparenleft}cases\ {\isasymphi}{\isacharparenright}\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}DelayCount\ x{\isadigit{1}}{\isadigit{0}}{\isadigit{1}}\ x{\isadigit{1}}{\isadigit{0}}{\isadigit{2}}\ x{\isadigit{1}}{\isadigit{0}}{\isadigit{3}}\ x{\isadigit{1}}{\isadigit{0}}{\isadigit{4}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{with}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ spec{\isacharunderscore}atom{\isachardot}simps{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
-\ False\ \isacommand{by}\isamarkupfalse%
-\ simp\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{by}\isamarkupfalse%
-\ simp\isanewline
-\isacommand{next}\isamarkupfalse%
-\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}SporadicOn\ x{\isadigit{1}}{\isadigit{1}}\ x{\isadigit{1}}{\isadigit{2}}\ x{\isadigit{1}}{\isadigit{3}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{1}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ sporadic{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\isacommand{next}\isamarkupfalse%
-\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}TagRelation\ x{\isadigit{2}}{\isadigit{1}}\ x{\isadigit{2}}{\isadigit{2}}\ x{\isadigit{2}}{\isadigit{3}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{1}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ tagrel{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\isacommand{next}\isamarkupfalse%
-\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}Implies\ x{\isadigit{3}}{\isadigit{1}}\ x{\isadigit{3}}{\isadigit{2}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{1}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ implies{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\isacommand{next}\isamarkupfalse%
-\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}ImpliesNot\ x{\isadigit{4}}{\isadigit{1}}\ x{\isadigit{4}}{\isadigit{2}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{1}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ implies{\isacharunderscore}not{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\isacommand{next}\isamarkupfalse%
-\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}TimeDelayedBy\ x{\isadigit{5}}{\isadigit{1}}\ x{\isadigit{5}}{\isadigit{2}}\ x{\isadigit{5}}{\isadigit{3}}\ x{\isadigit{5}}{\isadigit{4}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{1}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ time{\isacharunderscore}delayed{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\isacommand{next}\isamarkupfalse%
-\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}DelayedBy\ x{\isadigit{6}}{\isadigit{1}}\ x{\isadigit{6}}{\isadigit{2}}\ x{\isadigit{6}}{\isadigit{3}}\ x{\isadigit{6}}{\isadigit{4}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{1}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ count{\isacharunderscore}delayed{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\isacommand{next}\isamarkupfalse%
-\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}WeaklyPrecedes\ x{\isadigit{7}}{\isadigit{1}}\ x{\isadigit{7}}{\isadigit{2}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{1}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ weakly{\isacharunderscore}precedes{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\isacommand{next}\isamarkupfalse%
-\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}StrictlyPrecedes\ x{\isadigit{8}}{\isadigit{1}}\ x{\isadigit{8}}{\isadigit{2}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{1}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ strictly{\isacharunderscore}precedes{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\isacommand{next}\isamarkupfalse%
-\isanewline
-\ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}Kills\ x{\isadigit{9}}{\isadigit{1}}\ x{\isadigit{9}}{\isadigit{2}}{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{thus}\isamarkupfalse%
-\ {\isacharquery}thesis\ \isacommand{using}\isamarkupfalse%
-\ assms{\isacharparenleft}{\isadigit{1}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ kill{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
-\ blast\isanewline
-\isacommand{qed}\isamarkupfalse%
-%
+\isacommand{using}\isamarkupfalse%
+\ assms{\isacharparenleft}{\isadigit{2}}{\isacharcomma}{\isadigit{3}}{\isacharparenright}\ atomic{\isacharunderscore}sub{\isacharunderscore}lemmas{\isacharbrackleft}OF\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}cases\ {\isasymphi}{\isacharcomma}\ simp{\isacharunderscore}all{\isacharparenright}%
 \endisatagproof
 {\isafoldproof}%
 %
@@ -1134,7 +1144,7 @@ Finally, any TESL specification is invariant by stuttering.%
 \isacommand{theorem}\isamarkupfalse%
 \ TESL{\isacharunderscore}stuttering{\isacharunderscore}invariant{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}sub\ {\isasymlless}\ r{\isacartoucheclose}\isanewline
-\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}{\isasymlbrakk}\ spec{\isacharunderscore}formula\ S{\isacharsemicolon}\ sub\ {\isasymin}\ {\isasymlbrakk}{\isasymlbrakk}\ S\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L\ {\isasymrbrakk}\ {\isasymLongrightarrow}\ r\ {\isasymin}\ {\isasymlbrakk}{\isasymlbrakk}\ S\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}{\isasymlbrakk}is{\isacharunderscore}public{\isacharunderscore}spec\ S{\isacharsemicolon}\ sub\ {\isasymin}\ {\isasymlbrakk}{\isasymlbrakk}\ S\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isasymrbrakk}\ {\isasymLongrightarrow}\ r\ {\isasymin}\ {\isasymlbrakk}{\isasymlbrakk}\ S\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -1151,30 +1161,32 @@ Finally, any TESL specification is invariant by stuttering.%
 \isacommand{next}\isamarkupfalse%
 \isanewline
 \ \ \isacommand{case}\isamarkupfalse%
-\ {\isacharparenleft}Cons\ a\ s{\isacharparenright}\isanewline
-\ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isadigit{1}}{\isacharcolon}{\isacartoucheopen}spec{\isacharunderscore}atom\ a{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
-\ simp\isanewline
+\ {\isacharparenleft}Cons\ a\ s{\isacharparenright}\ \isacommand{print{\isacharunderscore}facts}\isamarkupfalse%
+\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
-\ Cons{\isachardot}prems\ \isacommand{have}\isamarkupfalse%
+\ Cons{\isachardot}prems{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
+\ puba{\isacharcolon}{\isacartoucheopen}is{\isacharunderscore}public{\isacharunderscore}atom\ a{\isacartoucheclose}\ \isakeyword{and}\ pubs{\isacharcolon}{\isacartoucheopen}is{\isacharunderscore}public{\isacharunderscore}spec\ s{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ simp{\isacharplus}\isanewline
+\ \ \ \ \isacommand{from}\isamarkupfalse%
+\ Cons{\isachardot}prems{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{have}\isamarkupfalse%
 \ sa{\isacharcolon}{\isacartoucheopen}sub\ {\isasymin}\ {\isasymlbrakk}\ a\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\ \isakeyword{and}\ sb{\isacharcolon}{\isacartoucheopen}sub\ {\isasymin}\ {\isasymlbrakk}{\isasymlbrakk}\ s\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ TESL{\isacharunderscore}interpretation{\isacharunderscore}image\ \isacommand{by}\isamarkupfalse%
 \ simp{\isacharplus}\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
-\ Cons{\isachardot}IH\ sb\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}spec{\isacharunderscore}formula\ s\ {\isasymLongrightarrow}\ r\ {\isasymin}\ {\isasymlbrakk}{\isasymlbrakk}\ s\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
-\ simp\isanewline
+\ Cons{\isachardot}IH{\isacharbrackleft}OF\ pubs\ sb{\isacharbrackright}\ \isacommand{have}\isamarkupfalse%
+\ {\isacartoucheopen}r\ {\isasymin}\ {\isasymlbrakk}{\isasymlbrakk}\ s\ {\isasymrbrakk}{\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
+\isanewline
 \ \ \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{from}\isamarkupfalse%
-\ atomic{\isacharunderscore}sub{\isacharbrackleft}OF\ assms\ {\isadigit{1}}\ sa{\isacharbrackright}\ \isacommand{have}\isamarkupfalse%
+\ atomic{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ puba\ sa{\isacharbrackright}\ \isacommand{have}\isamarkupfalse%
 \ {\isacartoucheopen}r\ {\isasymin}\ {\isasymlbrakk}\ a\ {\isasymrbrakk}\isactrlsub T\isactrlsub E\isactrlsub S\isactrlsub L{\isacartoucheclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
 \isanewline
 \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
 \ \isacommand{show}\isamarkupfalse%
 \ {\isacharquery}case\ \isacommand{using}\isamarkupfalse%
-\ TESL{\isacharunderscore}interpretation{\isacharunderscore}image\ Cons{\isachardot}prems{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ \isacommand{by}\isamarkupfalse%
-\ auto\isanewline
+\ \ TESL{\isacharunderscore}interpretation{\isacharunderscore}image\ \isacommand{by}\isamarkupfalse%
+\ simp\isanewline
 \isacommand{qed}\isamarkupfalse%
 %
 \endisatagproof
@@ -1202,7 +1214,7 @@ Finally, any TESL specification is invariant by stuttering.%
 %
 \end{isabellebody}%
 \endinput
-%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL/src/Stuttering.thy%:%
+%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL_Fred/src/Stuttering.thy%:%
 %:%11=1%:%
 %:%27=3%:%
 %:%28=3%:%
@@ -1760,400 +1772,394 @@ Finally, any TESL specification is invariant by stuttering.%
 %:%691=243%:%
 %:%692=243%:%
 %:%693=243%:%
-%:%694=243%:%
-%:%695=244%:%
-%:%696=244%:%
-%:%697=245%:%
-%:%698=245%:%
-%:%699=245%:%
-%:%700=246%:%
-%:%701=247%:%
-%:%702=247%:%
-%:%703=247%:%
-%:%704=248%:%
-%:%714=250%:%
-%:%716=251%:%
-%:%717=251%:%
-%:%718=252%:%
-%:%719=253%:%
-%:%720=254%:%
-%:%727=255%:%
-%:%728=255%:%
-%:%729=256%:%
-%:%730=256%:%
-%:%731=256%:%
-%:%732=256%:%
-%:%733=257%:%
-%:%734=257%:%
-%:%735=257%:%
-%:%736=257%:%
-%:%737=258%:%
-%:%738=258%:%
-%:%739=259%:%
-%:%740=259%:%
-%:%741=259%:%
-%:%742=260%:%
-%:%743=260%:%
-%:%744=261%:%
-%:%745=261%:%
-%:%746=262%:%
-%:%747=262%:%
-%:%748=263%:%
-%:%749=263%:%
-%:%750=263%:%
-%:%751=263%:%
-%:%752=264%:%
-%:%753=264%:%
-%:%754=264%:%
-%:%755=264%:%
-%:%756=264%:%
-%:%757=265%:%
-%:%758=265%:%
-%:%759=265%:%
-%:%760=265%:%
-%:%761=266%:%
-%:%762=266%:%
-%:%763=267%:%
-%:%764=267%:%
-%:%765=267%:%
-%:%766=267%:%
-%:%767=268%:%
-%:%768=268%:%
-%:%769=269%:%
-%:%770=269%:%
-%:%771=270%:%
-%:%772=270%:%
-%:%773=270%:%
-%:%774=271%:%
-%:%775=271%:%
-%:%776=272%:%
-%:%777=272%:%
-%:%778=273%:%
-%:%779=273%:%
-%:%780=273%:%
-%:%781=274%:%
-%:%782=274%:%
-%:%783=275%:%
-%:%784=275%:%
-%:%785=275%:%
-%:%786=275%:%
-%:%787=276%:%
-%:%788=276%:%
-%:%789=277%:%
-%:%790=277%:%
-%:%791=278%:%
-%:%792=278%:%
-%:%793=278%:%
-%:%794=278%:%
-%:%795=279%:%
-%:%796=279%:%
-%:%797=279%:%
-%:%798=279%:%
-%:%799=280%:%
-%:%800=280%:%
-%:%801=280%:%
-%:%802=280%:%
-%:%803=281%:%
-%:%804=281%:%
-%:%805=282%:%
-%:%806=282%:%
-%:%807=282%:%
-%:%808=282%:%
-%:%809=283%:%
-%:%810=283%:%
-%:%811=284%:%
-%:%812=284%:%
-%:%813=284%:%
-%:%814=284%:%
-%:%815=285%:%
-%:%816=285%:%
-%:%817=286%:%
-%:%818=286%:%
-%:%819=287%:%
-%:%825=287%:%
-%:%828=288%:%
-%:%829=289%:%
-%:%830=289%:%
-%:%831=290%:%
-%:%832=291%:%
-%:%833=292%:%
-%:%840=293%:%
-%:%841=293%:%
-%:%842=293%:%
-%:%843=293%:%
-%:%852=295%:%
-%:%854=296%:%
-%:%855=296%:%
-%:%856=297%:%
-%:%857=298%:%
-%:%858=299%:%
-%:%865=300%:%
-%:%866=300%:%
-%:%867=301%:%
-%:%868=301%:%
-%:%869=301%:%
-%:%870=301%:%
-%:%871=302%:%
-%:%872=302%:%
-%:%873=302%:%
-%:%874=302%:%
-%:%875=303%:%
-%:%876=303%:%
-%:%877=304%:%
-%:%878=304%:%
-%:%879=304%:%
-%:%880=305%:%
-%:%881=305%:%
-%:%882=305%:%
-%:%883=306%:%
-%:%884=306%:%
-%:%885=306%:%
-%:%886=307%:%
-%:%887=307%:%
-%:%888=307%:%
-%:%889=307%:%
-%:%890=308%:%
-%:%891=308%:%
-%:%892=309%:%
-%:%893=309%:%
-%:%894=309%:%
-%:%895=309%:%
-%:%896=310%:%
-%:%897=310%:%
-%:%898=310%:%
-%:%899=311%:%
-%:%909=314%:%
-%:%911=316%:%
-%:%912=316%:%
-%:%913=317%:%
-%:%914=318%:%
-%:%915=319%:%
-%:%922=320%:%
-%:%923=320%:%
-%:%924=321%:%
-%:%925=321%:%
-%:%926=321%:%
-%:%927=321%:%
-%:%928=322%:%
-%:%929=322%:%
-%:%930=322%:%
-%:%931=323%:%
-%:%932=323%:%
-%:%933=324%:%
-%:%934=324%:%
-%:%935=325%:%
-%:%936=325%:%
-%:%937=325%:%
-%:%938=326%:%
-%:%939=326%:%
-%:%940=327%:%
-%:%941=327%:%
-%:%942=328%:%
-%:%943=328%:%
-%:%944=328%:%
-%:%945=328%:%
-%:%946=329%:%
-%:%947=329%:%
-%:%948=329%:%
-%:%949=329%:%
-%:%950=330%:%
-%:%951=330%:%
-%:%952=331%:%
-%:%953=331%:%
-%:%954=332%:%
-%:%955=332%:%
-%:%956=332%:%
-%:%957=332%:%
-%:%958=333%:%
-%:%959=333%:%
-%:%960=334%:%
-%:%961=334%:%
-%:%962=335%:%
-%:%963=335%:%
-%:%964=336%:%
-%:%965=336%:%
-%:%966=336%:%
-%:%967=336%:%
-%:%968=337%:%
-%:%969=337%:%
-%:%970=338%:%
-%:%971=338%:%
-%:%972=338%:%
-%:%973=339%:%
-%:%974=339%:%
-%:%975=339%:%
-%:%976=339%:%
-%:%977=339%:%
-%:%978=340%:%
-%:%979=340%:%
-%:%980=341%:%
-%:%981=341%:%
-%:%982=342%:%
-%:%983=342%:%
-%:%984=342%:%
-%:%985=342%:%
-%:%986=343%:%
-%:%987=343%:%
-%:%988=344%:%
-%:%989=344%:%
-%:%990=344%:%
-%:%991=344%:%
-%:%992=345%:%
-%:%993=345%:%
-%:%994=346%:%
-%:%995=346%:%
-%:%996=346%:%
-%:%997=346%:%
-%:%998=347%:%
-%:%999=347%:%
-%:%1000=348%:%
-%:%1001=348%:%
-%:%1002=349%:%
-%:%1003=349%:%
-%:%1004=349%:%
-%:%1005=350%:%
-%:%1006=350%:%
-%:%1007=350%:%
-%:%1008=350%:%
-%:%1009=351%:%
-%:%1015=351%:%
-%:%1018=352%:%
-%:%1019=353%:%
-%:%1020=353%:%
-%:%1021=354%:%
-%:%1022=355%:%
-%:%1024=358%:%
-%:%1025=359%:%
-%:%1027=361%:%
-%:%1028=361%:%
-%:%1029=362%:%
-%:%1030=363%:%
-%:%1031=364%:%
-%:%1032=365%:%
-%:%1039=366%:%
-%:%1040=366%:%
-%:%1041=367%:%
-%:%1042=367%:%
-%:%1043=368%:%
-%:%1044=368%:%
-%:%1045=368%:%
-%:%1046=368%:%
-%:%1047=369%:%
-%:%1048=369%:%
-%:%1049=369%:%
-%:%1050=370%:%
-%:%1051=370%:%
-%:%1052=371%:%
-%:%1053=371%:%
-%:%1054=372%:%
-%:%1055=372%:%
-%:%1056=372%:%
-%:%1057=372%:%
-%:%1058=373%:%
-%:%1059=373%:%
-%:%1060=374%:%
-%:%1061=374%:%
-%:%1062=375%:%
-%:%1063=375%:%
-%:%1064=375%:%
-%:%1065=375%:%
-%:%1066=376%:%
-%:%1067=376%:%
-%:%1068=377%:%
-%:%1069=377%:%
-%:%1070=378%:%
-%:%1071=378%:%
-%:%1072=378%:%
-%:%1073=378%:%
-%:%1074=379%:%
-%:%1075=379%:%
-%:%1076=380%:%
-%:%1077=380%:%
-%:%1078=381%:%
-%:%1079=381%:%
-%:%1080=381%:%
-%:%1081=381%:%
-%:%1082=382%:%
-%:%1083=382%:%
-%:%1084=383%:%
-%:%1085=383%:%
-%:%1086=384%:%
-%:%1087=384%:%
-%:%1088=384%:%
-%:%1089=384%:%
-%:%1090=385%:%
-%:%1091=385%:%
-%:%1092=386%:%
-%:%1093=386%:%
-%:%1094=387%:%
-%:%1095=387%:%
-%:%1096=387%:%
-%:%1097=387%:%
-%:%1098=388%:%
-%:%1099=388%:%
-%:%1100=389%:%
-%:%1101=389%:%
-%:%1102=390%:%
-%:%1103=390%:%
-%:%1104=390%:%
-%:%1105=390%:%
-%:%1106=391%:%
-%:%1107=391%:%
-%:%1108=392%:%
-%:%1109=392%:%
+%:%695=245%:%
+%:%696=246%:%
+%:%697=246%:%
+%:%698=246%:%
+%:%699=247%:%
+%:%700=247%:%
+%:%702=249%:%
+%:%703=250%:%
+%:%704=250%:%
+%:%705=250%:%
+%:%706=251%:%
+%:%707=251%:%
+%:%709=253%:%
+%:%710=254%:%
+%:%711=254%:%
+%:%712=255%:%
+%:%713=255%:%
+%:%714=255%:%
+%:%715=255%:%
+%:%716=256%:%
+%:%717=256%:%
+%:%718=256%:%
+%:%719=256%:%
+%:%720=257%:%
+%:%721=257%:%
+%:%722=257%:%
+%:%723=258%:%
+%:%724=259%:%
+%:%725=259%:%
+%:%726=260%:%
+%:%727=260%:%
+%:%728=260%:%
+%:%729=261%:%
+%:%730=262%:%
+%:%731=262%:%
+%:%732=262%:%
+%:%733=263%:%
+%:%734=263%:%
+%:%735=264%:%
+%:%736=265%:%
+%:%737=266%:%
+%:%738=266%:%
+%:%739=267%:%
+%:%740=267%:%
+%:%741=268%:%
+%:%742=268%:%
+%:%743=269%:%
+%:%744=269%:%
+%:%745=270%:%
+%:%746=270%:%
+%:%747=270%:%
+%:%748=270%:%
+%:%749=271%:%
+%:%750=271%:%
+%:%751=272%:%
+%:%752=272%:%
+%:%753=272%:%
+%:%754=273%:%
+%:%764=275%:%
+%:%766=276%:%
+%:%767=276%:%
+%:%768=277%:%
+%:%769=278%:%
+%:%770=279%:%
+%:%777=280%:%
+%:%778=280%:%
+%:%779=281%:%
+%:%780=281%:%
+%:%781=281%:%
+%:%782=281%:%
+%:%783=282%:%
+%:%784=282%:%
+%:%785=282%:%
+%:%786=282%:%
+%:%787=283%:%
+%:%788=283%:%
+%:%789=284%:%
+%:%790=284%:%
+%:%791=284%:%
+%:%792=285%:%
+%:%793=285%:%
+%:%794=286%:%
+%:%795=286%:%
+%:%796=287%:%
+%:%797=287%:%
+%:%798=288%:%
+%:%799=288%:%
+%:%800=288%:%
+%:%801=288%:%
+%:%802=289%:%
+%:%803=289%:%
+%:%804=289%:%
+%:%805=289%:%
+%:%806=289%:%
+%:%807=290%:%
+%:%808=290%:%
+%:%809=290%:%
+%:%810=290%:%
+%:%811=291%:%
+%:%812=291%:%
+%:%813=292%:%
+%:%814=292%:%
+%:%815=292%:%
+%:%816=292%:%
+%:%817=293%:%
+%:%818=293%:%
+%:%819=294%:%
+%:%820=294%:%
+%:%821=295%:%
+%:%822=295%:%
+%:%823=295%:%
+%:%824=296%:%
+%:%825=296%:%
+%:%826=297%:%
+%:%827=297%:%
+%:%828=298%:%
+%:%829=298%:%
+%:%830=298%:%
+%:%831=299%:%
+%:%832=299%:%
+%:%833=300%:%
+%:%834=300%:%
+%:%835=300%:%
+%:%836=300%:%
+%:%837=301%:%
+%:%838=301%:%
+%:%839=302%:%
+%:%840=302%:%
+%:%841=303%:%
+%:%842=303%:%
+%:%843=303%:%
+%:%844=303%:%
+%:%845=304%:%
+%:%846=304%:%
+%:%847=304%:%
+%:%848=304%:%
+%:%849=305%:%
+%:%850=305%:%
+%:%851=305%:%
+%:%852=305%:%
+%:%853=306%:%
+%:%854=306%:%
+%:%855=307%:%
+%:%856=307%:%
+%:%857=307%:%
+%:%858=307%:%
+%:%859=308%:%
+%:%860=308%:%
+%:%861=309%:%
+%:%862=309%:%
+%:%863=309%:%
+%:%864=309%:%
+%:%865=310%:%
+%:%866=310%:%
+%:%867=311%:%
+%:%868=311%:%
+%:%869=312%:%
+%:%875=312%:%
+%:%878=313%:%
+%:%879=314%:%
+%:%880=314%:%
+%:%881=315%:%
+%:%882=316%:%
+%:%883=317%:%
+%:%890=318%:%
+%:%891=318%:%
+%:%892=318%:%
+%:%893=318%:%
+%:%902=320%:%
+%:%904=321%:%
+%:%905=321%:%
+%:%906=322%:%
+%:%907=323%:%
+%:%908=324%:%
+%:%915=325%:%
+%:%916=325%:%
+%:%917=326%:%
+%:%918=326%:%
+%:%919=326%:%
+%:%920=326%:%
+%:%921=327%:%
+%:%922=327%:%
+%:%923=327%:%
+%:%924=327%:%
+%:%925=328%:%
+%:%926=328%:%
+%:%927=329%:%
+%:%928=329%:%
+%:%929=329%:%
+%:%930=330%:%
+%:%931=330%:%
+%:%932=330%:%
+%:%933=331%:%
+%:%934=331%:%
+%:%935=331%:%
+%:%936=332%:%
+%:%937=332%:%
+%:%938=332%:%
+%:%939=332%:%
+%:%940=333%:%
+%:%941=333%:%
+%:%942=334%:%
+%:%943=334%:%
+%:%944=334%:%
+%:%945=334%:%
+%:%946=335%:%
+%:%947=335%:%
+%:%948=335%:%
+%:%949=336%:%
+%:%959=339%:%
+%:%961=341%:%
+%:%962=341%:%
+%:%963=342%:%
+%:%964=343%:%
+%:%965=344%:%
+%:%972=345%:%
+%:%973=345%:%
+%:%974=346%:%
+%:%975=346%:%
+%:%976=346%:%
+%:%977=346%:%
+%:%978=347%:%
+%:%979=347%:%
+%:%980=347%:%
+%:%981=348%:%
+%:%982=348%:%
+%:%983=349%:%
+%:%984=349%:%
+%:%985=350%:%
+%:%986=350%:%
+%:%987=350%:%
+%:%988=351%:%
+%:%989=351%:%
+%:%990=352%:%
+%:%991=352%:%
+%:%992=353%:%
+%:%993=353%:%
+%:%994=353%:%
+%:%995=353%:%
+%:%996=354%:%
+%:%997=354%:%
+%:%998=354%:%
+%:%999=354%:%
+%:%1000=355%:%
+%:%1001=355%:%
+%:%1002=356%:%
+%:%1003=356%:%
+%:%1004=357%:%
+%:%1005=357%:%
+%:%1006=357%:%
+%:%1007=357%:%
+%:%1008=358%:%
+%:%1009=358%:%
+%:%1010=359%:%
+%:%1011=359%:%
+%:%1012=360%:%
+%:%1013=360%:%
+%:%1014=361%:%
+%:%1015=361%:%
+%:%1016=361%:%
+%:%1017=361%:%
+%:%1018=362%:%
+%:%1019=362%:%
+%:%1020=363%:%
+%:%1021=363%:%
+%:%1022=363%:%
+%:%1023=364%:%
+%:%1024=364%:%
+%:%1025=364%:%
+%:%1026=364%:%
+%:%1027=364%:%
+%:%1028=365%:%
+%:%1029=365%:%
+%:%1030=366%:%
+%:%1031=366%:%
+%:%1032=367%:%
+%:%1033=367%:%
+%:%1034=367%:%
+%:%1035=367%:%
+%:%1036=368%:%
+%:%1037=368%:%
+%:%1038=369%:%
+%:%1039=369%:%
+%:%1040=369%:%
+%:%1041=369%:%
+%:%1042=370%:%
+%:%1043=370%:%
+%:%1044=371%:%
+%:%1045=371%:%
+%:%1046=371%:%
+%:%1047=371%:%
+%:%1048=372%:%
+%:%1049=372%:%
+%:%1050=373%:%
+%:%1051=373%:%
+%:%1052=374%:%
+%:%1053=374%:%
+%:%1054=374%:%
+%:%1055=375%:%
+%:%1056=375%:%
+%:%1057=375%:%
+%:%1058=375%:%
+%:%1059=376%:%
+%:%1069=379%:%
+%:%1071=381%:%
+%:%1072=381%:%
+%:%1073=382%:%
+%:%1074=383%:%
+%:%1075=384%:%
+%:%1082=385%:%
+%:%1083=385%:%
+%:%1084=386%:%
+%:%1085=386%:%
+%:%1086=386%:%
+%:%1087=386%:%
+%:%1088=387%:%
+%:%1089=387%:%
+%:%1090=387%:%
+%:%1091=387%:%
+%:%1092=388%:%
+%:%1093=388%:%
+%:%1094=389%:%
+%:%1095=389%:%
+%:%1096=389%:%
+%:%1097=390%:%
+%:%1098=391%:%
+%:%1099=391%:%
+%:%1100=391%:%
+%:%1101=392%:%
+%:%1107=392%:%
 %:%1110=393%:%
-%:%1111=393%:%
-%:%1112=393%:%
-%:%1113=393%:%
-%:%1114=394%:%
-%:%1115=394%:%
-%:%1116=395%:%
-%:%1117=395%:%
-%:%1118=396%:%
-%:%1119=396%:%
-%:%1120=396%:%
-%:%1121=396%:%
-%:%1122=397%:%
-%:%1132=400%:%
-%:%1134=402%:%
-%:%1135=402%:%
-%:%1136=403%:%
-%:%1137=404%:%
-%:%1144=405%:%
-%:%1145=405%:%
-%:%1146=406%:%
-%:%1147=406%:%
-%:%1148=407%:%
-%:%1149=407%:%
-%:%1150=407%:%
-%:%1151=408%:%
-%:%1152=408%:%
-%:%1153=409%:%
-%:%1154=409%:%
-%:%1155=410%:%
-%:%1156=410%:%
-%:%1157=410%:%
-%:%1158=411%:%
-%:%1159=411%:%
-%:%1160=411%:%
-%:%1161=412%:%
-%:%1162=412%:%
-%:%1163=412%:%
-%:%1164=413%:%
-%:%1165=413%:%
-%:%1166=413%:%
-%:%1167=413%:%
-%:%1168=414%:%
-%:%1169=414%:%
-%:%1170=414%:%
-%:%1171=414%:%
-%:%1172=414%:%
-%:%1173=415%:%
-%:%1174=415%:%
-%:%1175=415%:%
-%:%1176=415%:%
-%:%1177=415%:%
-%:%1178=416%:%
-%:%1184=416%:%
-%:%1189=417%:%
-%:%1194=418%:%
+%:%1111=394%:%
+%:%1112=394%:%
+%:%1113=395%:%
+%:%1114=396%:%
+%:%1116=399%:%
+%:%1117=400%:%
+%:%1119=402%:%
+%:%1120=402%:%
+%:%1121=403%:%
+%:%1122=404%:%
+%:%1123=405%:%
+%:%1124=406%:%
+%:%1131=407%:%
+%:%1132=407%:%
+%:%1133=407%:%
+%:%1142=410%:%
+%:%1144=412%:%
+%:%1145=412%:%
+%:%1146=413%:%
+%:%1147=414%:%
+%:%1154=415%:%
+%:%1155=415%:%
+%:%1156=416%:%
+%:%1157=416%:%
+%:%1158=417%:%
+%:%1159=417%:%
+%:%1160=417%:%
+%:%1161=418%:%
+%:%1162=418%:%
+%:%1163=419%:%
+%:%1164=419%:%
+%:%1165=419%:%
+%:%1166=420%:%
+%:%1167=420%:%
+%:%1168=420%:%
+%:%1169=420%:%
+%:%1170=421%:%
+%:%1171=421%:%
+%:%1172=421%:%
+%:%1173=422%:%
+%:%1174=422%:%
+%:%1175=422%:%
+%:%1176=423%:%
+%:%1177=423%:%
+%:%1178=423%:%
+%:%1179=423%:%
+%:%1180=424%:%
+%:%1181=424%:%
+%:%1182=424%:%
+%:%1183=424%:%
+%:%1184=424%:%
+%:%1185=425%:%
+%:%1186=425%:%
+%:%1187=425%:%
+%:%1188=425%:%
+%:%1189=425%:%
+%:%1190=426%:%
+%:%1196=426%:%
+%:%1201=427%:%
+%:%1206=428%:%

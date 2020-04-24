@@ -111,68 +111,108 @@ The elimination rules describe how TESL formulae for the present are transformed
 %
 \isamarkupcmt{A sporadic constraint can be ignored in the present and rejected into the future.%
 }\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ sporadic{\isacharunderscore}on{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
 %
 \isamarkupcmt{It can also be handled in the present by making the clock tick and have 
   the expected time. Once it has been handled, it is no longer a constraint 
   to satisfy, so it disappears from the future.%
 }\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymDown}\ n\ {\isacharat}\ {\isasymtau}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymDown}\ n\ {\isacharat}\ {\isasymtau}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ sporadic{\isacharunderscore}on{\isacharunderscore}tvar{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic{\isasymsharp}\ {\isasymtau}\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic{\isasymsharp}\ {\isasymtau}\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ sporadic{\isacharunderscore}on{\isacharunderscore}tvar{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic{\isasymsharp}\ {\isasymtau}\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymDown}\ n\ {\isacharat}{\isasymsharp}\ {\isasymtau}\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ tagrel{\isacharunderscore}e{\isacharcolon}\isanewline
 %
 \isamarkupcmt{A relation between time scales has to be obeyed at every instant.%
 }\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}time{\isacharminus}relation\ {\isasymlfloor}K\isactrlsub {\isadigit{1}}{\isacharcomma}\ K\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}{\isasymlfloor}{\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}K\isactrlsub {\isadigit{1}}{\isacharcomma}\ n{\isacharparenright}{\isacharcomma}\ {\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}K\isactrlsub {\isadigit{2}}{\isacharcomma}\ n{\isacharparenright}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}time{\isacharminus}relation\ {\isasymlfloor}K\isactrlsub {\isadigit{1}}{\isacharcomma}\ K\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}time{\isacharminus}relation\ {\isasymlfloor}C\isactrlsub {\isadigit{1}}{\isacharcomma}\ C\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}{\isasymlfloor}{\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}C\isactrlsub {\isadigit{1}}{\isacharcomma}\ n{\isacharparenright}{\isacharcomma}\ {\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}C\isactrlsub {\isadigit{2}}{\isacharcomma}\ n{\isacharparenright}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}time{\isacharminus}relation\ {\isasymlfloor}C\isactrlsub {\isadigit{1}}{\isacharcomma}\ C\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ implies{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
 %
 \isamarkupcmt{An implication can be handled in the present by forbidding a tick of the master
   clock. The implication is copied back into the future because it holds for 
   the whole run.%
 }\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ implies{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
 %
 \isamarkupcmt{It can also be handled in the present by making both the master and the slave
     clocks tick.%
 }\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ implies{\isacharunderscore}not{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
 %
 \isamarkupcmt{A negative implication can be handled in the present by forbidding a tick of 
   the master clock. The implication is copied back into the future because 
   it holds for the whole run.%
 }\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ not\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ not\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ not\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ not\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ implies{\isacharunderscore}not{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
 %
 \isamarkupcmt{It can also be handled in the present by making the master clock ticks and 
     forbidding a tick on the slave clock.%
 }\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ not\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ not\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ not\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ not\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ timedelayed{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
 %
 \isamarkupcmt{A timed delayed implication can be handled by forbidding a tick on 
     the master clock.%
 }\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ timedelayed{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
 %
 \isamarkupcmt{It can also be handled by making the master clock tick and adding a constraint 
     that makes the slave clock tick when the delay has elapsed on the measuring clock.%
 }\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isacharat}\ n\ {\isasymoplus}\ {\isasymdelta}{\isasymtau}\ {\isasymRightarrow}\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isacharat}\ n\ {\isasymoplus}\ {\isasymdelta}{\isasymtau}\ {\isasymRightarrow}\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ timedelayed{\isacharunderscore}tvar{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed{\isasymbowtie}\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed{\isasymbowtie}\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ timedelayed{\isacharunderscore}tvar{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed{\isasymbowtie}\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{3}}\ sporadic{\isasymsharp}\ {\isasymlparr}{\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}C\isactrlsub {\isadigit{2}}{\isacharcomma}\ n{\isacharparenright}\ {\isasymoplus}\ {\isasymdelta}{\isasymtau}{\isasymrparr}\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed{\isasymbowtie}\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ weakly{\isacharunderscore}precedes{\isacharunderscore}e{\isacharcolon}\isanewline
+%
+\isamarkupcmt{A weak precedence relation has to hold at every instant.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ weakly\ precedes\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}{\isasymlceil}{\isacharhash}\isactrlsup {\isasymle}\ C\isactrlsub {\isadigit{2}}\ n{\isacharcomma}\ {\isacharhash}\isactrlsup {\isasymle}\ C\isactrlsub {\isadigit{1}}\ n{\isasymrceil}\ {\isasymin}\ {\isacharparenleft}{\isasymlambda}{\isacharparenleft}x{\isacharcomma}y{\isacharparenright}{\isachardot}\ x{\isasymle}y{\isacharparenright}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ weakly\ precedes\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ strictly{\isacharunderscore}precedes{\isacharunderscore}e{\isacharcolon}\isanewline
+%
+\isamarkupcmt{A strict precedence relation has to hold at every instant.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ strictly\ precedes\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}{\isasymlceil}{\isacharhash}\isactrlsup {\isasymle}\ C\isactrlsub {\isadigit{2}}\ n{\isacharcomma}\ {\isacharhash}\isactrlsup {\isacharless}\ C\isactrlsub {\isadigit{1}}\ n{\isasymrceil}\ {\isasymin}\ {\isacharparenleft}{\isasymlambda}{\isacharparenleft}x{\isacharcomma}y{\isacharparenright}{\isachardot}\ x{\isasymle}y{\isacharparenright}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ strictly\ precedes\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ kills{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
+%
+\isamarkupcmt{A kill can be handled by forbidding a tick of the triggering clock.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ kills\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ kills\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+{\isacharbar}\ kills{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
+%
+\isamarkupcmt{It can also be handled by making the triggering clock tick and by forbidding 
+    any further tick of the killed clock.%
+}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ kills\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymnot}{\isasymUp}\ {\isasymge}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ kills\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 {\isacharbar}\ delayed{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
 %
 \isamarkupcmt{A delayed implication can be handled by forbidding a tick on 
@@ -216,34 +256,7 @@ The elimination rules describe how TESL formulae for the present are transformed
 \isamarkupcmt{If the delay was greater than 1, we simply decrement it when the counter clock ticks.%
 }\isanewline
 \ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}from\ m\ delay\ count\ {\isacharparenleft}Suc\ {\isacharparenleft}Suc\ d{\isacharparenright}{\isacharparenright}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}from\ n\ delay\ count\ {\isacharparenleft}Suc\ d{\isacharparenright}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
-{\isacharbar}\ weakly{\isacharunderscore}precedes{\isacharunderscore}e{\isacharcolon}\isanewline
-%
-\isamarkupcmt{A weak precedence relation has to hold at every instant.%
-}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ weakly\ precedes\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}{\isasymlceil}{\isacharhash}\isactrlsup {\isasymle}\ K\isactrlsub {\isadigit{2}}\ n{\isacharcomma}\ {\isacharhash}\isactrlsup {\isasymle}\ K\isactrlsub {\isadigit{1}}\ n{\isasymrceil}\ {\isasymin}\ {\isacharparenleft}{\isasymlambda}{\isacharparenleft}x{\isacharcomma}y{\isacharparenright}{\isachardot}\ x{\isasymle}y{\isacharparenright}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ weakly\ precedes\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
-{\isacharbar}\ strictly{\isacharunderscore}precedes{\isacharunderscore}e{\isacharcolon}\isanewline
-%
-\isamarkupcmt{A strict precedence relation has to hold at every instant.%
-}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ strictly\ precedes\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}{\isasymlceil}{\isacharhash}\isactrlsup {\isasymle}\ K\isactrlsub {\isadigit{2}}\ n{\isacharcomma}\ {\isacharhash}\isactrlsup {\isacharless}\ K\isactrlsub {\isadigit{1}}\ n{\isasymrceil}\ {\isasymin}\ {\isacharparenleft}{\isasymlambda}{\isacharparenleft}x{\isacharcomma}y{\isacharparenright}{\isachardot}\ x{\isasymle}y{\isacharparenright}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ strictly\ precedes\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
-{\isacharbar}\ kills{\isacharunderscore}e{\isadigit{1}}{\isacharcolon}\isanewline
-%
-\isamarkupcmt{A kill can be handled by forbidding a tick of the triggering clock.%
-}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ kills\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ kills\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
-{\isacharbar}\ kills{\isacharunderscore}e{\isadigit{2}}{\isacharcolon}\isanewline
-%
-\isamarkupcmt{It can also be handled by making the triggering clock tick and by forbidding 
-    any further tick of the killed clock.%
-}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ kills\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}\isanewline
-\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymnot}{\isasymUp}\ {\isasymge}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ kills\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}%
+\ \ \ \ \ {\isasymhookrightarrow}\isactrlsub e\ \ {\isacharparenleft}{\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}from\ n\ delay\ count\ {\isacharparenleft}Suc\ d{\isacharparenright}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}%
 \begin{isamarkuptext}%
 A step of the operational semantics is either the application of the introduction 
   rule or the application of an elimination rule.%
@@ -374,9 +387,9 @@ The following lemmas state that the configurations produced by the elimination
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{lemma}\isamarkupfalse%
 \ Cnext{\isacharunderscore}solve{\isacharunderscore}sporadicon{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
-\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymDown}\ n\ {\isacharat}\ {\isasymtau}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isasymPhi}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic\ {\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
+\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymDown}\ n\ {\isacharat}\ {\isasymtau}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isasymPhi}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -396,10 +409,33 @@ The following lemmas state that the configurations produced by the elimination
 \endisadelimproof
 \isanewline
 \isacommand{lemma}\isamarkupfalse%
+\ Cnext{\isacharunderscore}solve{\isacharunderscore}sporadicon{\isacharunderscore}tvar{\isacharcolon}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic{\isasymsharp}\ {\isasymtau}\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ sporadic{\isasymsharp}\ {\isasymtau}\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
+\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymDown}\ n\ {\isacharat}{\isasymsharp}\ {\isasymtau}\isactrlsub e\isactrlsub x\isactrlsub p\isactrlsub r{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isasymPhi}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ operational{\isacharunderscore}semantics{\isacharunderscore}step{\isachardot}simps\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ operational{\isacharunderscore}semantics{\isacharunderscore}elim{\isachardot}sporadic{\isacharunderscore}on{\isacharunderscore}tvar{\isacharunderscore}e{\isadigit{1}}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ operational{\isacharunderscore}semantics{\isacharunderscore}elim{\isachardot}sporadic{\isacharunderscore}on{\isacharunderscore}tvar{\isacharunderscore}e{\isadigit{2}}{\isacharparenright}%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{lemma}\isamarkupfalse%
 \ Cnext{\isacharunderscore}solve{\isacharunderscore}tagrel{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}time{\isacharminus}relation\ {\isasymlfloor}K\isactrlsub {\isadigit{1}}{\isacharcomma}\ K\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}{\isasymlfloor}{\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}K\isactrlsub {\isadigit{1}}{\isacharcomma}\ n{\isacharparenright}{\isacharcomma}\ {\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}K\isactrlsub {\isadigit{2}}{\isacharcomma}\ n{\isacharparenright}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}n\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}time{\isacharminus}relation\ {\isasymlfloor}K\isactrlsub {\isadigit{1}}{\isacharcomma}\ K\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}time{\isacharminus}relation\ {\isasymlfloor}C\isactrlsub {\isadigit{1}}{\isacharcomma}\ C\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}{\isasymlfloor}{\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}C\isactrlsub {\isadigit{1}}{\isacharcomma}\ n{\isacharparenright}{\isacharcomma}\ {\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}C\isactrlsub {\isadigit{2}}{\isacharcomma}\ n{\isacharparenright}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}n\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}time{\isacharminus}relation\ {\isasymlfloor}C\isactrlsub {\isadigit{1}}{\isacharcomma}\ C\isactrlsub {\isadigit{2}}{\isasymrfloor}\ {\isasymin}\ R{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -418,9 +454,9 @@ The following lemmas state that the configurations produced by the elimination
 \isanewline
 \isacommand{lemma}\isamarkupfalse%
 \ Cnext{\isacharunderscore}solve{\isacharunderscore}implies{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
-\ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
+\ \ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -440,9 +476,9 @@ The following lemmas state that the configurations produced by the elimination
 \isanewline
 \isacommand{lemma}\isamarkupfalse%
 \ Cnext{\isacharunderscore}solve{\isacharunderscore}implies{\isacharunderscore}not{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ not\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ not\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
-\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ implies\ not\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ not\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ not\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
+\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ implies\ not\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -463,10 +499,10 @@ The following lemmas state that the configurations produced by the elimination
 \isanewline
 \isacommand{lemma}\isamarkupfalse%
 \ Cnext{\isacharunderscore}solve{\isacharunderscore}timedelayed{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
-\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isacharat}\ n\ {\isasymoplus}\ {\isasymdelta}{\isasymtau}\ {\isasymRightarrow}\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ K\isactrlsub {\isadigit{2}}\ implies\ K\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
+\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isacharat}\ n\ {\isasymoplus}\ {\isasymdelta}{\isasymtau}\ {\isasymRightarrow}\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -486,10 +522,35 @@ The following lemmas state that the configurations produced by the elimination
 \endisadelimproof
 \isanewline
 \isacommand{lemma}\isamarkupfalse%
+\ Cnext{\isacharunderscore}solve{\isacharunderscore}timedelayed{\isacharunderscore}tvar{\isacharcolon}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed{\isasymbowtie}\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed{\isasymbowtie}\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
+\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isacharparenleft}C\isactrlsub {\isadigit{3}}\ sporadic{\isasymsharp}\ {\isasymlparr}{\isasymtau}\isactrlsub v\isactrlsub a\isactrlsub r{\isacharparenleft}C\isactrlsub {\isadigit{2}}{\isacharcomma}\ n{\isacharparenright}\ {\isasymoplus}\ {\isasymdelta}{\isasymtau}{\isasymrparr}\ on\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ time{\isacharminus}delayed{\isasymbowtie}\ by\ {\isasymdelta}{\isasymtau}\ on\ C\isactrlsub {\isadigit{2}}\ implies\ C\isactrlsub {\isadigit{3}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+%
+\isadelimproof
+%
+\endisadelimproof
+%
+\isatagproof
+\isacommand{by}\isamarkupfalse%
+\ {\isacharparenleft}simp\ add{\isacharcolon}\ operational{\isacharunderscore}semantics{\isacharunderscore}step{\isachardot}simps\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ operational{\isacharunderscore}semantics{\isacharunderscore}elim{\isachardot}timedelayed{\isacharunderscore}tvar{\isacharunderscore}e{\isadigit{1}}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ operational{\isacharunderscore}semantics{\isacharunderscore}elim{\isachardot}timedelayed{\isacharunderscore}tvar{\isacharunderscore}e{\isadigit{2}}{\isacharparenright}%
+\endisatagproof
+{\isafoldproof}%
+%
+\isadelimproof
+\isanewline
+%
+\endisadelimproof
+\isanewline
+\isacommand{lemma}\isamarkupfalse%
 \ Cnext{\isacharunderscore}solve{\isacharunderscore}weakly{\isacharunderscore}precedes{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ weakly\ precedes\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}{\isasymlceil}{\isacharhash}\isactrlsup {\isasymle}\ K\isactrlsub {\isadigit{2}}\ n{\isacharcomma}\ {\isacharhash}\isactrlsup {\isasymle}\ K\isactrlsub {\isadigit{1}}\ n{\isasymrceil}\ {\isasymin}\ {\isacharparenleft}{\isasymlambda}{\isacharparenleft}x{\isacharcomma}y{\isacharparenright}{\isachardot}\ x{\isasymle}y{\isacharparenright}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ weakly\ precedes\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ weakly\ precedes\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}{\isasymlceil}{\isacharhash}\isactrlsup {\isasymle}\ C\isactrlsub {\isadigit{2}}\ n{\isacharcomma}\ {\isacharhash}\isactrlsup {\isasymle}\ C\isactrlsub {\isadigit{1}}\ n{\isasymrceil}\ {\isasymin}\ {\isacharparenleft}{\isasymlambda}{\isacharparenleft}x{\isacharcomma}y{\isacharparenright}{\isachardot}\ x{\isasymle}y{\isacharparenright}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ weakly\ precedes\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -509,9 +570,9 @@ The following lemmas state that the configurations produced by the elimination
 \isanewline
 \isacommand{lemma}\isamarkupfalse%
 \ Cnext{\isacharunderscore}solve{\isacharunderscore}strictly{\isacharunderscore}precedes{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ strictly\ precedes\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}{\isasymlceil}{\isacharhash}\isactrlsup {\isasymle}\ K\isactrlsub {\isadigit{2}}\ n{\isacharcomma}\ {\isacharhash}\isactrlsup {\isacharless}\ K\isactrlsub {\isadigit{1}}\ n{\isasymrceil}\ {\isasymin}\ {\isacharparenleft}{\isasymlambda}{\isacharparenleft}x{\isacharcomma}y{\isacharparenright}{\isachardot}\ x{\isasymle}y{\isacharparenright}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ strictly\ precedes\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ strictly\ precedes\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}{\isasymlceil}{\isacharhash}\isactrlsup {\isasymle}\ C\isactrlsub {\isadigit{2}}\ n{\isacharcomma}\ {\isacharhash}\isactrlsup {\isacharless}\ C\isactrlsub {\isadigit{1}}\ n{\isasymrceil}\ {\isasymin}\ {\isacharparenleft}{\isasymlambda}{\isacharparenleft}x{\isacharcomma}y{\isacharparenright}{\isachardot}\ x{\isasymle}y{\isacharparenright}{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ strictly\ precedes\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -531,9 +592,9 @@ The following lemmas state that the configurations produced by the elimination
 \isanewline
 \isacommand{lemma}\isamarkupfalse%
 \ Cnext{\isacharunderscore}solve{\isacharunderscore}kills{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ kills\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ kills\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
-\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}K\isactrlsub {\isadigit{2}}\ {\isasymnot}{\isasymUp}\ {\isasymge}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}K\isactrlsub {\isadigit{1}}\ kills\ K\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isasymC}\isactrlsub n\isactrlsub e\isactrlsub x\isactrlsub t\ {\isacharparenleft}{\isasymGamma}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ kills\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPsi}{\isacharparenright}\ {\isasymtriangleright}\ {\isasymPhi}{\isacharparenright}{\isacharparenright}\isanewline
+\ \ \ \ {\isasymsupseteq}\ {\isacharbraceleft}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymnot}{\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ kills\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}{\isacharcomma}\isanewline
+\ \ \ \ \ \ \ \ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ {\isasymUp}\ n{\isacharparenright}\ {\isacharhash}\ {\isacharparenleft}C\isactrlsub {\isadigit{2}}\ {\isasymnot}{\isasymUp}\ {\isasymge}\ n{\isacharparenright}\ {\isacharhash}\ {\isasymGamma}{\isacharparenright}{\isacharcomma}\ n\ {\isasymturnstile}\ {\isasymPsi}\ {\isasymtriangleright}\ {\isacharparenleft}{\isacharparenleft}C\isactrlsub {\isadigit{1}}\ kills\ C\isactrlsub {\isadigit{2}}{\isacharparenright}\ {\isacharhash}\ {\isasymPhi}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -604,7 +665,7 @@ An empty specification can be reduced to an empty specification for
 %
 \end{isabellebody}%
 \endinput
-%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL/src/Operational.thy%:%
+%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL_Fred/src/Operational.thy%:%
 %:%11=1%:%
 %:%23=2%:%
 %:%31=4%:%
@@ -660,268 +721,300 @@ An empty specification can be reduced to an empty specification for
 %:%122=61%:%
 %:%123=62%:%
 %:%124=63%:%
-%:%126=64%:%
-%:%127=64%:%
-%:%128=65%:%
-%:%130=67%:%
-%:%131=68%:%
-%:%133=69%:%
-%:%134=70%:%
-%:%135=71%:%
-%:%136=71%:%
-%:%137=72%:%
-%:%138=73%:%
-%:%139=74%:%
-%:%141=75%:%
-%:%142=76%:%
-%:%143=76%:%
-%:%144=77%:%
-%:%145=78%:%
-%:%146=79%:%
-%:%148=80%:%
-%:%149=81%:%
-%:%150=82%:%
-%:%151=82%:%
-%:%152=83%:%
-%:%153=84%:%
-%:%154=85%:%
-%:%156=86%:%
-%:%157=87%:%
-%:%158=87%:%
-%:%159=88%:%
-%:%160=89%:%
-%:%161=90%:%
-%:%163=91%:%
-%:%164=92%:%
-%:%165=92%:%
-%:%166=93%:%
-%:%167=94%:%
-%:%168=95%:%
-%:%170=96%:%
-%:%171=97%:%
-%:%172=97%:%
-%:%173=98%:%
-%:%175=100%:%
-%:%176=101%:%
-%:%178=102%:%
-%:%179=103%:%
-%:%180=103%:%
-%:%181=104%:%
-%:%182=105%:%
-%:%183=106%:%
-%:%185=107%:%
-%:%186=108%:%
-%:%187=108%:%
-%:%189=109%:%
-%:%190=109%:%
-%:%191=110%:%
-%:%193=112%:%
-%:%194=113%:%
-%:%196=114%:%
-%:%197=115%:%
-%:%198=115%:%
-%:%199=116%:%
-%:%201=118%:%
-%:%202=119%:%
-%:%204=120%:%
-%:%205=120%:%
-%:%206=121%:%
-%:%207=122%:%
-%:%208=123%:%
-%:%210=124%:%
-%:%211=124%:%
-%:%212=125%:%
-%:%213=126%:%
-%:%214=127%:%
-%:%216=128%:%
-%:%217=128%:%
-%:%218=129%:%
-%:%219=130%:%
-%:%220=131%:%
-%:%222=132%:%
-%:%223=132%:%
-%:%224=133%:%
-%:%226=135%:%
-%:%227=136%:%
-%:%229=137%:%
-%:%230=137%:%
-%:%231=138%:%
-%:%233=140%:%
-%:%234=141%:%
-%:%236=142%:%
-%:%237=142%:%
-%:%238=143%:%
-%:%239=144%:%
-%:%240=145%:%
-%:%242=146%:%
-%:%243=147%:%
-%:%244=147%:%
-%:%245=148%:%
-%:%248=152%:%
-%:%249=153%:%
-%:%251=155%:%
-%:%252=155%:%
-%:%253=156%:%
-%:%254=157%:%
-%:%255=158%:%
-%:%256=159%:%
+%:%125=64%:%
+%:%126=65%:%
+%:%127=66%:%
+%:%128=67%:%
+%:%129=68%:%
+%:%130=69%:%
+%:%132=70%:%
+%:%133=70%:%
+%:%134=71%:%
+%:%136=73%:%
+%:%137=74%:%
+%:%139=75%:%
+%:%140=76%:%
+%:%141=77%:%
+%:%142=77%:%
+%:%143=78%:%
+%:%144=79%:%
+%:%145=80%:%
+%:%147=81%:%
+%:%148=82%:%
+%:%149=82%:%
+%:%150=83%:%
+%:%151=84%:%
+%:%152=85%:%
+%:%154=86%:%
+%:%155=87%:%
+%:%156=88%:%
+%:%157=88%:%
+%:%158=89%:%
+%:%159=90%:%
+%:%160=91%:%
+%:%162=92%:%
+%:%163=93%:%
+%:%164=93%:%
+%:%165=94%:%
+%:%166=95%:%
+%:%167=96%:%
+%:%169=97%:%
+%:%170=98%:%
+%:%171=98%:%
+%:%172=99%:%
+%:%173=100%:%
+%:%174=101%:%
+%:%176=102%:%
+%:%177=103%:%
+%:%178=103%:%
+%:%179=104%:%
+%:%181=106%:%
+%:%182=107%:%
+%:%183=108%:%
+%:%184=109%:%
+%:%185=110%:%
+%:%186=111%:%
+%:%188=113%:%
+%:%189=114%:%
+%:%191=115%:%
+%:%192=115%:%
+%:%193=116%:%
+%:%195=118%:%
+%:%196=119%:%
+%:%198=120%:%
+%:%199=120%:%
+%:%200=121%:%
+%:%202=123%:%
+%:%203=124%:%
+%:%205=125%:%
+%:%206=125%:%
+%:%207=126%:%
+%:%208=127%:%
+%:%209=128%:%
+%:%211=129%:%
+%:%212=130%:%
+%:%213=130%:%
+%:%214=131%:%
+%:%215=132%:%
+%:%216=133%:%
+%:%218=134%:%
+%:%219=135%:%
+%:%220=135%:%
+%:%221=136%:%
+%:%222=137%:%
+%:%223=138%:%
+%:%225=139%:%
+%:%226=140%:%
+%:%227=140%:%
+%:%229=141%:%
+%:%230=141%:%
+%:%231=142%:%
+%:%233=144%:%
+%:%234=145%:%
+%:%236=146%:%
+%:%237=147%:%
+%:%238=147%:%
+%:%239=148%:%
+%:%241=150%:%
+%:%242=151%:%
+%:%244=152%:%
+%:%245=152%:%
+%:%246=153%:%
+%:%247=154%:%
+%:%248=155%:%
+%:%250=156%:%
+%:%251=156%:%
+%:%252=157%:%
+%:%253=158%:%
+%:%254=159%:%
+%:%256=160%:%
 %:%257=160%:%
 %:%258=161%:%
-%:%259=162%:%
+%:%261=165%:%
 %:%262=166%:%
-%:%263=167%:%
-%:%265=169%:%
+%:%264=168%:%
+%:%265=168%:%
 %:%266=169%:%
 %:%267=170%:%
 %:%268=171%:%
 %:%269=172%:%
 %:%270=173%:%
 %:%271=174%:%
-%:%272=174%:%
-%:%273=175%:%
-%:%274=176%:%
-%:%275=177%:%
-%:%276=178%:%
-%:%277=179%:%
-%:%278=179%:%
-%:%279=180%:%
-%:%280=181%:%
-%:%281=182%:%
-%:%282=183%:%
-%:%283=184%:%
-%:%284=184%:%
-%:%285=185%:%
-%:%286=186%:%
-%:%287=187%:%
-%:%288=188%:%
-%:%289=189%:%
-%:%290=189%:%
-%:%291=190%:%
-%:%292=191%:%
-%:%293=192%:%
-%:%300=195%:%
-%:%312=198%:%
-%:%313=199%:%
-%:%314=200%:%
-%:%316=202%:%
-%:%317=202%:%
-%:%318=203%:%
-%:%319=204%:%
-%:%320=205%:%
-%:%327=206%:%
-%:%328=206%:%
-%:%329=207%:%
-%:%330=208%:%
-%:%331=208%:%
-%:%340=211%:%
-%:%341=212%:%
-%:%343=214%:%
-%:%344=214%:%
-%:%345=215%:%
-%:%346=216%:%
-%:%347=217%:%
-%:%349=220%:%
-%:%350=221%:%
-%:%352=223%:%
-%:%353=223%:%
-%:%354=224%:%
-%:%361=225%:%
-%:%362=225%:%
-%:%371=228%:%
-%:%372=229%:%
-%:%373=230%:%
-%:%375=232%:%
-%:%376=232%:%
-%:%377=233%:%
-%:%379=235%:%
-%:%386=236%:%
-%:%387=236%:%
-%:%388=237%:%
-%:%389=238%:%
-%:%394=238%:%
-%:%397=239%:%
-%:%398=240%:%
-%:%399=240%:%
-%:%400=241%:%
-%:%402=243%:%
-%:%409=244%:%
-%:%410=244%:%
-%:%415=244%:%
-%:%418=245%:%
-%:%419=246%:%
-%:%420=246%:%
-%:%421=247%:%
-%:%423=249%:%
-%:%430=250%:%
-%:%431=250%:%
-%:%432=251%:%
-%:%437=251%:%
-%:%440=252%:%
-%:%441=253%:%
-%:%442=253%:%
-%:%443=254%:%
-%:%445=256%:%
-%:%452=257%:%
-%:%453=257%:%
-%:%454=258%:%
-%:%455=259%:%
-%:%460=259%:%
-%:%463=260%:%
-%:%464=261%:%
-%:%465=261%:%
-%:%466=262%:%
-%:%469=265%:%
-%:%476=266%:%
-%:%477=266%:%
-%:%478=267%:%
-%:%479=268%:%
-%:%484=268%:%
-%:%487=269%:%
-%:%488=270%:%
-%:%489=270%:%
-%:%490=271%:%
-%:%492=273%:%
-%:%499=274%:%
-%:%500=274%:%
-%:%501=275%:%
-%:%506=275%:%
-%:%509=276%:%
-%:%510=277%:%
-%:%511=277%:%
-%:%512=278%:%
-%:%514=280%:%
-%:%521=281%:%
-%:%522=281%:%
-%:%523=282%:%
-%:%528=282%:%
-%:%531=283%:%
-%:%532=284%:%
-%:%533=284%:%
-%:%534=285%:%
-%:%536=287%:%
-%:%543=288%:%
-%:%544=288%:%
-%:%545=289%:%
-%:%554=292%:%
-%:%555=293%:%
-%:%557=295%:%
-%:%558=295%:%
-%:%559=296%:%
-%:%566=297%:%
-%:%567=297%:%
-%:%568=298%:%
-%:%569=298%:%
-%:%570=298%:%
-%:%571=298%:%
-%:%572=299%:%
-%:%573=299%:%
-%:%574=300%:%
-%:%575=300%:%
-%:%576=300%:%
-%:%577=301%:%
-%:%578=301%:%
-%:%579=301%:%
-%:%580=302%:%
-%:%586=302%:%
-%:%591=303%:%
-%:%596=304%:%
+%:%272=175%:%
+%:%275=179%:%
+%:%276=180%:%
+%:%278=182%:%
+%:%279=182%:%
+%:%280=183%:%
+%:%281=184%:%
+%:%282=185%:%
+%:%283=186%:%
+%:%284=187%:%
+%:%285=187%:%
+%:%286=188%:%
+%:%287=189%:%
+%:%288=190%:%
+%:%289=191%:%
+%:%290=192%:%
+%:%291=192%:%
+%:%292=193%:%
+%:%293=194%:%
+%:%294=195%:%
+%:%295=196%:%
+%:%296=197%:%
+%:%297=197%:%
+%:%298=198%:%
+%:%299=199%:%
+%:%300=200%:%
+%:%301=201%:%
+%:%302=202%:%
+%:%303=202%:%
+%:%304=203%:%
+%:%305=204%:%
+%:%306=205%:%
+%:%313=208%:%
+%:%325=211%:%
+%:%326=212%:%
+%:%327=213%:%
+%:%329=215%:%
+%:%330=215%:%
+%:%331=216%:%
+%:%332=217%:%
+%:%333=218%:%
+%:%340=219%:%
+%:%341=219%:%
+%:%342=220%:%
+%:%343=221%:%
+%:%344=221%:%
+%:%353=224%:%
+%:%354=225%:%
+%:%356=227%:%
+%:%357=227%:%
+%:%358=228%:%
+%:%359=229%:%
+%:%360=230%:%
+%:%362=233%:%
+%:%363=234%:%
+%:%365=236%:%
+%:%366=236%:%
+%:%367=237%:%
+%:%374=238%:%
+%:%375=238%:%
+%:%384=241%:%
+%:%385=242%:%
+%:%386=243%:%
+%:%388=245%:%
+%:%389=245%:%
+%:%390=246%:%
+%:%392=248%:%
+%:%399=249%:%
+%:%400=249%:%
+%:%401=250%:%
+%:%402=251%:%
+%:%407=251%:%
+%:%410=252%:%
+%:%411=253%:%
+%:%412=253%:%
+%:%413=254%:%
+%:%415=256%:%
+%:%422=257%:%
+%:%423=257%:%
+%:%424=258%:%
+%:%425=259%:%
+%:%430=259%:%
+%:%433=260%:%
+%:%434=261%:%
+%:%435=261%:%
+%:%436=262%:%
+%:%438=264%:%
+%:%445=265%:%
+%:%446=265%:%
+%:%451=265%:%
+%:%454=266%:%
+%:%455=267%:%
+%:%456=267%:%
+%:%457=268%:%
+%:%459=270%:%
+%:%466=271%:%
+%:%467=271%:%
+%:%468=272%:%
+%:%473=272%:%
+%:%476=273%:%
+%:%477=274%:%
+%:%478=274%:%
+%:%479=275%:%
+%:%481=277%:%
+%:%488=278%:%
+%:%489=278%:%
+%:%490=279%:%
+%:%491=280%:%
+%:%496=280%:%
+%:%499=281%:%
+%:%500=282%:%
+%:%501=282%:%
+%:%502=283%:%
+%:%505=286%:%
+%:%512=287%:%
+%:%513=287%:%
+%:%514=288%:%
+%:%515=289%:%
+%:%520=289%:%
+%:%523=290%:%
+%:%524=291%:%
+%:%525=291%:%
+%:%526=292%:%
+%:%530=296%:%
+%:%537=297%:%
+%:%538=297%:%
+%:%539=298%:%
+%:%540=299%:%
+%:%545=299%:%
+%:%548=300%:%
+%:%549=301%:%
+%:%550=301%:%
+%:%551=302%:%
+%:%553=304%:%
+%:%560=305%:%
+%:%561=305%:%
+%:%562=306%:%
+%:%567=306%:%
+%:%570=307%:%
+%:%571=308%:%
+%:%572=308%:%
+%:%573=309%:%
+%:%575=311%:%
+%:%582=312%:%
+%:%583=312%:%
+%:%584=313%:%
+%:%589=313%:%
+%:%592=314%:%
+%:%593=315%:%
+%:%594=315%:%
+%:%595=316%:%
+%:%597=318%:%
+%:%604=319%:%
+%:%605=319%:%
+%:%606=320%:%
+%:%615=323%:%
+%:%616=324%:%
+%:%618=326%:%
+%:%619=326%:%
+%:%620=327%:%
+%:%627=328%:%
+%:%628=328%:%
+%:%629=329%:%
+%:%630=329%:%
+%:%631=329%:%
+%:%632=329%:%
+%:%633=330%:%
+%:%634=330%:%
+%:%635=331%:%
+%:%636=331%:%
+%:%637=331%:%
+%:%638=332%:%
+%:%639=332%:%
+%:%640=332%:%
+%:%641=333%:%
+%:%647=333%:%
+%:%652=334%:%
+%:%657=335%:%

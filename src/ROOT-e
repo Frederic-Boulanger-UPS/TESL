@@ -1,6 +1,0 @@
-session "Hygge_Theory" = "HOL" +
-  options [document = false]
-  theories
-    (* Foo *)
-    (* Bar *)
-    Hygge_Theory

@@ -25,22 +25,22 @@ notation dummyDeltaT (\<open>\<delta>t\<close>)
 fun TESL_interpretation_atomic
     :: \<open>('\<tau>::linordered_field) TESL_atomic \<Rightarrow> '\<tau> run set\<close> (\<open>\<lbrakk> _ \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L\<close>)
 where
-  \<comment> \<open>@{term \<open>K\<^sub>1 sporadic \<tau> on K\<^sub>2\<close>} means that @{term \<open>K\<^sub>1\<close>} should tick at an 
-      instant where the time on @{term \<open>K\<^sub>2\<close>} is @{term \<open>\<tau>\<close>}.\<close>
-    \<open>\<lbrakk> K\<^sub>1 sporadic \<tau> on K\<^sub>2 \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
-        {\<rho>. \<exists>n::nat. hamlet ((Rep_run \<rho>) n K\<^sub>1) \<and> time ((Rep_run \<rho>) n K\<^sub>2) = \<tau>}\<close>
-  \<comment> \<open>@{term \<open>time-relation \<lfloor>K\<^sub>1, K\<^sub>2\<rfloor> \<in> R\<close>} means that at each instant, the time 
-      on @{term \<open>K\<^sub>1\<close>} and the time on @{term \<open>K\<^sub>2\<close>} are in relation~@{term \<open>R\<close>}.\<close>
-  | \<open>\<lbrakk> time-relation \<lfloor>K\<^sub>1, K\<^sub>2\<rfloor> \<in> R \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
-        {\<rho>. \<forall>n::nat. R (time ((Rep_run \<rho>) n K\<^sub>1), time ((Rep_run \<rho>) n K\<^sub>2))}\<close>
+  \<comment> \<open>@{term \<open>C\<^sub>1 sporadic \<tau> on C\<^sub>2\<close>} means that @{term \<open>C\<^sub>1\<close>} should tick at an 
+      instant where the time on @{term \<open>C\<^sub>2\<close>} is @{term \<open>\<tau>\<close>}.\<close>
+    \<open>\<lbrakk> C\<^sub>1 sporadic \<tau> on C\<^sub>2 \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
+        {\<rho>. \<exists>n::nat. ticks ((Rep_run \<rho>) n C\<^sub>1) \<and> time ((Rep_run \<rho>) n C\<^sub>2) = \<tau>}\<close>
+  \<comment> \<open>@{term \<open>time-relation \<lfloor>C\<^sub>1, C\<^sub>2\<rfloor> \<in> R\<close>} means that at each instant, the time 
+      on @{term \<open>C\<^sub>1\<close>} and the time on @{term \<open>C\<^sub>2\<close>} are in relation~@{term \<open>R\<close>}.\<close>
+  | \<open>\<lbrakk> time-relation \<lfloor>C\<^sub>1, C\<^sub>2\<rfloor> \<in> R \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
+        {\<rho>. \<forall>n::nat. R (time ((Rep_run \<rho>) n C\<^sub>1), time ((Rep_run \<rho>) n C\<^sub>2))}\<close>
   \<comment> \<open>@{term \<open>master implies slave\<close>} means that at each instant at which 
       @{term \<open>master\<close>} ticks, @{term \<open>slave\<close>} also ticks.\<close>
   | \<open>\<lbrakk> master implies slave \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
-        {\<rho>. \<forall>n::nat. hamlet ((Rep_run \<rho>) n master) \<longrightarrow> hamlet ((Rep_run \<rho>) n slave)}\<close>
+        {\<rho>. \<forall>n::nat. ticks ((Rep_run \<rho>) n master) \<longrightarrow> ticks ((Rep_run \<rho>) n slave)}\<close>
   \<comment> \<open>@{term \<open>master implies not slave\<close>} means that at each instant at which 
       @{term \<open>master\<close>} ticks, @{term \<open>slave\<close>} does not tick.\<close>
   | \<open>\<lbrakk> master implies not slave \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
-        {\<rho>. \<forall>n::nat. hamlet ((Rep_run \<rho>) n master) \<longrightarrow> \<not>hamlet ((Rep_run \<rho>) n slave)}\<close>
+        {\<rho>. \<forall>n::nat. ticks ((Rep_run \<rho>) n master) \<longrightarrow> \<not>ticks ((Rep_run \<rho>) n slave)}\<close>
   \<comment> \<open>@{term \<open>master time-delayed by \<delta>\<tau> on measuring implies slave\<close>} means that 
       at each instant at which  @{term \<open>master\<close>} ticks, @{term \<open>slave\<close>} will
       tick after a delay @{term \<open>\<delta>\<tau>\<close>} measured on the time scale 
@@ -51,46 +51,62 @@ where
       at the first instant when the date on measuring is @{term \<open>t\<^sub>0+\<delta>t\<close>}, 
       slave has to tick.
     \<close>
-        {\<rho>. \<forall>n. hamlet ((Rep_run \<rho>) n master) \<longrightarrow>
+        {\<rho>. \<forall>n. ticks ((Rep_run \<rho>) n master) \<longrightarrow>
                  (let measured_time = time ((Rep_run \<rho>) n measuring) in
                   \<forall>m \<ge> n.  first_time \<rho> measuring m (measured_time + \<delta>\<tau>)
-                            \<longrightarrow> hamlet ((Rep_run \<rho>) m slave)
+                            \<longrightarrow> ticks ((Rep_run \<rho>) m slave)
                  )
         }\<close>
+  | \<open>\<lbrakk> master time-delayed\<bowtie> by \<delta>\<tau> on measuring implies slave \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
+    \<comment> \<open>
+      When master ticks, let's call @{term \<open>t\<^sub>0\<close>} the current date on measuring. Then, 
+      slave will be ticking at some instant(s) when the time on measuring is @{term \<open>t\<^sub>0+\<delta>t\<close>}.
+    \<close>
+        { \<rho>. \<forall>n. ticks ((Rep_run \<rho>) n master) \<longrightarrow>
+                 (let measured_time = time ((Rep_run \<rho>) n measuring) in
+                  \<exists>m \<ge> n. ticks ((Rep_run \<rho>) m slave)
+                          \<and> time ((Rep_run \<rho>) m measuring) = measured_time + \<delta>\<tau>
+                 )
+        }\<close>
+  \<comment> \<open>@{term \<open>C\<^sub>1 weakly precedes C\<^sub>2\<close>} means that each tick on @{term \<open>C\<^sub>2\<close>}
+        must be preceded by or coincide with at least one tick on @{term \<open>C\<^sub>1\<close>}.
+        Therefore, at each instant @{term \<open>n\<close>}, the number of ticks on @{term \<open>C\<^sub>2\<close>} 
+        must be less or equal to the number of ticks on @{term \<open>C\<^sub>1\<close>}.\<close>
+  | \<open>\<lbrakk> C\<^sub>1 weakly precedes C\<^sub>2 \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
+        {\<rho>. \<forall>n::nat. (run_tick_count \<rho> C\<^sub>2 n) \<le> (run_tick_count \<rho> C\<^sub>1 n)}\<close>
+  \<comment> \<open>@{term \<open>C\<^sub>1 strictly precedes C\<^sub>2\<close>} means that each tick on @{term \<open>C\<^sub>2\<close>}
+        must be preceded by at least one tick on @{term \<open>C\<^sub>1\<close>} at a previous instant.
+        Therefore, at each instant n, the number of ticks on @{term \<open>C\<^sub>2\<close>}
+        must be less or equal to the number of ticks on @{term \<open>C\<^sub>1\<close>} 
+        at instant n - 1.\<close>
+  | \<open>\<lbrakk> C\<^sub>1 strictly precedes C\<^sub>2 \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
+        {\<rho>. \<forall>n::nat. (run_tick_count \<rho> C\<^sub>2 n) \<le> (run_tick_count_strictly \<rho> C\<^sub>1 n)}\<close>
+  \<comment> \<open>@{term \<open>C\<^sub>1 kills C\<^sub>2\<close>} means that when @{term \<open>C\<^sub>1\<close>} ticks, @{term \<open>C\<^sub>2\<close>}
+        cannot tick and is not allowed to tick at any further instant.\<close>
+  | \<open>\<lbrakk> C\<^sub>1 kills C\<^sub>2 \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
+        {\<rho>. \<forall>n::nat. ticks ((Rep_run \<rho>) n C\<^sub>1)
+                        \<longrightarrow> (\<forall>m\<ge>n. \<not> ticks ((Rep_run \<rho>) m C\<^sub>2))}\<close>
   | \<open>\<lbrakk> master delayed by d on counter implies slave \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
     \<comment> \<open>
       When master ticks, we count d ticks on measuring and we must have a tick on slave.
     \<close>
-        {\<rho>. \<forall>n. hamlet ((Rep_run \<rho>) n master) \<longrightarrow>
+        {\<rho>. \<forall>n. ticks ((Rep_run \<rho>) n master) \<longrightarrow>
                  (
                   \<forall>m \<ge> n.  counted_ticks \<rho> counter n m d
-                            \<longrightarrow> hamlet ((Rep_run \<rho>) m slave)
+                            \<longrightarrow> ticks ((Rep_run \<rho>) m slave)
                  )
         }\<close>
-  \<comment> \<open>@{term \<open>K\<^sub>1 weakly precedes K\<^sub>2\<close>} means that each tick on @{term \<open>K\<^sub>2\<close>}
-        must be preceded by or coincide with at least one tick on @{term \<open>K\<^sub>1\<close>}.
-        Therefore, at each instant @{term \<open>n\<close>}, the number of ticks on @{term \<open>K\<^sub>2\<close>} 
-        must be less or equal to the number of ticks on @{term \<open>K\<^sub>1\<close>}.\<close>
-  | \<open>\<lbrakk> K\<^sub>1 weakly precedes K\<^sub>2 \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
-        {\<rho>. \<forall>n::nat. (run_tick_count \<rho> K\<^sub>2 n) \<le> (run_tick_count \<rho> K\<^sub>1 n)}\<close>
-  \<comment> \<open>@{term \<open>K\<^sub>1 strictly precedes K\<^sub>2\<close>} means that each tick on @{term \<open>K\<^sub>2\<close>}
-        must be preceded by at least one tick on @{term \<open>K\<^sub>1\<close>} at a previous instant.
-        Therefore, at each instant n, the number of ticks on @{term \<open>K\<^sub>2\<close>}
-        must be less or equal to the number of ticks on @{term \<open>K\<^sub>1\<close>} 
-        at instant n - 1.\<close>
-  | \<open>\<lbrakk> K\<^sub>1 strictly precedes K\<^sub>2 \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
-        {\<rho>. \<forall>n::nat. (run_tick_count \<rho> K\<^sub>2 n) \<le> (run_tick_count_strictly \<rho> K\<^sub>1 n)}\<close>
-  \<comment> \<open>@{term \<open>K\<^sub>1 kills K\<^sub>2\<close>} means that when @{term \<open>K\<^sub>1\<close>} ticks, @{term \<open>K\<^sub>2\<close>}
-        cannot tick and is not allowed to tick at any further instant.\<close>
-  | \<open>\<lbrakk> K\<^sub>1 kills K\<^sub>2 \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
-        {\<rho>. \<forall>n::nat. hamlet ((Rep_run \<rho>) n K\<^sub>1)
-                        \<longrightarrow> (\<forall>m\<ge>n. \<not> hamlet ((Rep_run \<rho>) m K\<^sub>2))}\<close>
+ 	\<comment> \<open>Additional constraints for the operational semantics\<close>
+  \<comment> \<open>@{term \<open>C\<^sub>1 sporadic\<sharp> \<lparr>\<tau>\<^sub>v\<^sub>a\<^sub>r(C\<^sub>p\<^sub>a\<^sub>s\<^sub>t, n\<^sub>p\<^sub>a\<^sub>s\<^sub>t) \<oplus> \<delta>\<tau>\<rparr> on C\<^sub>2\<close>} means that @{term \<open>C\<^sub>1\<close>} should tick at an 
+      instant where the time on @{term \<open>C\<^sub>2\<close>} is @{term \<open>\<lparr>\<tau>\<^sub>v\<^sub>a\<^sub>r(C\<^sub>p\<^sub>a\<^sub>s\<^sub>t, n\<^sub>p\<^sub>a\<^sub>s\<^sub>t) \<oplus> \<delta>\<tau>\<rparr>\<close>}.\<close>
+  | \<open>\<lbrakk> C\<^sub>1 sporadic\<sharp> \<lparr>\<tau>\<^sub>v\<^sub>a\<^sub>r(C\<^sub>p\<^sub>a\<^sub>s\<^sub>t, n\<^sub>p\<^sub>a\<^sub>s\<^sub>t) \<oplus> \<delta>\<tau>\<rparr> on C\<^sub>2 \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
+        {\<rho>. \<exists>n::nat. ticks ((Rep_run \<rho>) n C\<^sub>1) \<and> time ((Rep_run \<rho>) n C\<^sub>2) = time ((Rep_run \<rho>) n\<^sub>p\<^sub>a\<^sub>s\<^sub>t C\<^sub>p\<^sub>a\<^sub>s\<^sub>t) + \<delta>\<tau> }\<close>
   | \<open>\<lbrakk> from n delay count d on counter implies slave \<rbrakk>\<^sub>T\<^sub>E\<^sub>S\<^sub>L =
     \<comment> \<open>
      Count d ticks on counter from instant n and put a tick on slave.
     \<close>
         {\<rho>. \<forall>m \<ge> n. counted_ticks \<rho> counter n m d
-                       \<longrightarrow> hamlet ((Rep_run \<rho>) m slave)}\<close>
+                       \<longrightarrow> ticks ((Rep_run \<rho>) m slave)}\<close>
 
 section \<open>Denotational interpretation for TESL formulae\<close>
 

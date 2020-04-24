@@ -44,19 +44,19 @@ text \<open>
 \<close>
 lemma ticks_image:
   assumes \<open>dilating_fun f r\<close>
-  and     \<open>hamlet ((Rep_run r) n c)\<close>
+  and     \<open>ticks ((Rep_run r) n c)\<close>
   shows   \<open>\<exists>n\<^sub>0. f n\<^sub>0 = n\<close>
 using dilating_fun_def assms by blast
 
 lemma ticks_image_sub:
   assumes \<open>dilating f sub r\<close>
-  and     \<open>hamlet ((Rep_run r) n c)\<close>
+  and     \<open>ticks ((Rep_run r) n c)\<close>
   shows   \<open>\<exists>n\<^sub>0. f n\<^sub>0 = n\<close>
 using assms dilating_def ticks_image by blast
 
 lemma ticks_image_sub':
   assumes \<open>dilating f sub r\<close>
-  and     \<open>\<exists>c. hamlet ((Rep_run r) n c)\<close>
+  and     \<open>\<exists>c. ticks ((Rep_run r) n c)\<close>
   shows   \<open>\<exists>n\<^sub>0. f n\<^sub>0 = n\<close>
 using ticks_image_sub[OF assms(1)] assms(2) by blast
 
@@ -70,12 +70,12 @@ text \<open>
 
 lemma dilating_fun_image_strict:
   assumes \<open>dilating_fun f r\<close>
-  shows   \<open>{k. f m < k \<and> k < f n \<and> hamlet ((Rep_run r) k c)}
-            = image f {k. m < k \<and> k < n \<and> hamlet ((Rep_run r) (f k) c)}\<close>
+  shows   \<open>{k. f m < k \<and> k < f n \<and> ticks ((Rep_run r) k c)}
+            = image f {k. m < k \<and> k < n \<and> ticks ((Rep_run r) (f k) c)}\<close>
   (is \<open>?IMG = image f ?SET\<close>)
 proof
   { fix k assume h:\<open>k \<in> ?IMG\<close>
-    from h obtain k\<^sub>0 where k0prop:\<open>f k\<^sub>0 = k \<and> hamlet ((Rep_run r) (f k\<^sub>0) c)\<close>
+    from h obtain k\<^sub>0 where k0prop:\<open>f k\<^sub>0 = k \<and> ticks ((Rep_run r) (f k\<^sub>0) c)\<close>
       using ticks_image[OF assms] by blast
     with h have \<open>k \<in> image f ?SET\<close>
       using assms dilating_fun_def strict_mono_less by blast
@@ -89,12 +89,12 @@ qed
 
 lemma dilating_fun_image_left:
   assumes \<open>dilating_fun f r\<close>
-  shows   \<open>{k. f m \<le> k \<and> k < f n \<and> hamlet ((Rep_run r) k c)}
-          = image f {k. m \<le> k \<and> k < n \<and> hamlet ((Rep_run r) (f k) c)}\<close>
+  shows   \<open>{k. f m \<le> k \<and> k < f n \<and> ticks ((Rep_run r) k c)}
+          = image f {k. m \<le> k \<and> k < n \<and> ticks ((Rep_run r) (f k) c)}\<close>
   (is \<open>?IMG = image f ?SET\<close>)
 proof
   { fix k assume h:\<open>k \<in> ?IMG\<close>
-    from h obtain k\<^sub>0 where k0prop:\<open>f k\<^sub>0 = k \<and> hamlet ((Rep_run r) (f k\<^sub>0) c)\<close>
+    from h obtain k\<^sub>0 where k0prop:\<open>f k\<^sub>0 = k \<and> ticks ((Rep_run r) (f k\<^sub>0) c)\<close>
       using ticks_image[OF assms] by blast
     with h have \<open>k \<in> image f ?SET\<close>
       using assms dilating_fun_def strict_mono_less strict_mono_less_eq by fastforce
@@ -109,12 +109,12 @@ qed
 
 lemma dilating_fun_image_right:
   assumes \<open>dilating_fun f r\<close>
-  shows   \<open>{k. f m < k \<and> k \<le> f n \<and> hamlet ((Rep_run r) k c)}
-          = image f {k. m < k \<and> k \<le> n \<and> hamlet ((Rep_run r) (f k) c)}\<close>
+  shows   \<open>{k. f m < k \<and> k \<le> f n \<and> ticks ((Rep_run r) k c)}
+          = image f {k. m < k \<and> k \<le> n \<and> ticks ((Rep_run r) (f k) c)}\<close>
   (is \<open>?IMG = image f ?SET\<close>)
 proof
   { fix k assume h:\<open>k \<in> ?IMG\<close>
-    from h obtain k\<^sub>0 where k0prop:\<open>f k\<^sub>0 = k \<and> hamlet ((Rep_run r) (f k\<^sub>0) c)\<close>
+    from h obtain k\<^sub>0 where k0prop:\<open>f k\<^sub>0 = k \<and> ticks ((Rep_run r) (f k\<^sub>0) c)\<close>
       using ticks_image[OF assms] by blast
     with h have \<open>k \<in> image f ?SET\<close>
       using assms dilating_fun_def strict_mono_less strict_mono_less_eq by fastforce
@@ -129,12 +129,12 @@ qed
 
 lemma dilating_fun_image:
   assumes \<open>dilating_fun f r\<close>
-  shows   \<open>{k. f m \<le> k \<and> k \<le> f n \<and> hamlet ((Rep_run r) k c)}
-          = image f {k. m \<le> k \<and> k \<le> n \<and> hamlet ((Rep_run r) (f k) c)}\<close>
+  shows   \<open>{k. f m \<le> k \<and> k \<le> f n \<and> ticks ((Rep_run r) k c)}
+          = image f {k. m \<le> k \<and> k \<le> n \<and> ticks ((Rep_run r) (f k) c)}\<close>
   (is \<open>?IMG = image f ?SET\<close>)
 proof
   { fix k assume h:\<open>k \<in> ?IMG\<close>
-    from h obtain k\<^sub>0 where k0prop:\<open>f k\<^sub>0 = k \<and> hamlet ((Rep_run r) (f k\<^sub>0) c)\<close>
+    from h obtain k\<^sub>0 where k0prop:\<open>f k\<^sub>0 = k \<and> ticks ((Rep_run r) (f k\<^sub>0) c)\<close>
       using ticks_image[OF assms] by blast
     with h have \<open>k \<in> image f ?SET\<close>
       using assms dilating_fun_def strict_mono_less_eq by blast
@@ -152,8 +152,8 @@ text \<open>
 \<close>
 lemma ticks_as_often_strict:
   assumes \<open>dilating_fun f r\<close>
-  shows   \<open>card {p. n < p \<and> p < m \<and> hamlet ((Rep_run r) (f p) c)}
-          = card {p. f n < p \<and> p < f m \<and> hamlet ((Rep_run r) p c)}\<close>
+  shows   \<open>card {p. n < p \<and> p < m \<and> ticks ((Rep_run r) (f p) c)}
+          = card {p. f n < p \<and> p < f m \<and> ticks ((Rep_run r) p c)}\<close>
     (is \<open>card ?SET = card ?IMG\<close>)
 proof -
   from dilating_fun_injects[OF assms] have \<open>inj_on f ?SET\<close> .
@@ -166,8 +166,8 @@ qed
 
 lemma ticks_as_often_left:
   assumes \<open>dilating_fun f r\<close>
-  shows   \<open>card {p. n \<le> p \<and> p < m \<and> hamlet ((Rep_run r) (f p) c)}
-          = card {p. f n \<le> p \<and> p < f m \<and> hamlet ((Rep_run r) p c)}\<close>
+  shows   \<open>card {p. n \<le> p \<and> p < m \<and> ticks ((Rep_run r) (f p) c)}
+          = card {p. f n \<le> p \<and> p < f m \<and> ticks ((Rep_run r) p c)}\<close>
     (is \<open>card ?SET = card ?IMG\<close>)
 proof -
   from dilating_fun_injects[OF assms] have \<open>inj_on f ?SET\<close> .
@@ -180,8 +180,8 @@ qed
 
 lemma ticks_as_often_right:
   assumes \<open>dilating_fun f r\<close>
-  shows   \<open>card {p. n < p \<and> p \<le> m \<and> hamlet ((Rep_run r) (f p) c)}
-          = card {p. f n < p \<and> p \<le> f m \<and> hamlet ((Rep_run r) p c)}\<close>
+  shows   \<open>card {p. n < p \<and> p \<le> m \<and> ticks ((Rep_run r) (f p) c)}
+          = card {p. f n < p \<and> p \<le> f m \<and> ticks ((Rep_run r) p c)}\<close>
     (is \<open>card ?SET = card ?IMG\<close>)
 proof -
   from dilating_fun_injects[OF assms] have \<open>inj_on f ?SET\<close> .
@@ -194,8 +194,8 @@ qed
 
 lemma ticks_as_often:
   assumes \<open>dilating_fun f r\<close>
-  shows   \<open>card {p. n \<le> p \<and> p \<le> m \<and> hamlet ((Rep_run r) (f p) c)}
-          = card {p. f n \<le> p \<and> p \<le> f m \<and> hamlet ((Rep_run r) p c)}\<close>
+  shows   \<open>card {p. n \<le> p \<and> p \<le> m \<and> ticks ((Rep_run r) (f p) c)}
+          = card {p. f n \<le> p \<and> p \<le> f m \<and> ticks ((Rep_run r) p c)}\<close>
     (is \<open>card ?SET = card ?IMG\<close>)
 proof -
   from dilating_fun_injects[OF assms] have \<open>inj_on f ?SET\<close> .
@@ -210,7 +210,7 @@ text \<open>The date of an event is preserved by dilation.\<close>
 
 lemma ticks_tag_image:
   assumes \<open>dilating f sub r\<close>
-  and     \<open>\<exists>c. hamlet ((Rep_run r) k c)\<close>
+  and     \<open>\<exists>c. ticks ((Rep_run r) k c)\<close>
   and     \<open>time ((Rep_run r) k c) = \<tau>\<close>
   shows   \<open>\<exists>k\<^sub>0. f k\<^sub>0 = k \<and> time ((Rep_run sub) k\<^sub>0 c) = \<tau>\<close>
 proof -
@@ -225,12 +225,12 @@ text \<open>TESL operators are invariant by dilation.\<close>
 
 lemma ticks_sub:
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>hamlet ((Rep_run sub) n a) = hamlet ((Rep_run r) (f n) a)\<close>
+  shows   \<open>ticks ((Rep_run sub) n a) = ticks ((Rep_run r) (f n) a)\<close>
 using assms by (simp add: dilating_def)
 
 lemma no_tick_sub:
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>(\<nexists>n\<^sub>0. f n\<^sub>0 = n) \<longrightarrow> \<not>hamlet ((Rep_run r) n a)\<close>
+  shows   \<open>(\<nexists>n\<^sub>0. f n\<^sub>0 = n) \<longrightarrow> \<not>ticks ((Rep_run r) n a)\<close>
 using assms dilating_def dilating_fun_def by blast
 
 text \<open>Lifting a total function to a partial function on an option domain.\<close>
@@ -245,19 +245,19 @@ text \<open>
 \<close>
 lemma tick_set_sub:
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>{k. hamlet ((Rep_run r) k c)} = image f {k. hamlet ((Rep_run sub) k c)}\<close>
+  shows   \<open>{k. ticks ((Rep_run r) k c)} = image f {k. ticks ((Rep_run sub) k c)}\<close>
     (is \<open>?R = image f ?S\<close>)
 proof
   { fix k assume h:\<open>k \<in> ?R\<close>
     with no_tick_sub[OF assms] have \<open>\<exists>k\<^sub>0. f k\<^sub>0 = k\<close> by blast
     from this obtain k\<^sub>0 where k0prop:\<open>f k\<^sub>0 = k\<close> by blast
-    with ticks_sub[OF assms] h have \<open>hamlet ((Rep_run sub) k\<^sub>0 c)\<close> by blast
+    with ticks_sub[OF assms] h have \<open>ticks ((Rep_run sub) k\<^sub>0 c)\<close> by blast
     with k0prop have \<open>k \<in> image f ?S\<close> by blast
   }
   thus \<open>?R \<subseteq> image f ?S\<close> by blast
 next
   { fix k assume h:\<open>k \<in> image f ?S\<close>
-    from this obtain k\<^sub>0 where \<open>f k\<^sub>0 = k \<and> hamlet ((Rep_run sub) k\<^sub>0 c)\<close> by blast
+    from this obtain k\<^sub>0 where \<open>f k\<^sub>0 = k \<and> ticks ((Rep_run sub) k\<^sub>0 c)\<close> by blast
     with assms have \<open>k \<in> ?R\<close> using ticks_sub by blast 
   }
   thus \<open>image f ?S \<subseteq> ?R\<close> by blast
@@ -285,9 +285,9 @@ text \<open>
 \<close>
 lemma Least_sub:
   assumes \<open>dilating f sub r\<close>
-  and     \<open>\<exists>k::nat. hamlet ((Rep_run sub) k c)\<close>
-  shows   \<open>(LEAST k. k \<in> {t. hamlet ((Rep_run r) t c)})
-              = f (LEAST k. k \<in> {t. hamlet ((Rep_run sub) t c)})\<close>
+  and     \<open>\<exists>k::nat. ticks ((Rep_run sub) k c)\<close>
+  shows   \<open>(LEAST k. k \<in> {t. ticks ((Rep_run r) t c)})
+              = f (LEAST k. k \<in> {t. ticks ((Rep_run sub) t c)})\<close>
           (is \<open>(LEAST k. k \<in> ?R) = f (LEAST k. k \<in> ?S)\<close>)
 proof -
   from assms(2) have \<open>\<exists>x. x \<in> ?S\<close> by simp
@@ -304,10 +304,10 @@ text \<open>
 \<close>
 lemma ticks_imp_ticks_sub:
   assumes \<open>dilating f sub r\<close>
-  and     \<open>\<exists>k. hamlet ((Rep_run r) k c)\<close>
-  shows   \<open>\<exists>k\<^sub>0. hamlet ((Rep_run sub) k\<^sub>0 c)\<close>
+  and     \<open>\<exists>k. ticks ((Rep_run r) k c)\<close>
+  shows   \<open>\<exists>k\<^sub>0. ticks ((Rep_run sub) k\<^sub>0 c)\<close>
 proof -
-  from assms(2) obtain k where \<open>hamlet ((Rep_run r) k c)\<close> by blast
+  from assms(2) obtain k where \<open>ticks ((Rep_run r) k c)\<close> by blast
   with ticks_image_sub[OF assms(1)] ticks_sub[OF assms(1)] show ?thesis by blast
 qed
 
@@ -316,13 +316,13 @@ text \<open>
 \<close>
 lemma ticks_imp_ticks_subk:
   assumes \<open>dilating f sub r\<close>
-  and     \<open>hamlet ((Rep_run r) k c)\<close>
-  shows   \<open>\<exists>k\<^sub>0. f k\<^sub>0 = k \<and> hamlet ((Rep_run sub) k\<^sub>0 c)\<close>
+  and     \<open>ticks ((Rep_run r) k c)\<close>
+  shows   \<open>\<exists>k\<^sub>0. f k\<^sub>0 = k \<and> ticks ((Rep_run sub) k\<^sub>0 c)\<close>
 proof -
   from no_tick_sub[OF assms(1)] assms(2) have \<open>\<exists>k\<^sub>0. f k\<^sub>0 = k\<close> by blast
   from this obtain k\<^sub>0 where \<open>f k\<^sub>0 = k\<close> by blast
   moreover with ticks_sub[OF assms(1)] assms(2)
-    have \<open>hamlet ((Rep_run sub) k\<^sub>0 c)\<close> by blast
+    have \<open>ticks ((Rep_run sub) k\<^sub>0 c)\<close> by blast
   ultimately show ?thesis by blast
 qed
 
@@ -331,23 +331,23 @@ text \<open>
 \<close>
 lemma dilated_ticks_strict:
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>{i. f m < i \<and> i < f n \<and> hamlet ((Rep_run r) i c)}
-          = image f {i. m < i \<and> i < n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  shows   \<open>{i. f m < i \<and> i < f n \<and> ticks ((Rep_run r) i c)}
+          = image f {i. m < i \<and> i < n \<and> ticks ((Rep_run sub) i c)}\<close>
     (is \<open>?RUN = image f ?SUB\<close>)
 proof
   { fix i assume h:\<open>i \<in> ?SUB\<close>
     hence \<open>m < i \<and> i < n\<close> by simp
     hence \<open>f m < f i \<and> f i < (f n)\<close> using assms
       by (simp add: dilating_def dilating_fun_def strict_monoD strict_mono_less_eq)
-    moreover from h have \<open>hamlet ((Rep_run sub) i c)\<close> by simp
-    hence \<open>hamlet ((Rep_run r) (f i) c)\<close> using ticks_sub[OF assms] by blast
+    moreover from h have \<open>ticks ((Rep_run sub) i c)\<close> by simp
+    hence \<open>ticks ((Rep_run r) (f i) c)\<close> using ticks_sub[OF assms] by blast
     ultimately have \<open>f i \<in> ?RUN\<close> by simp
   } thus \<open>image f ?SUB \<subseteq> ?RUN\<close> by blast
 next
   { fix i assume h:\<open>i \<in> ?RUN\<close>
-    hence \<open>hamlet ((Rep_run r) i c)\<close> by simp
+    hence \<open>ticks ((Rep_run r) i c)\<close> by simp
     from ticks_imp_ticks_subk[OF assms this]
-      obtain i\<^sub>0 where i0prop:\<open>f i\<^sub>0 = i \<and> hamlet ((Rep_run sub) i\<^sub>0 c)\<close> by blast
+      obtain i\<^sub>0 where i0prop:\<open>f i\<^sub>0 = i \<and> ticks ((Rep_run sub) i\<^sub>0 c)\<close> by blast
     with h have \<open>f m < f i\<^sub>0 \<and> f i\<^sub>0 < f n\<close> by simp
     moreover have \<open>strict_mono f\<close> using assms dilating_def dilating_fun_def by blast
     ultimately have \<open>m < i\<^sub>0 \<and> i\<^sub>0 < n\<close>
@@ -358,23 +358,23 @@ qed
 
 lemma dilated_ticks_left:
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>{i. f m \<le> i \<and> i < f n \<and> hamlet ((Rep_run r) i c)}
-          = image f {i. m \<le> i \<and> i < n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  shows   \<open>{i. f m \<le> i \<and> i < f n \<and> ticks ((Rep_run r) i c)}
+          = image f {i. m \<le> i \<and> i < n \<and> ticks ((Rep_run sub) i c)}\<close>
     (is \<open>?RUN = image f ?SUB\<close>)
 proof
   { fix i assume h:\<open>i \<in> ?SUB\<close>
     hence \<open>m \<le> i \<and> i < n\<close> by simp
     hence \<open>f m \<le> f i \<and> f i < (f n)\<close> using assms
       by (simp add: dilating_def dilating_fun_def strict_monoD strict_mono_less_eq)
-    moreover from h have \<open>hamlet ((Rep_run sub) i c)\<close> by simp
-    hence \<open>hamlet ((Rep_run r) (f i) c)\<close> using ticks_sub[OF assms] by blast
+    moreover from h have \<open>ticks ((Rep_run sub) i c)\<close> by simp
+    hence \<open>ticks ((Rep_run r) (f i) c)\<close> using ticks_sub[OF assms] by blast
     ultimately have \<open>f i \<in> ?RUN\<close> by simp
   } thus \<open>image f ?SUB \<subseteq> ?RUN\<close> by blast
 next
   { fix i assume h:\<open>i \<in> ?RUN\<close>
-    hence \<open>hamlet ((Rep_run r) i c)\<close> by simp
+    hence \<open>ticks ((Rep_run r) i c)\<close> by simp
     from ticks_imp_ticks_subk[OF assms this]
-      obtain i\<^sub>0 where i0prop:\<open>f i\<^sub>0 = i \<and> hamlet ((Rep_run sub) i\<^sub>0 c)\<close> by blast
+      obtain i\<^sub>0 where i0prop:\<open>f i\<^sub>0 = i \<and> ticks ((Rep_run sub) i\<^sub>0 c)\<close> by blast
     with h have \<open>f m \<le> f i\<^sub>0 \<and> f i\<^sub>0 < f n\<close> by simp
     moreover have \<open>strict_mono f\<close> using assms dilating_def dilating_fun_def by blast
     ultimately have \<open>m \<le> i\<^sub>0 \<and> i\<^sub>0 < n\<close>
@@ -385,23 +385,23 @@ qed
 
 lemma dilated_ticks_right:
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>{i. f m < i \<and> i \<le> f n \<and> hamlet ((Rep_run r) i c)}
-          = image f {i. m < i \<and> i \<le> n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  shows   \<open>{i. f m < i \<and> i \<le> f n \<and> ticks ((Rep_run r) i c)}
+          = image f {i. m < i \<and> i \<le> n \<and> ticks ((Rep_run sub) i c)}\<close>
     (is \<open>?RUN = image f ?SUB\<close>)
 proof
   { fix i  assume h:\<open>i \<in> ?SUB\<close>
     hence \<open>m < i \<and> i \<le> n\<close> by simp
     hence \<open>f m < f i \<and> f i \<le> (f n)\<close> using assms
       by (simp add: dilating_def dilating_fun_def strict_monoD strict_mono_less_eq)
-    moreover from h have \<open>hamlet ((Rep_run sub) i c)\<close> by simp
-    hence \<open>hamlet ((Rep_run r) (f i) c)\<close> using ticks_sub[OF assms] by blast
+    moreover from h have \<open>ticks ((Rep_run sub) i c)\<close> by simp
+    hence \<open>ticks ((Rep_run r) (f i) c)\<close> using ticks_sub[OF assms] by blast
     ultimately have \<open>f i \<in> ?RUN\<close> by simp
   } thus \<open>image f ?SUB \<subseteq> ?RUN\<close> by blast
 next
   { fix i assume h:\<open>i \<in> ?RUN\<close>
-    hence \<open>hamlet ((Rep_run r) i c)\<close> by simp
+    hence \<open>ticks ((Rep_run r) i c)\<close> by simp
     from ticks_imp_ticks_subk[OF assms this]
-      obtain i\<^sub>0 where i0prop:\<open>f i\<^sub>0 = i \<and> hamlet ((Rep_run sub) i\<^sub>0 c)\<close> by blast
+      obtain i\<^sub>0 where i0prop:\<open>f i\<^sub>0 = i \<and> ticks ((Rep_run sub) i\<^sub>0 c)\<close> by blast
     with h have \<open>f m < f i\<^sub>0 \<and> f i\<^sub>0 \<le> f n\<close> by simp
     moreover have \<open>strict_mono f\<close> using assms dilating_def dilating_fun_def by blast
     ultimately have \<open>m < i\<^sub>0 \<and> i\<^sub>0 \<le> n\<close>
@@ -412,23 +412,23 @@ qed
 
 lemma dilated_ticks:
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>{i. f m \<le> i \<and> i \<le> f n \<and> hamlet ((Rep_run r) i c)}
-          = image f {i. m \<le> i \<and> i \<le> n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  shows   \<open>{i. f m \<le> i \<and> i \<le> f n \<and> ticks ((Rep_run r) i c)}
+          = image f {i. m \<le> i \<and> i \<le> n \<and> ticks ((Rep_run sub) i c)}\<close>
     (is \<open>?RUN = image f ?SUB\<close>)
 proof
   { fix i assume h:\<open>i \<in> ?SUB\<close>
     hence \<open>m \<le> i \<and> i \<le> n\<close> by simp
     hence \<open>f m \<le> f i \<and> f i \<le> (f n)\<close>
       using assms by (simp add: dilating_def dilating_fun_def strict_mono_less_eq)
-    moreover from h have \<open>hamlet ((Rep_run sub) i c)\<close> by simp
-    hence \<open>hamlet ((Rep_run r) (f i) c)\<close> using ticks_sub[OF assms] by blast
+    moreover from h have \<open>ticks ((Rep_run sub) i c)\<close> by simp
+    hence \<open>ticks ((Rep_run r) (f i) c)\<close> using ticks_sub[OF assms] by blast
     ultimately have \<open>f i \<in>?RUN\<close> by simp
   } thus \<open>image f ?SUB \<subseteq> ?RUN\<close> by blast
 next
   { fix i assume h:\<open>i \<in> ?RUN\<close>
-    hence \<open>hamlet ((Rep_run r) i c)\<close> by simp
+    hence \<open>ticks ((Rep_run r) i c)\<close> by simp
     from ticks_imp_ticks_subk[OF assms this]
-      obtain i\<^sub>0 where i0prop:\<open>f i\<^sub>0 = i \<and> hamlet ((Rep_run sub) i\<^sub>0 c)\<close> by blast
+      obtain i\<^sub>0 where i0prop:\<open>f i\<^sub>0 = i \<and> ticks ((Rep_run sub) i\<^sub>0 c)\<close> by blast
     with h have \<open>f m \<le> f i\<^sub>0 \<and> f i\<^sub>0 \<le> f n\<close> by simp
     moreover have \<open>strict_mono f\<close> using assms dilating_def dilating_fun_def by blast
     ultimately have \<open>m \<le> i\<^sub>0 \<and> i\<^sub>0 \<le> n\<close> using strict_mono_less_eq by blast
@@ -444,7 +444,7 @@ text \<open>
 lemma empty_dilated_prefix:
   assumes \<open>dilating f sub r\<close>
   and     \<open>n < f 0\<close>
-shows   \<open>\<not> hamlet ((Rep_run r) n c)\<close>
+shows   \<open>\<not> ticks ((Rep_run r) n c)\<close>
 proof -
   from assms have False by (simp add: dilating_def dilating_fun_def)
   thus ?thesis ..
@@ -452,46 +452,46 @@ qed
 
 corollary empty_dilated_prefix':
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>{i. f 0 \<le> i \<and> i \<le> f n \<and> hamlet ((Rep_run r) i c)}
-         = {i. i \<le> f n \<and> hamlet ((Rep_run r) i c)}\<close>
+  shows   \<open>{i. f 0 \<le> i \<and> i \<le> f n \<and> ticks ((Rep_run r) i c)}
+         = {i. i \<le> f n \<and> ticks ((Rep_run r) i c)}\<close>
 proof -
   from assms have \<open>strict_mono f\<close> by (simp add: dilating_def dilating_fun_def)
   hence \<open>f 0 \<le> f n\<close> unfolding strict_mono_def by (simp add: less_mono_imp_le_mono)
   hence \<open>\<forall>i. i \<le> f n = (i < f 0) \<or> (f 0 \<le> i \<and> i \<le> f n)\<close> by auto
-  hence \<open>{i. i \<le> f n \<and> hamlet ((Rep_run r) i c)}
-        = {i. i < f 0 \<and> hamlet ((Rep_run r) i c)}
-        \<union> {i. f 0 \<le> i \<and> i \<le> f n \<and> hamlet ((Rep_run r) i c)}\<close>
+  hence \<open>{i. i \<le> f n \<and> ticks ((Rep_run r) i c)}
+        = {i. i < f 0 \<and> ticks ((Rep_run r) i c)}
+        \<union> {i. f 0 \<le> i \<and> i \<le> f n \<and> ticks ((Rep_run r) i c)}\<close>
     by auto
-  also have \<open>... = {i. f 0 \<le> i \<and> i \<le> f n \<and> hamlet ((Rep_run r) i c)}\<close>
+  also have \<open>... = {i. f 0 \<le> i \<and> i \<le> f n \<and> ticks ((Rep_run r) i c)}\<close>
      using empty_dilated_prefix[OF assms] by blast
   finally show ?thesis by simp
 qed
 
 corollary dilated_prefix:
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>{i. i \<le> f n \<and> hamlet ((Rep_run r) i c)}
-          = image f {i. i \<le> n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  shows   \<open>{i. i \<le> f n \<and> ticks ((Rep_run r) i c)}
+          = image f {i. i \<le> n \<and> ticks ((Rep_run sub) i c)}\<close>
 proof -
-  have \<open>{i. 0 \<le> i \<and> i \<le> f n \<and> hamlet ((Rep_run r) i c)}
-        = image f {i. 0 \<le> i \<and> i \<le> n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  have \<open>{i. 0 \<le> i \<and> i \<le> f n \<and> ticks ((Rep_run r) i c)}
+        = image f {i. 0 \<le> i \<and> i \<le> n \<and> ticks ((Rep_run sub) i c)}\<close>
     using dilated_ticks[OF assms] empty_dilated_prefix'[OF assms] by blast
   thus ?thesis by simp
 qed
 
 corollary dilated_strict_prefix:
   assumes \<open>dilating f sub r\<close>
-  shows   \<open>{i. i < f n \<and> hamlet ((Rep_run r) i c)}
-          = image f {i. i < n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  shows   \<open>{i. i < f n \<and> ticks ((Rep_run r) i c)}
+          = image f {i. i < n \<and> ticks ((Rep_run sub) i c)}\<close>
 proof -
   from assms have dil:\<open>dilating_fun f r\<close> unfolding dilating_def by simp
   from dil have f0:\<open>f 0 = 0\<close>  using dilating_fun_def by blast
   from dilating_fun_image_left[OF dil, of \<open>0\<close> \<open>n\<close> \<open>c\<close>]
-  have \<open>{i. f 0 \<le> i \<and> i < f n \<and> hamlet ((Rep_run r) i c)}
-        = image f {i. 0 \<le> i \<and> i < n \<and> hamlet ((Rep_run r) (f i) c)}\<close> .
-  hence \<open>{i. i < f n \<and> hamlet ((Rep_run r) i c)}
-        = image f {i. i < n \<and> hamlet ((Rep_run r) (f i) c)}\<close>
+  have \<open>{i. f 0 \<le> i \<and> i < f n \<and> ticks ((Rep_run r) i c)}
+        = image f {i. 0 \<le> i \<and> i < n \<and> ticks ((Rep_run r) (f i) c)}\<close> .
+  hence \<open>{i. i < f n \<and> ticks ((Rep_run r) i c)}
+        = image f {i. i < n \<and> ticks ((Rep_run r) (f i) c)}\<close>
     using f0 by simp
-  also have \<open>... = image f {i. i < n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  also have \<open>... = image f {i. i < n \<and> ticks ((Rep_run sub) i c)}\<close>
     using assms dilating_def by blast
   finally show ?thesis by simp
 qed
@@ -508,28 +508,28 @@ text \<open>
 lemma tick_count_is_fun[code]:\<open>tick_count r c n = run_tick_count r c n\<close>
 proof (induction n)
   case 0
-    have \<open>tick_count r c 0 = card {i. i \<le> 0 \<and> hamlet ((Rep_run r) i c)}\<close>
+    have \<open>tick_count r c 0 = card {i. i \<le> 0 \<and> ticks ((Rep_run r) i c)}\<close>
       by (simp add: tick_count_def)
-    also have \<open>... = card {i::nat. i = 0 \<and> hamlet ((Rep_run r) 0 c)}\<close>
-      using le_zero_eq nat_sing_prop[of \<open>0\<close> \<open>\<lambda>i. hamlet ((Rep_run r) i c)\<close>] by simp
-    also have \<open>... = (if hamlet ((Rep_run r) 0 c) then 1 else 0)\<close> by simp
+    also have \<open>... = card {i::nat. i = 0 \<and> ticks ((Rep_run r) 0 c)}\<close>
+      using le_zero_eq nat_sing_prop[of \<open>0\<close> \<open>\<lambda>i. ticks ((Rep_run r) i c)\<close>] by simp
+    also have \<open>... = (if ticks ((Rep_run r) 0 c) then 1 else 0)\<close> by simp
     also have \<open>... = run_tick_count r c 0\<close> by simp
     finally show ?case .
 next
   case (Suc k)
     show ?case
-    proof (cases \<open>hamlet ((Rep_run r) (Suc k) c)\<close>)
+    proof (cases \<open>ticks ((Rep_run r) (Suc k) c)\<close>)
       case True
-        hence \<open>{i. i \<le> Suc k \<and> hamlet ((Rep_run r) i c)}
-             = insert (Suc k) {i. i \<le> k \<and> hamlet ((Rep_run r) i c)}\<close> by auto
+        hence \<open>{i. i \<le> Suc k \<and> ticks ((Rep_run r) i c)}
+             = insert (Suc k) {i. i \<le> k \<and> ticks ((Rep_run r) i c)}\<close> by auto
         hence \<open>tick_count r c (Suc k) = Suc (tick_count r c k)\<close>
           by (simp add: tick_count_def)
         with Suc.IH have \<open>tick_count r c (Suc k) = Suc (run_tick_count r c k)\<close> by simp
         thus ?thesis by (simp add: True)
     next
       case False
-        hence \<open>{i. i \<le> Suc k \<and> hamlet ((Rep_run r) i c)}
-             = {i. i \<le> k \<and> hamlet ((Rep_run r) i c)}\<close>
+        hence \<open>{i. i \<le> Suc k \<and> ticks ((Rep_run r) i c)}
+             = {i. i \<le> k \<and> ticks ((Rep_run r) i c)}\<close>
           using le_Suc_eq by auto
         hence \<open>tick_count r c (Suc k) = tick_count r c k\<close>
           by (simp add: tick_count_def)
@@ -585,7 +585,7 @@ lemma zero_gt_all:
 
 lemma strictly_precedes_alt_def2:
   \<open>{ \<rho>. \<forall>n::nat. (run_tick_count \<rho> K\<^sub>2 n) \<le> (run_tick_count_strictly \<rho> K\<^sub>1 n) }
- = { \<rho>. (\<not>hamlet ((Rep_run \<rho>) 0 K\<^sub>2))
+ = { \<rho>. (\<not>ticks ((Rep_run \<rho>) 0 K\<^sub>2))
       \<and> (\<forall>n::nat. (run_tick_count \<rho> K\<^sub>2 (Suc n)) \<le> (run_tick_count \<rho> K\<^sub>1 n)) }\<close>
   (is \<open>?P = ?P'\<close>)
 proof
@@ -607,7 +607,7 @@ proof
     from 1 have \<open>tick_count r K\<^sub>2 0 <= tick_count_strict r K\<^sub>1 0\<close> by simp
     moreover have \<open>tick_count_strict r K\<^sub>1 0 = 0\<close> unfolding tick_count_strict_def by simp
     ultimately have \<open>tick_count r K\<^sub>2 0 = 0\<close> by simp
-    hence \<open>\<not>hamlet ((Rep_run r) 0 K\<^sub>2)\<close> unfolding tick_count_def by auto
+    hence \<open>\<not>ticks ((Rep_run r) 0 K\<^sub>2)\<close> unfolding tick_count_def by auto
     with * have \<open>r \<in> ?P'\<close> by simp
   } thus \<open>?P \<subseteq> ?P'\<close> ..
   { fix r::\<open>'a run\<close>
@@ -620,7 +620,7 @@ proof
     hence *:\<open>\<forall>n. n > 0 \<longrightarrow> (tick_count r K\<^sub>2 n) \<le> (tick_count_strict r K\<^sub>1 n)\<close>
       using gr0_implies_Suc by blast
     have \<open>tick_count_strict r K\<^sub>1 0 = 0\<close> unfolding tick_count_strict_def by simp
-    moreover from h have \<open>\<not>hamlet ((Rep_run r) 0 K\<^sub>2)\<close> by simp
+    moreover from h have \<open>\<not>ticks ((Rep_run r) 0 K\<^sub>2)\<close> by simp
     hence \<open>tick_count r K\<^sub>2 0 = 0\<close> unfolding tick_count_def by auto
     ultimately have \<open>tick_count r K\<^sub>2 0 \<le> tick_count_strict r K\<^sub>1 0\<close> by simp
     from zero_gt_all[of \<open>\<lambda>n. tick_count r K\<^sub>2 n \<le> tick_count_strict r K\<^sub>1 n\<close>, OF this ] *
@@ -636,13 +636,13 @@ text \<open>
   and @{const \<open>Suc\<close>}:
 \<close>
 lemma run_tick_count_suc:
-  \<open>run_tick_count r c (Suc n) = (if hamlet ((Rep_run r) (Suc n) c)
+  \<open>run_tick_count r c (Suc n) = (if ticks ((Rep_run r) (Suc n) c)
                                  then Suc (run_tick_count r c n)
                                  else run_tick_count r c n)\<close>
 by simp
 
 corollary tick_count_suc:
-  \<open>tick_count r c (Suc n) = (if hamlet ((Rep_run r) (Suc n) c)
+  \<open>tick_count r c (Suc n) = (if ticks ((Rep_run r) (Suc n) c)
                              then Suc (tick_count r c n)
                              else tick_count r c n)\<close>
 by (simp add: tick_count_is_fun)
@@ -752,10 +752,10 @@ text \<open>
 lemma no_tick_before_suc:
   assumes \<open>dilating f sub r\<close>
       and \<open>(f n) < k \<and> k < (f (Suc n))\<close>
-    shows \<open>\<not>hamlet ((Rep_run r) k c)\<close>
+    shows \<open>\<not>ticks ((Rep_run r) k c)\<close>
 proof -
   from assms(1) have smf:\<open>strict_mono f\<close> by (simp add: dilating_def dilating_fun_def)
-  { fix k assume h:\<open>f n < k \<and> k < f (Suc n) \<and> hamlet ((Rep_run r) k c)\<close>
+  { fix k assume h:\<open>f n < k \<and> k < f (Suc n) \<and> ticks ((Rep_run r) k c)\<close>
     hence \<open>\<exists>k\<^sub>0. f k\<^sub>0 = k\<close> using assms(1) dilating_def dilating_fun_def by blast
     from this obtain k\<^sub>0 where \<open>f k\<^sub>0 = k\<close> by blast
     with h have \<open>f n < f k\<^sub>0 \<and> f k\<^sub>0 < f (Suc n)\<close> by simp
@@ -772,25 +772,25 @@ text \<open>
 lemma tick_count_fsuc:
   assumes \<open>dilating f sub r\<close>
     shows \<open>tick_count r c (f (Suc n))
-         = tick_count r c (f n) + card {k. k = f (Suc n) \<and> hamlet ((Rep_run r) k c)}\<close>
+         = tick_count r c (f n) + card {k. k = f (Suc n) \<and> ticks ((Rep_run r) k c)}\<close>
 proof -
   have smf:\<open>strict_mono f\<close> using assms dilating_def dilating_fun_def by blast
-  moreover have \<open>finite {k. k \<le> f n \<and> hamlet ((Rep_run r) k c)}\<close> by simp
-  moreover have *:\<open>finite {k. f n < k \<and> k \<le> f (Suc n) \<and> hamlet ((Rep_run r) k c)}\<close> by simp
-  ultimately have \<open>{k. k \<le> f (Suc n) \<and> hamlet ((Rep_run r) k c)} =
-                        {k. k \<le> f n \<and> hamlet ((Rep_run r) k c)}
-                      \<union> {k. f n < k \<and> k \<le> f (Suc n) \<and> hamlet ((Rep_run r) k c)}\<close>
+  moreover have \<open>finite {k. k \<le> f n \<and> ticks ((Rep_run r) k c)}\<close> by simp
+  moreover have *:\<open>finite {k. f n < k \<and> k \<le> f (Suc n) \<and> ticks ((Rep_run r) k c)}\<close> by simp
+  ultimately have \<open>{k. k \<le> f (Suc n) \<and> ticks ((Rep_run r) k c)} =
+                        {k. k \<le> f n \<and> ticks ((Rep_run r) k c)}
+                      \<union> {k. f n < k \<and> k \<le> f (Suc n) \<and> ticks ((Rep_run r) k c)}\<close>
     by (simp add: nat_interval_union strict_mono_less_eq)
-  moreover have \<open>{k. k \<le> f n \<and> hamlet ((Rep_run r) k c)}
-                  \<inter> {k. f n < k \<and> k \<le> f (Suc n) \<and> hamlet ((Rep_run r) k c)} = {}\<close>
+  moreover have \<open>{k. k \<le> f n \<and> ticks ((Rep_run r) k c)}
+                  \<inter> {k. f n < k \<and> k \<le> f (Suc n) \<and> ticks ((Rep_run r) k c)} = {}\<close>
      by auto
-  ultimately have \<open>card {k. k \<le> f (Suc n) \<and> hamlet (Rep_run r k c)} =
-                      card {k. k \<le> f n \<and> hamlet (Rep_run r k c)}
-                    + card {k. f n < k \<and> k \<le> f (Suc n) \<and> hamlet (Rep_run r k c)}\<close>
+  ultimately have \<open>card {k. k \<le> f (Suc n) \<and> ticks (Rep_run r k c)} =
+                      card {k. k \<le> f n \<and> ticks (Rep_run r k c)}
+                    + card {k. f n < k \<and> k \<le> f (Suc n) \<and> ticks (Rep_run r k c)}\<close>
     by (simp add: * card_Un_disjoint)
   moreover from no_tick_before_suc[OF assms] have
-    \<open>{k. f n < k \<and> k \<le> f (Suc n) \<and> hamlet ((Rep_run r) k c)} =
-            {k. k = f (Suc n) \<and> hamlet ((Rep_run r) k c)}\<close>
+    \<open>{k. f n < k \<and> k \<le> f (Suc n) \<and> ticks ((Rep_run r) k c)} =
+            {k. k = f (Suc n) \<and> ticks ((Rep_run r) k c)}\<close>
     using smf strict_mono_less by fastforce
   ultimately show ?thesis by (simp add: tick_count_def)
 qed
@@ -798,20 +798,20 @@ qed
 corollary tick_count_f_suc:
   assumes \<open>dilating f sub r\<close>
     shows \<open>tick_count r c (f (Suc n))
-         = tick_count r c (f n) + (if hamlet ((Rep_run r) (f (Suc n)) c) then 1 else 0)\<close>
+         = tick_count r c (f n) + (if ticks ((Rep_run r) (f (Suc n)) c) then 1 else 0)\<close>
 using tick_count_fsuc[OF assms]
-      card_sing_prop[of \<open>f (Suc n)\<close> \<open>\<lambda>k. hamlet ((Rep_run r) k c)\<close>] by simp
+      card_sing_prop[of \<open>f (Suc n)\<close> \<open>\<lambda>k. ticks ((Rep_run r) k c)\<close>] by simp
 
 corollary tick_count_f_suc_suc:
   assumes \<open>dilating f sub r\<close>
-    shows \<open>tick_count r c (f (Suc n)) = (if hamlet ((Rep_run r) (f (Suc n)) c)
+    shows \<open>tick_count r c (f (Suc n)) = (if ticks ((Rep_run r) (f (Suc n)) c)
                                          then Suc (tick_count r c (f n))
                                          else tick_count r c (f n))\<close>
 using tick_count_f_suc[OF assms] by simp
 
 lemma tick_count_f_suc_sub:
   assumes \<open>dilating f sub r\<close>
-    shows \<open>tick_count r c (f (Suc n)) = (if hamlet ((Rep_run sub) (Suc n) c)
+    shows \<open>tick_count r c (f (Suc n)) = (if ticks ((Rep_run sub) (Suc n) c)
                                          then Suc (tick_count r c (f n))
                                          else tick_count r c (f n))\<close>
 using tick_count_f_suc_suc[OF assms] assms by (simp add: dilating_def)
@@ -824,13 +824,13 @@ lemma tick_count_latest:
       and \<open>f n\<^sub>p < n \<and> (\<forall>k. f n\<^sub>p < k \<and> k \<le> n \<longrightarrow> (\<nexists>k\<^sub>0. f k\<^sub>0 = k))\<close>
     shows \<open>tick_count r c n = tick_count r c (f n\<^sub>p)\<close>
 proof -
-  have union:\<open>{i. i \<le> n \<and> hamlet ((Rep_run r) i c)} =
-          {i. i \<le> f n\<^sub>p \<and> hamlet ((Rep_run r) i c)}
-        \<union> {i. f n\<^sub>p < i \<and> i \<le> n \<and> hamlet ((Rep_run r) i c)}\<close> using assms(2) by auto
-  have partition: \<open>{i. i \<le> f n\<^sub>p \<and> hamlet ((Rep_run r) i c)}
-        \<inter> {i. f n\<^sub>p < i \<and> i \<le> n \<and> hamlet ((Rep_run r) i c)} = {}\<close>
+  have union:\<open>{i. i \<le> n \<and> ticks ((Rep_run r) i c)} =
+          {i. i \<le> f n\<^sub>p \<and> ticks ((Rep_run r) i c)}
+        \<union> {i. f n\<^sub>p < i \<and> i \<le> n \<and> ticks ((Rep_run r) i c)}\<close> using assms(2) by auto
+  have partition: \<open>{i. i \<le> f n\<^sub>p \<and> ticks ((Rep_run r) i c)}
+        \<inter> {i. f n\<^sub>p < i \<and> i \<le> n \<and> ticks ((Rep_run r) i c)} = {}\<close>
     by (simp add: disjoint_iff_not_equal)
-  from assms have \<open>{i. f n\<^sub>p < i \<and> i \<le> n \<and> hamlet ((Rep_run r) i c)} = {}\<close>
+  from assms have \<open>{i. f n\<^sub>p < i \<and> i \<le> n \<and> ticks ((Rep_run r) i c)} = {}\<close>
     using no_tick_sub by fastforce
   with union and partition show ?thesis by (simp add: tick_count_def)
 qed
@@ -842,11 +842,11 @@ lemma tick_count_sub:
   assumes \<open>dilating f sub r\<close>
     shows \<open>tick_count sub c n = tick_count r c (f n)\<close>
 proof -
-  have \<open>tick_count sub c n = card {i. i \<le> n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  have \<open>tick_count sub c n = card {i. i \<le> n \<and> ticks ((Rep_run sub) i c)}\<close>
     using tick_count_def[of \<open>sub\<close> \<open>c\<close> \<open>n\<close>] .
-  also have \<open>... = card (image f {i. i \<le> n \<and> hamlet ((Rep_run sub) i c)})\<close>
+  also have \<open>... = card (image f {i. i \<le> n \<and> ticks ((Rep_run sub) i c)})\<close>
     using assms dilating_def dilating_injects[OF assms] by (simp add: card_image)
-  also have \<open>... = card {i. i \<le> f n \<and> hamlet ((Rep_run r) i c)}\<close>
+  also have \<open>... = card {i. i \<le> f n \<and> ticks ((Rep_run r) i c)}\<close>
     using dilated_prefix[OF assms, symmetric, of \<open>n\<close> \<open>c\<close>] by simp
   also have \<open>... = tick_count r c (f n)\<close>
     using tick_count_def[of \<open>r\<close> \<open>c\<close> \<open>f n\<close>] by simp
@@ -888,14 +888,14 @@ proof -
   from assms(2) have \<open>f n < k\<close> by simp
   hence \<open>\<forall>i. k \<le> i \<longrightarrow> f n < i\<close> by simp
   with no_tick_before_suc[OF assms(1)] have
-    *:\<open>\<forall>i. k \<le> i \<and> i < f (Suc n) \<longrightarrow> \<not>hamlet ((Rep_run r) i c)\<close> by blast
+    *:\<open>\<forall>i. k \<le> i \<and> i < f (Suc n) \<longrightarrow> \<not>ticks ((Rep_run r) i c)\<close> by blast
   from tick_count_strict_def have
-    \<open>tick_count_strict r c (f (Suc n)) = card {i. i < f (Suc n) \<and> hamlet ((Rep_run r) i c)}\<close> .
+    \<open>tick_count_strict r c (f (Suc n)) = card {i. i < f (Suc n) \<and> ticks ((Rep_run r) i c)}\<close> .
   also have
-    \<open>... = card {i. i < k \<and> hamlet ((Rep_run r) i c)}
-         + card {i. k \<le> i \<and> i < f (Suc n) \<and> hamlet ((Rep_run r) i c)}\<close> 
+    \<open>... = card {i. i < k \<and> ticks ((Rep_run r) i c)}
+         + card {i. k \<le> i \<and> i < f (Suc n) \<and> ticks ((Rep_run r) i c)}\<close> 
     using card_mnm' assms(2) by simp
-  also have \<open>... = card {i. i < k \<and> hamlet ((Rep_run r) i c)}\<close> using * by simp
+  also have \<open>... = card {i. i < k \<and> ticks ((Rep_run r) i c)}\<close> using * by simp
   finally show ?thesis by (simp add: tick_count_strict_def)
 qed
 
@@ -906,11 +906,11 @@ lemma tick_count_strict_sub:
   assumes \<open>dilating f sub r\<close>
     shows \<open>tick_count_strict sub c n = tick_count_strict r c (f n)\<close>
 proof -
-  have \<open>tick_count_strict sub c n = card {i. i < n \<and> hamlet ((Rep_run sub) i c)}\<close>
+  have \<open>tick_count_strict sub c n = card {i. i < n \<and> ticks ((Rep_run sub) i c)}\<close>
     using tick_count_strict_def[of \<open>sub\<close> \<open>c\<close> \<open>n\<close>] .
-  also have \<open>... = card (image f {i. i < n \<and> hamlet ((Rep_run sub) i c)})\<close>
+  also have \<open>... = card (image f {i. i < n \<and> ticks ((Rep_run sub) i c)})\<close>
     using assms dilating_def dilating_injects[OF assms] by (simp add: card_image)
-  also have \<open>... = card {i. i < f n \<and> hamlet ((Rep_run r) i c)}\<close>
+  also have \<open>... = card {i. i < f n \<and> ticks ((Rep_run r) i c)}\<close>
     using dilated_strict_prefix[OF assms, symmetric, of \<open>n\<close> \<open>c\<close>] by simp
   also have \<open>... = tick_count_strict r c (f n)\<close>
     using tick_count_strict_def[of \<open>r\<close> \<open>c\<close> \<open>f n\<close>] by simp
@@ -1034,14 +1034,14 @@ proof -
       case True
         from this obtain n\<^sub>0 where fn0:\<open>f n\<^sub>0 = Suc n'\<close> by blast
         show ?thesis
-        proof (cases \<open>hamlet ((Rep_run sub) n\<^sub>0 a)\<close>)
+        proof (cases \<open>ticks ((Rep_run sub) n\<^sub>0 a)\<close>)
           case True
             have \<open>run_tick_count r a (f n\<^sub>0) \<le> run_tick_count r b (f n\<^sub>0)\<close>
               using assms(2) run_tick_count_sub[OF *] by simp
             thus ?thesis by (simp add: fn0)
         next
           case False
-            hence \<open>\<not> hamlet ((Rep_run r) (Suc n') a)\<close>
+            hence \<open>\<not> ticks ((Rep_run r) (Suc n') a)\<close>
               using * fn0 ticks_sub by fastforce
             thus ?thesis by (simp add: Suc.IH le_SucI)
         qed
@@ -1188,7 +1188,7 @@ lemma contracting_inverse:
     shows \<open>contracting (dil_inverse f) r sub f\<close>
 proof -
   from assms have smf:\<open>strict_mono f\<close>
-    and no_img_tick:\<open>\<forall>k. (\<nexists>k\<^sub>0. f k\<^sub>0 = k) \<longrightarrow> (\<forall>c. \<not>(hamlet ((Rep_run r) k c)))\<close>
+    and no_img_tick:\<open>\<forall>k. (\<nexists>k\<^sub>0. f k\<^sub>0 = k) \<longrightarrow> (\<forall>c. \<not>(ticks ((Rep_run r) k c)))\<close>
     and no_img_time:\<open>\<And>n. (\<nexists>n\<^sub>0. f n\<^sub>0 = (Suc n))
                           \<longrightarrow> (\<forall>c. time ((Rep_run r) (Suc n) c) = time ((Rep_run r) n c))\<close>
     and fxge:\<open>\<forall>x. f x \<ge> x\<close> and f0n:\<open>\<And>n. f 0 \<le> n\<close> and f0:\<open>f 0 = 0\<close>
@@ -1222,7 +1222,7 @@ proof -
     using assms(1) dilating_def dilating_fun_def Max_in by blast
 
   have 5:\<open>\<forall>n c k. f ((dil_inverse f) n) < k \<and> k \<le> n
-                              \<longrightarrow> \<not> hamlet ((Rep_run r) k c)\<close>
+                              \<longrightarrow> \<not> ticks ((Rep_run r) k c)\<close>
     using not_image_stut[OF assms] no_img_tick unfolding dil_inverse_def by blast
 
   have 6:\<open>(\<forall>n c k. f ((dil_inverse f) n) \<le> k \<and> k \<le> n
@@ -1270,8 +1270,8 @@ proof
   { fix n assume h:\<open>g n < (dil_inverse f) n\<close>
     hence \<open>\<exists>k > g n. f k \<le> n\<close> unfolding dil_inverse_def using Max_in[OF * **] by blast
     from this obtain k where kprop:\<open>g n < k \<and> f k \<le> n\<close> by blast
-    with assms(3) dense_run_def obtain c where \<open>hamlet ((Rep_run sub) k c)\<close> by blast
-    hence \<open>hamlet ((Rep_run r) (f k) c)\<close> using ticks_sub[OF assms(1)] by blast
+    with assms(3) dense_run_def obtain c where \<open>ticks ((Rep_run sub) k c)\<close> by blast
+    hence \<open>ticks ((Rep_run r) (f k) c)\<close> using ticks_sub[OF assms(1)] by blast
     moreover from kprop have \<open>f (g n) < f k \<and> f k \<le> n\<close> using assms(1)
       by (simp add: dilating_def dilating_fun_def strict_monoD)
     ultimately have False using assms(2) unfolding contracting_def by blast

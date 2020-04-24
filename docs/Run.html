@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Theory Run (Isabelle2019: June 2019)</title>
+<title>Theory Run (Isabelle2020: April 2020)</title>
 <link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
 </head>
 
@@ -25,12 +25,12 @@
   Runs are sequences of instants, and each instant maps a clock to a pair 
   @{term &#8249;(h, t)&#8250;} where @{term &#8249;h&#8250;} indicates whether the clock ticks or not, 
   and @{term &#8249;t&#8250;} is the current time on this clock.
-  The first element of the pair is called the &#8727;&#8249;hamlet&#8250; of the clock (to tick or 
+  The first element of the pair is called the &#8727;&#8249;ticks&#8250; of the clock (to tick or 
   not to tick), the second element is called the &#8727;&#8249;time&#8250;.
 &#8250;</span></span></span><span>
 </span><span>
-</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>hamlet</span><span> </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;hamlet &#8801; fst&#8250;</span></span></span><span>
-</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>time</span><span>   </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;time &#8801; snd&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>ticks</span><span> </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;ticks &#8801; fst&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>time</span><span>  </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;time &#8801; snd&#8250;</span></span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">type_synonym</span></span><span> </span><span class="tfree">&#39;&#964;</span><span> </span><span>instant</span><span> </span><span class="delimiter">=</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;clock &#8658; (bool &#215; &#39;&#964; tag_const)&#8250;</span></span></span><span>
 </span><span>
@@ -54,7 +54,7 @@
   A &#8727;&#8249;dense&#8250; run is a run in which something happens (at least one clock ticks) 
   at every instant.
 &#8250;</span></span></span><span>
-</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;dense_run &#961; &#8801; (&#8704;n. &#8707;c. hamlet ((Rep_run &#961;) n c))&#8250;</span></span></span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;dense_run &#961; &#8801; (&#8704;n. &#8707;c. ticks ((Rep_run &#961;) n c))&#8250;</span></span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">text</span></span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
   @{term &#8249;run_tick_count &#961; K n&#8250;} counts the number of ticks on clock @{term &#8249;K&#8250;} 
@@ -63,10 +63,10 @@
 </span><span class="keyword1"><span class="command">fun</span></span><span> </span><span>run_tick_count</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) run &#8658; clock &#8658; nat &#8658; nat&#8250;</span></span></span><span>
 </span><span>  </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;#<span class="hidden">&#8681;</span><sub>&#8804;</sub> _ _ _&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
-</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K 0)       = (if hamlet ((Rep_run &#961;) 0 K)
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K 0)       = (if ticks ((Rep_run &#961;) 0 K)
                        then 1
                        else 0)&#8250;</span></span></span><span>
-</span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K (Suc n)) = (if hamlet ((Rep_run &#961;) (Suc n) K)
+</span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K (Suc n)) = (if ticks ((Rep_run &#961;) (Suc n) K)
                        then 1 + (#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K n)
                        else (#<span class="hidden">&#8681;</span><sub>&#8804;</sub> &#961; K n))&#8250;</span></span></span><span>
 </span><span>

@@ -8,12 +8,12 @@ text \<open>
   Runs are sequences of instants, and each instant maps a clock to a pair 
   @{term \<open>(h, t)\<close>} where @{term \<open>h\<close>} indicates whether the clock ticks or not, 
   and @{term \<open>t\<close>} is the current time on this clock.
-  The first element of the pair is called the \<^emph>\<open>hamlet\<close> of the clock (to tick or 
+  The first element of the pair is called the \<^emph>\<open>ticks\<close> of the clock (to tick or 
   not to tick), the second element is called the \<^emph>\<open>time\<close>.
 \<close>
 
-abbreviation hamlet where \<open>hamlet \<equiv> fst\<close>
-abbreviation time   where \<open>time \<equiv> snd\<close>
+abbreviation ticks where \<open>ticks \<equiv> fst\<close>
+abbreviation time  where \<open>time \<equiv> snd\<close>
 
 type_synonym '\<tau> instant = \<open>clock \<Rightarrow> (bool \<times> '\<tau> tag_const)\<close>
 
@@ -37,7 +37,7 @@ text \<open>
   A \<^emph>\<open>dense\<close> run is a run in which something happens (at least one clock ticks) 
   at every instant.
 \<close>
-definition \<open>dense_run \<rho> \<equiv> (\<forall>n. \<exists>c. hamlet ((Rep_run \<rho>) n c))\<close>
+definition \<open>dense_run \<rho> \<equiv> (\<forall>n. \<exists>c. ticks ((Rep_run \<rho>) n c))\<close>
 
 text\<open>
   @{term \<open>run_tick_count \<rho> K n\<close>} counts the number of ticks on clock @{term \<open>K\<close>} 
@@ -46,10 +46,10 @@ text\<open>
 fun run_tick_count :: \<open>('\<tau>::linordered_field) run \<Rightarrow> clock \<Rightarrow> nat \<Rightarrow> nat\<close>
   (\<open>#\<^sub>\<le> _ _ _\<close>)
 where
-  \<open>(#\<^sub>\<le> \<rho> K 0)       = (if hamlet ((Rep_run \<rho>) 0 K)
+  \<open>(#\<^sub>\<le> \<rho> K 0)       = (if ticks ((Rep_run \<rho>) 0 K)
                        then 1
                        else 0)\<close>
-| \<open>(#\<^sub>\<le> \<rho> K (Suc n)) = (if hamlet ((Rep_run \<rho>) (Suc n) K)
+| \<open>(#\<^sub>\<le> \<rho> K (Suc n)) = (if ticks ((Rep_run \<rho>) (Suc n) K)
                        then 1 + (#\<^sub>\<le> \<rho> K n)
                        else (#\<^sub>\<le> \<rho> K n))\<close>
 

@@ -147,7 +147,7 @@ If a clock ticks at an instant in a dilated run, that instant is the image
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}image{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating{\isacharunderscore}fun\ f\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ n{\isacartoucheclose}\isanewline
 %
 \isadelimproof
@@ -169,7 +169,7 @@ If a clock ticks at an instant in a dilated run, that instant is the image
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}image{\isacharunderscore}sub{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ n{\isacartoucheclose}\isanewline
 %
 \isadelimproof
@@ -191,7 +191,7 @@ If a clock ticks at an instant in a dilated run, that instant is the image
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}image{\isacharunderscore}sub{\isacharprime}{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}{\isasymexists}c{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}{\isasymexists}c{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ n{\isacartoucheclose}\isanewline
 %
 \isadelimproof
@@ -218,8 +218,8 @@ The image of the ticks in an interval by a dilating function is the interval
 \isacommand{lemma}\isamarkupfalse%
 \ dilating{\isacharunderscore}fun{\isacharunderscore}image{\isacharunderscore}strict{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating{\isacharunderscore}fun\ f\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ m\ {\isacharless}\ k\ {\isasymand}\ k\ {\isacharless}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ m\ {\isacharless}\ k\ {\isasymand}\ k\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ m\ {\isacharless}\ k\ {\isasymand}\ k\ {\isacharless}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ m\ {\isacharless}\ k\ {\isasymand}\ k\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}IMG\ {\isacharequal}\ image\ f\ {\isacharquery}SET{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -235,7 +235,7 @@ The image of the ticks in an interval by a dilating function is the interval
 \ h{\isacharcolon}{\isacartoucheopen}k\ {\isasymin}\ {\isacharquery}IMG{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ h\ \isacommand{obtain}\isamarkupfalse%
-\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ k{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k\isactrlsub {\isadigit{0}}{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ k{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k\isactrlsub {\isadigit{0}}{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}image{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -280,8 +280,8 @@ The image of the ticks in an interval by a dilating function is the interval
 \isacommand{lemma}\isamarkupfalse%
 \ dilating{\isacharunderscore}fun{\isacharunderscore}image{\isacharunderscore}left{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating{\isacharunderscore}fun\ f\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ m\ {\isasymle}\ k\ {\isasymand}\ k\ {\isacharless}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ m\ {\isasymle}\ k\ {\isasymand}\ k\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ m\ {\isasymle}\ k\ {\isasymand}\ k\ {\isacharless}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ m\ {\isasymle}\ k\ {\isasymand}\ k\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}IMG\ {\isacharequal}\ image\ f\ {\isacharquery}SET{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -297,7 +297,7 @@ The image of the ticks in an interval by a dilating function is the interval
 \ h{\isacharcolon}{\isacartoucheopen}k\ {\isasymin}\ {\isacharquery}IMG{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ h\ \isacommand{obtain}\isamarkupfalse%
-\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ k{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k\isactrlsub {\isadigit{0}}{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ k{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k\isactrlsub {\isadigit{0}}{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}image{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -343,8 +343,8 @@ The image of the ticks in an interval by a dilating function is the interval
 \isacommand{lemma}\isamarkupfalse%
 \ dilating{\isacharunderscore}fun{\isacharunderscore}image{\isacharunderscore}right{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating{\isacharunderscore}fun\ f\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ m\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ m\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ m\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ m\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}IMG\ {\isacharequal}\ image\ f\ {\isacharquery}SET{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -360,7 +360,7 @@ The image of the ticks in an interval by a dilating function is the interval
 \ h{\isacharcolon}{\isacartoucheopen}k\ {\isasymin}\ {\isacharquery}IMG{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ h\ \isacommand{obtain}\isamarkupfalse%
-\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ k{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k\isactrlsub {\isadigit{0}}{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ k{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k\isactrlsub {\isadigit{0}}{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}image{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -406,8 +406,8 @@ The image of the ticks in an interval by a dilating function is the interval
 \isacommand{lemma}\isamarkupfalse%
 \ dilating{\isacharunderscore}fun{\isacharunderscore}image{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating{\isacharunderscore}fun\ f\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ m\ {\isasymle}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ m\ {\isasymle}\ k\ {\isasymand}\ k\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ m\ {\isasymle}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ m\ {\isasymle}\ k\ {\isasymand}\ k\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}IMG\ {\isacharequal}\ image\ f\ {\isacharquery}SET{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -423,7 +423,7 @@ The image of the ticks in an interval by a dilating function is the interval
 \ h{\isacharcolon}{\isacartoucheopen}k\ {\isasymin}\ {\isacharquery}IMG{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ h\ \isacommand{obtain}\isamarkupfalse%
-\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ k{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k\isactrlsub {\isadigit{0}}{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ k{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k\isactrlsub {\isadigit{0}}{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}image{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -471,8 +471,8 @@ On any clock, the number of ticks in an interval is preserved
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}as{\isacharunderscore}often{\isacharunderscore}strict{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating{\isacharunderscore}fun\ f\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}card\ {\isacharbraceleft}p{\isachardot}\ n\ {\isacharless}\ p\ {\isasymand}\ p\ {\isacharless}\ m\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ p{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ card\ {\isacharbraceleft}p{\isachardot}\ f\ n\ {\isacharless}\ p\ {\isasymand}\ p\ {\isacharless}\ f\ m\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ p\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}card\ {\isacharbraceleft}p{\isachardot}\ n\ {\isacharless}\ p\ {\isasymand}\ p\ {\isacharless}\ m\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ p{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ card\ {\isacharbraceleft}p{\isachardot}\ f\ n\ {\isacharless}\ p\ {\isasymand}\ p\ {\isacharless}\ f\ m\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ p\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}card\ {\isacharquery}SET\ {\isacharequal}\ card\ {\isacharquery}IMG{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -517,8 +517,8 @@ On any clock, the number of ticks in an interval is preserved
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}as{\isacharunderscore}often{\isacharunderscore}left{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating{\isacharunderscore}fun\ f\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}card\ {\isacharbraceleft}p{\isachardot}\ n\ {\isasymle}\ p\ {\isasymand}\ p\ {\isacharless}\ m\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ p{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ card\ {\isacharbraceleft}p{\isachardot}\ f\ n\ {\isasymle}\ p\ {\isasymand}\ p\ {\isacharless}\ f\ m\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ p\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}card\ {\isacharbraceleft}p{\isachardot}\ n\ {\isasymle}\ p\ {\isasymand}\ p\ {\isacharless}\ m\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ p{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ card\ {\isacharbraceleft}p{\isachardot}\ f\ n\ {\isasymle}\ p\ {\isasymand}\ p\ {\isacharless}\ f\ m\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ p\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}card\ {\isacharquery}SET\ {\isacharequal}\ card\ {\isacharquery}IMG{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -563,8 +563,8 @@ On any clock, the number of ticks in an interval is preserved
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}as{\isacharunderscore}often{\isacharunderscore}right{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating{\isacharunderscore}fun\ f\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}card\ {\isacharbraceleft}p{\isachardot}\ n\ {\isacharless}\ p\ {\isasymand}\ p\ {\isasymle}\ m\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ p{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ card\ {\isacharbraceleft}p{\isachardot}\ f\ n\ {\isacharless}\ p\ {\isasymand}\ p\ {\isasymle}\ f\ m\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ p\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}card\ {\isacharbraceleft}p{\isachardot}\ n\ {\isacharless}\ p\ {\isasymand}\ p\ {\isasymle}\ m\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ p{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ card\ {\isacharbraceleft}p{\isachardot}\ f\ n\ {\isacharless}\ p\ {\isasymand}\ p\ {\isasymle}\ f\ m\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ p\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}card\ {\isacharquery}SET\ {\isacharequal}\ card\ {\isacharquery}IMG{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -609,8 +609,8 @@ On any clock, the number of ticks in an interval is preserved
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}as{\isacharunderscore}often{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating{\isacharunderscore}fun\ f\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}card\ {\isacharbraceleft}p{\isachardot}\ n\ {\isasymle}\ p\ {\isasymand}\ p\ {\isasymle}\ m\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ p{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ card\ {\isacharbraceleft}p{\isachardot}\ f\ n\ {\isasymle}\ p\ {\isasymand}\ p\ {\isasymle}\ f\ m\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ p\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}card\ {\isacharbraceleft}p{\isachardot}\ n\ {\isasymle}\ p\ {\isasymand}\ p\ {\isasymle}\ m\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ p{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ card\ {\isacharbraceleft}p{\isachardot}\ f\ n\ {\isasymle}\ p\ {\isasymand}\ p\ {\isasymle}\ f\ m\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ p\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}card\ {\isacharquery}SET\ {\isacharequal}\ card\ {\isacharquery}IMG{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -657,7 +657,7 @@ The date of an event is preserved by dilation.%
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}tag{\isacharunderscore}image{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}{\isasymexists}c{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}{\isasymexists}c{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}\ {\isacharequal}\ {\isasymtau}{\isacartoucheclose}\isanewline
 \ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymexists}k\isactrlsub {\isadigit{0}}{\isachardot}\ f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}\ {\isacharequal}\ {\isasymtau}{\isacartoucheclose}\isanewline
 %
@@ -701,7 +701,7 @@ TESL operators are invariant by dilation.%
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}sub{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ a{\isacharparenright}\ {\isacharequal}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ a{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\ a{\isacharparenright}\ {\isacharequal}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ n{\isacharparenright}\ a{\isacharparenright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -722,7 +722,7 @@ TESL operators are invariant by dilation.%
 \isacommand{lemma}\isamarkupfalse%
 \ no{\isacharunderscore}tick{\isacharunderscore}sub{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharparenleft}{\isasymnexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ n{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharparenleft}{\isasymnexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ n{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ a{\isacharparenright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -753,7 +753,7 @@ The set of instants when a clock ticks in a dilated run is the image by the
 \isacommand{lemma}\isamarkupfalse%
 \ tick{\isacharunderscore}set{\isacharunderscore}sub{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\ image\ f\ {\isacharbraceleft}k{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}R\ {\isacharequal}\ image\ f\ {\isacharquery}S{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -777,7 +777,7 @@ The set of instants when a clock ticks in a dilated run is the image by the
 \ blast\isanewline
 \ \ \ \ \isacommand{with}\isamarkupfalse%
 \ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharbrackright}\ h\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{with}\isamarkupfalse%
 \ k{\isadigit{0}}prop\ \isacommand{have}\isamarkupfalse%
@@ -796,7 +796,7 @@ The set of instants when a clock ticks in a dilated run is the image by the
 \ h{\isacharcolon}{\isacartoucheopen}k\ {\isasymin}\ image\ f\ {\isacharquery}S{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ this\ \isacommand{obtain}\isamarkupfalse%
-\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ {\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ k\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ {\isacartoucheopen}f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{with}\isamarkupfalse%
 \ assms\ \isacommand{have}\isamarkupfalse%
@@ -869,9 +869,9 @@ The first instant when a clock ticks in a dilated run is the image by the dilati
 \isacommand{lemma}\isamarkupfalse%
 \ Least{\isacharunderscore}sub{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}{\isasymexists}k{\isacharcolon}{\isacharcolon}nat{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharparenleft}LEAST\ k{\isachardot}\ k\ {\isasymin}\ {\isacharbraceleft}t{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ t\ c{\isacharparenright}{\isacharbraceright}{\isacharparenright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharequal}\ f\ {\isacharparenleft}LEAST\ k{\isachardot}\ k\ {\isasymin}\ {\isacharbraceleft}t{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ t\ c{\isacharparenright}{\isacharbraceright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}{\isasymexists}k{\isacharcolon}{\isacharcolon}nat{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharparenleft}LEAST\ k{\isachardot}\ k\ {\isasymin}\ {\isacharbraceleft}t{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ t\ c{\isacharparenright}{\isacharbraceright}{\isacharparenright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharequal}\ f\ {\isacharparenleft}LEAST\ k{\isachardot}\ k\ {\isasymin}\ {\isacharbraceleft}t{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ t\ c{\isacharparenright}{\isacharbraceright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharparenleft}LEAST\ k{\isachardot}\ k\ {\isasymin}\ {\isacharquery}R{\isacharparenright}\ {\isacharequal}\ f\ {\isacharparenleft}LEAST\ k{\isachardot}\ k\ {\isasymin}\ {\isacharquery}S{\isacharparenright}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -918,8 +918,8 @@ If a clock ticks in a run, it ticks in the subrun.%
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}sub{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}{\isasymexists}k{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymexists}k\isactrlsub {\isadigit{0}}{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}{\isasymexists}k{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymexists}k\isactrlsub {\isadigit{0}}{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -930,7 +930,7 @@ If a clock ticks in a run, it ticks in the subrun.%
 \ {\isacharminus}\isanewline
 \ \ \isacommand{from}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{obtain}\isamarkupfalse%
-\ k\ \isakeyword{where}\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ k\ \isakeyword{where}\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \isacommand{with}\isamarkupfalse%
 \ ticks{\isacharunderscore}image{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}{\isacharbrackright}\ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}{\isacharbrackright}\ \isacommand{show}\isamarkupfalse%
@@ -951,8 +951,8 @@ Stronger version: it ticks in the subrun and we know when.%
 \isacommand{lemma}\isamarkupfalse%
 \ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymexists}k\isactrlsub {\isadigit{0}}{\isachardot}\ f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymexists}k\isactrlsub {\isadigit{0}}{\isachardot}\ f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -973,7 +973,7 @@ Stronger version: it ticks in the subrun and we know when.%
 \ \isacommand{with}\isamarkupfalse%
 \ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}{\isacharbrackright}\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\isanewline
 \ \ \ \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \isacommand{ultimately}\isamarkupfalse%
 \ \isacommand{show}\isamarkupfalse%
@@ -994,8 +994,8 @@ A dilating function preserves the tick count on an interval for any clock.%
 \isacommand{lemma}\isamarkupfalse%
 \ dilated{\isacharunderscore}ticks{\isacharunderscore}strict{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ m\ {\isacharless}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ m\ {\isacharless}\ i\ {\isasymand}\ i\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ m\ {\isacharless}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ m\ {\isacharless}\ i\ {\isasymand}\ i\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}RUN\ {\isacharequal}\ image\ f\ {\isacharquery}SUB{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -1020,10 +1020,10 @@ A dilating function preserves the tick count on an interval for any clock.%
 \ \ \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{from}\isamarkupfalse%
 \ h\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
@@ -1041,12 +1041,12 @@ A dilating function preserves the tick count on an interval for any clock.%
 \ i\ \isacommand{assume}\isamarkupfalse%
 \ h{\isacharcolon}{\isacartoucheopen}i\ {\isasymin}\ {\isacharquery}RUN{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk{\isacharbrackleft}OF\ assms\ this{\isacharbrackright}\isanewline
 \ \ \ \ \ \ \isacommand{obtain}\isamarkupfalse%
-\ i\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ i{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ i\isactrlsub {\isadigit{0}}\ {\isacharequal}\ i\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ i\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ i{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ i\isactrlsub {\isadigit{0}}\ {\isacharequal}\ i\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{with}\isamarkupfalse%
 \ h\ \isacommand{have}\isamarkupfalse%
@@ -1084,8 +1084,8 @@ A dilating function preserves the tick count on an interval for any clock.%
 \isacommand{lemma}\isamarkupfalse%
 \ dilated{\isacharunderscore}ticks{\isacharunderscore}left{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ m\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ m\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ m\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ m\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}RUN\ {\isacharequal}\ image\ f\ {\isacharquery}SUB{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -1110,10 +1110,10 @@ A dilating function preserves the tick count on an interval for any clock.%
 \ \ \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{from}\isamarkupfalse%
 \ h\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
@@ -1131,12 +1131,12 @@ A dilating function preserves the tick count on an interval for any clock.%
 \ i\ \isacommand{assume}\isamarkupfalse%
 \ h{\isacharcolon}{\isacartoucheopen}i\ {\isasymin}\ {\isacharquery}RUN{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk{\isacharbrackleft}OF\ assms\ this{\isacharbrackright}\isanewline
 \ \ \ \ \ \ \isacommand{obtain}\isamarkupfalse%
-\ i\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ i{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ i\isactrlsub {\isadigit{0}}\ {\isacharequal}\ i\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ i\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ i{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ i\isactrlsub {\isadigit{0}}\ {\isacharequal}\ i\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{with}\isamarkupfalse%
 \ h\ \isacommand{have}\isamarkupfalse%
@@ -1174,8 +1174,8 @@ A dilating function preserves the tick count on an interval for any clock.%
 \isacommand{lemma}\isamarkupfalse%
 \ dilated{\isacharunderscore}ticks{\isacharunderscore}right{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ m\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ m\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ m\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ m\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}RUN\ {\isacharequal}\ image\ f\ {\isacharquery}SUB{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -1200,10 +1200,10 @@ A dilating function preserves the tick count on an interval for any clock.%
 \ \ \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{from}\isamarkupfalse%
 \ h\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
@@ -1221,12 +1221,12 @@ A dilating function preserves the tick count on an interval for any clock.%
 \ i\ \isacommand{assume}\isamarkupfalse%
 \ h{\isacharcolon}{\isacartoucheopen}i\ {\isasymin}\ {\isacharquery}RUN{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk{\isacharbrackleft}OF\ assms\ this{\isacharbrackright}\isanewline
 \ \ \ \ \ \ \isacommand{obtain}\isamarkupfalse%
-\ i\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ i{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ i\isactrlsub {\isadigit{0}}\ {\isacharequal}\ i\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ i\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ i{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ i\isactrlsub {\isadigit{0}}\ {\isacharequal}\ i\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{with}\isamarkupfalse%
 \ h\ \isacommand{have}\isamarkupfalse%
@@ -1264,8 +1264,8 @@ A dilating function preserves the tick count on an interval for any clock.%
 \isacommand{lemma}\isamarkupfalse%
 \ dilated{\isacharunderscore}ticks{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ m\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ m\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ m\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ m\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}RUN\ {\isacharequal}\ image\ f\ {\isacharquery}SUB{\isacartoucheclose}{\isacharparenright}\isanewline
 %
 \isadelimproof
@@ -1290,10 +1290,10 @@ A dilating function preserves the tick count on an interval for any clock.%
 \ \ \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{from}\isamarkupfalse%
 \ h\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{ultimately}\isamarkupfalse%
@@ -1311,12 +1311,12 @@ A dilating function preserves the tick count on an interval for any clock.%
 \ i\ \isacommand{assume}\isamarkupfalse%
 \ h{\isacharcolon}{\isacartoucheopen}i\ {\isasymin}\ {\isacharquery}RUN{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{from}\isamarkupfalse%
 \ ticks{\isacharunderscore}imp{\isacharunderscore}ticks{\isacharunderscore}subk{\isacharbrackleft}OF\ assms\ this{\isacharbrackright}\isanewline
 \ \ \ \ \ \ \isacommand{obtain}\isamarkupfalse%
-\ i\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ i{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ i\isactrlsub {\isadigit{0}}\ {\isacharequal}\ i\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ i\isactrlsub {\isadigit{0}}\ \isakeyword{where}\ i{\isadigit{0}}prop{\isacharcolon}{\isacartoucheopen}f\ i\isactrlsub {\isadigit{0}}\ {\isacharequal}\ i\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\isactrlsub {\isadigit{0}}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{with}\isamarkupfalse%
 \ h\ \isacommand{have}\isamarkupfalse%
@@ -1356,7 +1356,7 @@ No tick can occur in a dilated run before the image of 0 by the dilation functio
 \ empty{\isacharunderscore}dilated{\isacharunderscore}prefix{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
 \ \ \isakeyword{and}\ \ \ \ \ {\isacartoucheopen}n\ {\isacharless}\ f\ {\isadigit{0}}{\isacartoucheclose}\isanewline
-\isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymnot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\isakeyword{shows}\ \ \ {\isacartoucheopen}{\isasymnot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -1385,8 +1385,8 @@ No tick can occur in a dilated run before the image of 0 by the dilation functio
 \isacommand{corollary}\isamarkupfalse%
 \ empty{\isacharunderscore}dilated{\isacharunderscore}prefix{\isacharprime}{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ {\isacharequal}\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ {\isacharequal}\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -1407,14 +1407,14 @@ No tick can occur in a dilated run before the image of 0 by the dilation functio
 \ {\isacartoucheopen}{\isasymforall}i{\isachardot}\ i\ {\isasymle}\ f\ n\ {\isacharequal}\ {\isacharparenleft}i\ {\isacharless}\ f\ {\isadigit{0}}{\isacharparenright}\ {\isasymor}\ {\isacharparenleft}f\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ auto\isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ {\isacharequal}\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ {\isadigit{0}}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ {\isasymunion}\ {\isacharbraceleft}i{\isachardot}\ f\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ {\isacharequal}\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ {\isadigit{0}}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ {\isasymunion}\ {\isacharbraceleft}i{\isachardot}\ f\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{by}\isamarkupfalse%
 \ auto\isanewline
 \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ {\isacharbraceleft}i{\isachardot}\ f\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ {\isacharbraceleft}i{\isachardot}\ f\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ empty{\isacharunderscore}dilated{\isacharunderscore}prefix{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -1435,8 +1435,8 @@ No tick can occur in a dilated run before the image of 0 by the dilation functio
 \isacommand{corollary}\isamarkupfalse%
 \ dilated{\isacharunderscore}prefix{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -1446,8 +1446,8 @@ No tick can occur in a dilated run before the image of 0 by the dilation functio
 \isacommand{proof}\isamarkupfalse%
 \ {\isacharminus}\isanewline
 \ \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ dilated{\isacharunderscore}ticks{\isacharbrackleft}OF\ assms{\isacharbrackright}\ empty{\isacharunderscore}dilated{\isacharunderscore}prefix{\isacharprime}{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -1467,8 +1467,8 @@ No tick can occur in a dilated run before the image of 0 by the dilation functio
 \isacommand{corollary}\isamarkupfalse%
 \ dilated{\isacharunderscore}strict{\isacharunderscore}prefix{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \isakeyword{shows}\ \ \ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -1490,18 +1490,18 @@ No tick can occur in a dilated run before the image of 0 by the dilation functio
 \ \ \isacommand{from}\isamarkupfalse%
 \ dilating{\isacharunderscore}fun{\isacharunderscore}image{\isacharunderscore}left{\isacharbrackleft}OF\ dil{\isacharcomma}\ of\ {\isacartoucheopen}{\isadigit{0}}{\isacartoucheclose}\ {\isacartoucheopen}n{\isacartoucheclose}\ {\isacartoucheopen}c{\isacartoucheclose}{\isacharbrackright}\isanewline
 \ \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
+\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ {\isadigit{0}}\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
 \isanewline
 \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ i{\isacharparenright}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ f{\isadigit{0}}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ assms\ dilating{\isacharunderscore}def\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
@@ -1556,18 +1556,18 @@ The set definition and the function definition of \isa{tick{\isacharunderscore}c
 \ \ \isacommand{case}\isamarkupfalse%
 \ {\isadigit{0}}\isanewline
 \ \ \ \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isadigit{0}}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ {\isadigit{0}}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isadigit{0}}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ {\isadigit{0}}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ tick{\isacharunderscore}count{\isacharunderscore}def{\isacharparenright}\isanewline
 \ \ \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isacharcolon}{\isacharcolon}nat{\isachardot}\ i\ {\isacharequal}\ {\isadigit{0}}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isacharcolon}{\isacharcolon}nat{\isachardot}\ i\ {\isacharequal}\ {\isadigit{0}}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
-\ le{\isacharunderscore}zero{\isacharunderscore}eq\ nat{\isacharunderscore}sing{\isacharunderscore}prop{\isacharbrackleft}of\ {\isacartoucheopen}{\isadigit{0}}{\isacartoucheclose}\ {\isacartoucheopen}{\isasymlambda}i{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ le{\isacharunderscore}zero{\isacharunderscore}eq\ nat{\isacharunderscore}sing{\isacharunderscore}prop{\isacharbrackleft}of\ {\isacartoucheopen}{\isadigit{0}}{\isacartoucheclose}\ {\isacartoucheopen}{\isasymlambda}i{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ c{\isacharparenright}\ then\ {\isadigit{1}}\ else\ {\isadigit{0}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ {\isacharparenleft}if\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ c{\isacharparenright}\ then\ {\isadigit{1}}\ else\ {\isadigit{0}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
@@ -1584,12 +1584,12 @@ The set definition and the function definition of \isa{tick{\isacharunderscore}c
 \ \ \ \ \isacommand{show}\isamarkupfalse%
 \ {\isacharquery}case\isanewline
 \ \ \ \ \isacommand{proof}\isamarkupfalse%
-\ {\isacharparenleft}cases\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ k{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}{\isacharparenright}\isanewline
+\ {\isacharparenleft}cases\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ k{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}{\isacharparenright}\isanewline
 \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
 \ True\isanewline
 \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ Suc\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharequal}\ insert\ {\isacharparenleft}Suc\ k{\isacharparenright}\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ Suc\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharequal}\ insert\ {\isacharparenleft}Suc\ k{\isacharparenright}\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ auto\isanewline
 \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
 \ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}Suc\ k{\isacharparenright}\ {\isacharequal}\ Suc\ {\isacharparenleft}tick{\isacharunderscore}count\ r\ c\ k{\isacharparenright}{\isacartoucheclose}\isanewline
@@ -1607,8 +1607,8 @@ The set definition and the function definition of \isa{tick{\isacharunderscore}c
 \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
 \ False\isanewline
 \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ Suc\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharequal}\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ Suc\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharequal}\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ le{\isacharunderscore}Suc{\isacharunderscore}eq\ \isacommand{by}\isamarkupfalse%
 \ auto\isanewline
@@ -1774,7 +1774,7 @@ The strict precedence relation can even be defined using
 \isacommand{lemma}\isamarkupfalse%
 \ strictly{\isacharunderscore}precedes{\isacharunderscore}alt{\isacharunderscore}def{\isadigit{2}}{\isacharcolon}\isanewline
 \ \ {\isacartoucheopen}{\isacharbraceleft}\ {\isasymrho}{\isachardot}\ {\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\isactrlsub {\isadigit{2}}\ n{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count{\isacharunderscore}strictly\ {\isasymrho}\ K\isactrlsub {\isadigit{1}}\ n{\isacharparenright}\ {\isacharbraceright}\isanewline
-\ {\isacharequal}\ {\isacharbraceleft}\ {\isasymrho}{\isachardot}\ {\isacharparenleft}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isadigit{0}}\ K\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\isanewline
+\ {\isacharequal}\ {\isacharbraceleft}\ {\isasymrho}{\isachardot}\ {\isacharparenleft}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isadigit{0}}\ K\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacharparenright}\isanewline
 \ \ \ \ \ \ {\isasymand}\ {\isacharparenleft}{\isasymforall}n{\isacharcolon}{\isacharcolon}nat{\isachardot}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\isactrlsub {\isadigit{2}}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isasymle}\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\isactrlsub {\isadigit{1}}\ n{\isacharparenright}{\isacharparenright}\ {\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ {\isacharparenleft}\isakeyword{is}\ {\isacartoucheopen}{\isacharquery}P\ {\isacharequal}\ {\isacharquery}P{\isacharprime}{\isacartoucheclose}{\isacharparenright}\isanewline
 %
@@ -1832,7 +1832,7 @@ The strict precedence relation can even be defined using
 \ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ K\isactrlsub {\isadigit{2}}\ {\isadigit{0}}\ {\isacharequal}\ {\isadigit{0}}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ K\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{unfolding}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ K\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{unfolding}\isamarkupfalse%
 \ tick{\isacharunderscore}count{\isacharunderscore}def\ \isacommand{by}\isamarkupfalse%
 \ auto\isanewline
 \ \ \ \ \isacommand{with}\isamarkupfalse%
@@ -1872,7 +1872,7 @@ The strict precedence relation can even be defined using
 \ \ \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{from}\isamarkupfalse%
 \ h\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ K\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isadigit{0}}\ K\isactrlsub {\isadigit{2}}{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
 \ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ K\isactrlsub {\isadigit{2}}\ {\isadigit{0}}\ {\isacharequal}\ {\isadigit{0}}{\isacartoucheclose}\ \isacommand{unfolding}\isamarkupfalse%
@@ -1913,7 +1913,7 @@ Some properties of \isa{run{\isacharunderscore}tick{\isacharunderscore}count}, \
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{lemma}\isamarkupfalse%
 \ run{\isacharunderscore}tick{\isacharunderscore}count{\isacharunderscore}suc{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c{\isacharparenright}\isanewline
+\ \ {\isacartoucheopen}run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ then\ Suc\ {\isacharparenleft}run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\ n{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ run{\isacharunderscore}tick{\isacharunderscore}count\ r\ c\ n{\isacharparenright}{\isacartoucheclose}\isanewline
 %
@@ -1934,7 +1934,7 @@ Some properties of \isa{run{\isacharunderscore}tick{\isacharunderscore}count}, \
 \isanewline
 \isacommand{corollary}\isamarkupfalse%
 \ tick{\isacharunderscore}count{\isacharunderscore}suc{\isacharcolon}\isanewline
-\ \ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c{\isacharparenright}\isanewline
+\ \ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ then\ Suc\ {\isacharparenleft}tick{\isacharunderscore}count\ r\ c\ n{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ tick{\isacharunderscore}count\ r\ c\ n{\isacharparenright}{\isacartoucheclose}\isanewline
 %
@@ -2282,7 +2282,7 @@ In a dilated run, no tick occurs strictly between two successive instants that
 \ no{\isacharunderscore}tick{\isacharunderscore}before{\isacharunderscore}suc{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \isakeyword{and}\ {\isacartoucheopen}{\isacharparenleft}f\ n{\isacharparenright}\ {\isacharless}\ k\ {\isasymand}\ k\ {\isacharless}\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
-\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}{\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}{\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -2298,7 +2298,7 @@ In a dilated run, no tick occurs strictly between two successive instants that
 \ \ \isacommand{{\isacharbraceleft}}\isamarkupfalse%
 \ \isacommand{fix}\isamarkupfalse%
 \ k\ \isacommand{assume}\isamarkupfalse%
-\ h{\isacharcolon}{\isacartoucheopen}f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isacharless}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ h{\isacharcolon}{\isacartoucheopen}f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isacharless}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
 \ {\isacartoucheopen}{\isasymexists}k\isactrlsub {\isadigit{0}}{\isachardot}\ f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}fun{\isacharunderscore}def\ \isacommand{by}\isamarkupfalse%
@@ -2339,7 +2339,7 @@ From this, we show that the number of ticks on any clock at \isa{f\ {\isacharpar
 \ tick{\isacharunderscore}count{\isacharunderscore}fsuc{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
 \ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ \ \ \ \ \ {\isacharequal}\ tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}\ {\isacharplus}\ card\ {\isacharbraceleft}k{\isachardot}\ k\ {\isacharequal}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \ \ \ {\isacharequal}\ tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}\ {\isacharplus}\ card\ {\isacharbraceleft}k{\isachardot}\ k\ {\isacharequal}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -2354,38 +2354,38 @@ From this, we show that the number of ticks on any clock at \isa{f\ {\isacharpar
 \ blast\isanewline
 \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}finite\ {\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacartoucheopen}finite\ {\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacharasterisk}{\isacharcolon}{\isacartoucheopen}finite\ {\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ {\isacharasterisk}{\isacharcolon}{\isacartoucheopen}finite\ {\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{ultimately}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymunion}\ {\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymunion}\ {\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ nat{\isacharunderscore}interval{\isacharunderscore}union\ strict{\isacharunderscore}mono{\isacharunderscore}less{\isacharunderscore}eq{\isacharparenright}\isanewline
 \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasyminter}\ {\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\ {\isacharbraceleft}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasyminter}\ {\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\ {\isacharbraceleft}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \isacommand{by}\isamarkupfalse%
 \ auto\isanewline
 \ \ \isacommand{ultimately}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}card\ {\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card\ {\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharplus}\ card\ {\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}card\ {\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ card\ {\isacharbraceleft}k{\isachardot}\ k\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ k\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isacharplus}\ card\ {\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}Rep{\isacharunderscore}run\ r\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ {\isacharasterisk}\ card{\isacharunderscore}Un{\isacharunderscore}disjoint{\isacharparenright}\isanewline
 \ \ \isacommand{moreover}\isamarkupfalse%
 \ \isacommand{from}\isamarkupfalse%
 \ no{\isacharunderscore}tick{\isacharunderscore}before{\isacharunderscore}suc{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{have}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ {\isacharbraceleft}k{\isachardot}\ k\ {\isacharequal}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ \ \ \ {\isacartoucheopen}{\isacharbraceleft}k{\isachardot}\ f\ n\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ {\isacharbraceleft}k{\isachardot}\ k\ {\isacharequal}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ smf\ strict{\isacharunderscore}mono{\isacharunderscore}less\ \isacommand{by}\isamarkupfalse%
 \ fastforce\isanewline
@@ -2407,7 +2407,7 @@ From this, we show that the number of ticks on any clock at \isa{f\ {\isacharpar
 \ tick{\isacharunderscore}count{\isacharunderscore}f{\isacharunderscore}suc{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
 \ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\isanewline
-\ \ \ \ \ \ \ \ \ {\isacharequal}\ tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}\ {\isacharplus}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ c{\isacharparenright}\ then\ {\isadigit{1}}\ else\ {\isadigit{0}}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \ \ \ {\isacharequal}\ tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}\ {\isacharplus}\ {\isacharparenleft}if\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ c{\isacharparenright}\ then\ {\isadigit{1}}\ else\ {\isadigit{0}}{\isacharparenright}{\isacartoucheclose}\isanewline
 %
 \isadelimproof
 %
@@ -2416,7 +2416,7 @@ From this, we show that the number of ticks on any clock at \isa{f\ {\isacharpar
 \isatagproof
 \isacommand{using}\isamarkupfalse%
 \ tick{\isacharunderscore}count{\isacharunderscore}fsuc{\isacharbrackleft}OF\ assms{\isacharbrackright}\isanewline
-\ \ \ \ \ \ card{\isacharunderscore}sing{\isacharunderscore}prop{\isacharbrackleft}of\ {\isacartoucheopen}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacartoucheclose}\ {\isacartoucheopen}{\isasymlambda}k{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
+\ \ \ \ \ \ card{\isacharunderscore}sing{\isacharunderscore}prop{\isacharbrackleft}of\ {\isacartoucheopen}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacartoucheclose}\ {\isacartoucheopen}{\isasymlambda}k{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ simp%
 \endisatagproof
 {\isafoldproof}%
@@ -2429,7 +2429,7 @@ From this, we show that the number of ticks on any clock at \isa{f\ {\isacharpar
 \isacommand{corollary}\isamarkupfalse%
 \ tick{\isacharunderscore}count{\isacharunderscore}f{\isacharunderscore}suc{\isacharunderscore}suc{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ c{\isacharparenright}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ c{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ then\ Suc\ {\isacharparenleft}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 %
@@ -2452,7 +2452,7 @@ From this, we show that the number of ticks on any clock at \isa{f\ {\isacharpar
 \isacommand{lemma}\isamarkupfalse%
 \ tick{\isacharunderscore}count{\isacharunderscore}f{\isacharunderscore}suc{\isacharunderscore}sub{\isacharcolon}\isanewline
 \ \ \isakeyword{assumes}\ {\isacartoucheopen}dilating\ f\ sub\ r{\isacartoucheclose}\isanewline
-\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c{\isacharparenright}\isanewline
+\ \ \ \ \isakeyword{shows}\ {\isacartoucheopen}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ then\ Suc\ {\isacharparenleft}tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ tick{\isacharunderscore}count\ r\ c\ {\isacharparenleft}f\ n{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 %
@@ -2488,19 +2488,19 @@ The number of ticks does not progress during stuttering instants.%
 \isacommand{proof}\isamarkupfalse%
 \ {\isacharminus}\isanewline
 \ \ \isacommand{have}\isamarkupfalse%
-\ union{\isacharcolon}{\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\isanewline
-\ \ \ \ \ \ \ \ \ \ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\isactrlsub p\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ {\isasymunion}\ {\isacharbraceleft}i{\isachardot}\ f\ n\isactrlsub p\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ union{\isacharcolon}{\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\isanewline
+\ \ \ \ \ \ \ \ \ \ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\isactrlsub p\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ {\isasymunion}\ {\isacharbraceleft}i{\isachardot}\ f\ n\isactrlsub p\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{by}\isamarkupfalse%
 \ auto\isanewline
 \ \ \isacommand{have}\isamarkupfalse%
-\ partition{\isacharcolon}\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\isactrlsub p\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ {\isasyminter}\ {\isacharbraceleft}i{\isachardot}\ f\ n\isactrlsub p\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\ {\isacharbraceleft}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ partition{\isacharcolon}\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\isactrlsub p\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ {\isasyminter}\ {\isacharbraceleft}i{\isachardot}\ f\ n\isactrlsub p\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\ {\isacharbraceleft}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ disjoint{\isacharunderscore}iff{\isacharunderscore}not{\isacharunderscore}equal{\isacharparenright}\isanewline
 \ \ \isacommand{from}\isamarkupfalse%
 \ assms\ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ n\isactrlsub p\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\ {\isacharbraceleft}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isacharbraceleft}i{\isachardot}\ f\ n\isactrlsub p\ {\isacharless}\ i\ {\isasymand}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\ {\isacharequal}\ {\isacharbraceleft}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ no{\isacharunderscore}tick{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
 \ fastforce\isanewline
@@ -2533,19 +2533,19 @@ We finally show that the number of ticks on any clock is preserved by dilation.%
 \isacommand{proof}\isamarkupfalse%
 \ {\isacharminus}\isanewline
 \ \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}tick{\isacharunderscore}count\ sub\ c\ n\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}tick{\isacharunderscore}count\ sub\ c\ n\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ tick{\isacharunderscore}count{\isacharunderscore}def{\isacharbrackleft}of\ {\isacartoucheopen}sub{\isacartoucheclose}\ {\isacartoucheopen}c{\isacartoucheclose}\ {\isacartoucheopen}n{\isacartoucheclose}{\isacharbrackright}\ \isacommand{{\isachardot}}\isamarkupfalse%
 \isanewline
 \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharparenleft}image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharparenleft}image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ assms\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}injects{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ card{\isacharunderscore}image{\isacharparenright}\isanewline
 \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isasymle}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ dilated{\isacharunderscore}prefix{\isacharbrackleft}OF\ assms{\isacharcomma}\ symmetric{\isacharcomma}\ of\ {\isacartoucheopen}n{\isacartoucheclose}\ {\isacartoucheopen}c{\isacartoucheclose}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
@@ -2672,24 +2672,24 @@ The number of ticks strictly before an instant does not progress
 \ \ \isacommand{with}\isamarkupfalse%
 \ no{\isacharunderscore}tick{\isacharunderscore}before{\isacharunderscore}suc{\isacharbrackleft}OF\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}{\isacharbrackright}\ \isacommand{have}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isacharasterisk}{\isacharcolon}{\isacartoucheopen}{\isasymforall}i{\isachardot}\ k\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ \ \ \ {\isacharasterisk}{\isacharcolon}{\isacartoucheopen}{\isasymforall}i{\isachardot}\ k\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymlongrightarrow}\ {\isasymnot}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \isacommand{from}\isamarkupfalse%
 \ tick{\isacharunderscore}count{\isacharunderscore}strict{\isacharunderscore}def\ \isacommand{have}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isacartoucheopen}tick{\isacharunderscore}count{\isacharunderscore}strict\ r\ c\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
+\ \ \ \ {\isacartoucheopen}tick{\isacharunderscore}count{\isacharunderscore}strict\ r\ c\ {\isacharparenleft}f\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{{\isachardot}}\isamarkupfalse%
 \isanewline
 \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
 \isanewline
-\ \ \ \ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
-\ \ \ \ \ \ \ \ \ {\isacharplus}\ card\ {\isacharbraceleft}i{\isachardot}\ k\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isanewline
+\ \ \ \ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}\isanewline
+\ \ \ \ \ \ \ \ \ {\isacharplus}\ card\ {\isacharbraceleft}i{\isachardot}\ k\ {\isasymle}\ i\ {\isasymand}\ i\ {\isacharless}\ f\ {\isacharparenleft}Suc\ n{\isacharparenright}\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ card{\isacharunderscore}mnm{\isacharprime}\ assms{\isacharparenleft}{\isadigit{2}}{\isacharparenright}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ k\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ k\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
 \ {\isacharasterisk}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
 \ \ \isacommand{finally}\isamarkupfalse%
@@ -2721,19 +2721,19 @@ Finally, the number of ticks strictly before an instant is preserved by dilation
 \isacommand{proof}\isamarkupfalse%
 \ {\isacharminus}\isanewline
 \ \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}tick{\isacharunderscore}count{\isacharunderscore}strict\ sub\ c\ n\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}tick{\isacharunderscore}count{\isacharunderscore}strict\ sub\ c\ n\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ tick{\isacharunderscore}count{\isacharunderscore}strict{\isacharunderscore}def{\isacharbrackleft}of\ {\isacartoucheopen}sub{\isacartoucheclose}\ {\isacartoucheopen}c{\isacartoucheclose}\ {\isacartoucheopen}n{\isacartoucheclose}{\isacharbrackright}\ \isacommand{{\isachardot}}\isamarkupfalse%
 \isanewline
 \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharparenleft}image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharparenleft}image\ f\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ assms\ dilating{\isacharunderscore}def\ dilating{\isacharunderscore}injects{\isacharbrackleft}OF\ assms{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ {\isacharparenleft}simp\ add{\isacharcolon}\ card{\isacharunderscore}image{\isacharparenright}\isanewline
 \ \ \isacommand{also}\isamarkupfalse%
 \ \isacommand{have}\isamarkupfalse%
-\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isachardot}{\isachardot}{\isachardot}\ {\isacharequal}\ card\ {\isacharbraceleft}i{\isachardot}\ i\ {\isacharless}\ f\ n\ {\isasymand}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ i\ c{\isacharparenright}{\isacharbraceright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ dilated{\isacharunderscore}strict{\isacharunderscore}prefix{\isacharbrackleft}OF\ assms{\isacharcomma}\ symmetric{\isacharcomma}\ of\ {\isacartoucheopen}n{\isacartoucheclose}\ {\isacartoucheopen}c{\isacartoucheclose}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ simp\isanewline
@@ -3080,7 +3080,7 @@ The order relation between tick counts on clocks is preserved by dilation.%
 \ \ \ \ \ \ \ \ \isacommand{show}\isamarkupfalse%
 \ {\isacharquery}thesis\isanewline
 \ \ \ \ \ \ \ \ \isacommand{proof}\isamarkupfalse%
-\ {\isacharparenleft}cases\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\isactrlsub {\isadigit{0}}\ a{\isacharparenright}{\isacartoucheclose}{\isacharparenright}\isanewline
+\ {\isacharparenleft}cases\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ n\isactrlsub {\isadigit{0}}\ a{\isacharparenright}{\isacartoucheclose}{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
 \ True\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{have}\isamarkupfalse%
@@ -3096,7 +3096,7 @@ The order relation between tick counts on clocks is preserved by dilation.%
 \ \ \ \ \ \ \ \ \ \ \isacommand{case}\isamarkupfalse%
 \ False\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}{\isasymnot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharprime}{\isacharparenright}\ a{\isacharparenright}{\isacartoucheclose}\isanewline
+\ {\isacartoucheopen}{\isasymnot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharprime}{\isacharparenright}\ a{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ {\isacharasterisk}\ fn{\isadigit{0}}\ ticks{\isacharunderscore}sub\ \isacommand{by}\isamarkupfalse%
 \ fastforce\isanewline
@@ -3492,7 +3492,7 @@ For any dilating function \isa{f}, \isa{dil{\isacharunderscore}inverse\ f} is a
 \ \ \isacommand{from}\isamarkupfalse%
 \ assms\ \isacommand{have}\isamarkupfalse%
 \ smf{\isacharcolon}{\isacartoucheopen}strict{\isacharunderscore}mono\ f{\isacartoucheclose}\isanewline
-\ \ \ \ \isakeyword{and}\ no{\isacharunderscore}img{\isacharunderscore}tick{\isacharcolon}{\isacartoucheopen}{\isasymforall}k{\isachardot}\ {\isacharparenleft}{\isasymnexists}k\isactrlsub {\isadigit{0}}{\isachardot}\ f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}c{\isachardot}\ {\isasymnot}{\isacharparenleft}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \isakeyword{and}\ no{\isacharunderscore}img{\isacharunderscore}tick{\isacharcolon}{\isacartoucheopen}{\isasymforall}k{\isachardot}\ {\isacharparenleft}{\isasymnexists}k\isactrlsub {\isadigit{0}}{\isachardot}\ f\ k\isactrlsub {\isadigit{0}}\ {\isacharequal}\ k{\isacharparenright}\ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}c{\isachardot}\ {\isasymnot}{\isacharparenleft}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isakeyword{and}\ no{\isacharunderscore}img{\isacharunderscore}time{\isacharcolon}{\isacartoucheopen}{\isasymAnd}n{\isachardot}\ {\isacharparenleft}{\isasymnexists}n\isactrlsub {\isadigit{0}}{\isachardot}\ f\ n\isactrlsub {\isadigit{0}}\ {\isacharequal}\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isacharparenleft}{\isasymforall}c{\isachardot}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ c{\isacharparenright}\ {\isacharequal}\ time\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ n\ c{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isakeyword{and}\ fxge{\isacharcolon}{\isacartoucheopen}{\isasymforall}x{\isachardot}\ f\ x\ {\isasymge}\ x{\isacartoucheclose}\ \isakeyword{and}\ f{\isadigit{0}}n{\isacharcolon}{\isacartoucheopen}{\isasymAnd}n{\isachardot}\ f\ {\isadigit{0}}\ {\isasymle}\ n{\isacartoucheclose}\ \isakeyword{and}\ f{\isadigit{0}}{\isacharcolon}{\isacartoucheopen}f\ {\isadigit{0}}\ {\isacharequal}\ {\isadigit{0}}{\isacartoucheclose}\isanewline
@@ -3575,7 +3575,7 @@ For any dilating function \isa{f}, \isa{dil{\isacharunderscore}inverse\ f} is a
 \isanewline
 \ \ \isacommand{have}\isamarkupfalse%
 \ {\isadigit{5}}{\isacharcolon}{\isacartoucheopen}{\isasymforall}n\ c\ k{\isachardot}\ f\ {\isacharparenleft}{\isacharparenleft}dil{\isacharunderscore}inverse\ f{\isacharparenright}\ n{\isacharparenright}\ {\isacharless}\ k\ {\isasymand}\ k\ {\isasymle}\ n\isanewline
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isasymnot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\isasymlongrightarrow}\ {\isasymnot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\isanewline
 \ \ \ \ \isacommand{using}\isamarkupfalse%
 \ not{\isacharunderscore}image{\isacharunderscore}stut{\isacharbrackleft}OF\ assms{\isacharbrackright}\ no{\isacharunderscore}img{\isacharunderscore}tick\ \isacommand{unfolding}\isamarkupfalse%
 \ dil{\isacharunderscore}inverse{\isacharunderscore}def\ \isacommand{by}\isamarkupfalse%
@@ -3704,10 +3704,10 @@ The only possible contracting function toward a dense run (a run with no empty
 \ blast\isanewline
 \ \ \ \ \isacommand{with}\isamarkupfalse%
 \ assms{\isacharparenleft}{\isadigit{3}}{\isacharparenright}\ dense{\isacharunderscore}run{\isacharunderscore}def\ \isacommand{obtain}\isamarkupfalse%
-\ c\ \isakeyword{where}\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
+\ c\ \isakeyword{where}\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ sub{\isacharparenright}\ k\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{hence}\isamarkupfalse%
-\ {\isacartoucheopen}hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
+\ {\isacartoucheopen}ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ r{\isacharparenright}\ {\isacharparenleft}f\ k{\isacharparenright}\ c{\isacharparenright}{\isacartoucheclose}\ \isacommand{using}\isamarkupfalse%
 \ ticks{\isacharunderscore}sub{\isacharbrackleft}OF\ assms{\isacharparenleft}{\isadigit{1}}{\isacharparenright}{\isacharbrackright}\ \isacommand{by}\isamarkupfalse%
 \ blast\isanewline
 \ \ \ \ \isacommand{moreover}\isamarkupfalse%
@@ -3846,7 +3846,7 @@ The only possible contracting function toward a dense run (a run with no empty
 %
 \end{isabellebody}%
 \endinput
-%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL/src/StutteringLemmas.thy%:%
+%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL_Fred/src/StutteringLemmas.thy%:%
 %:%11=1%:%
 %:%27=3%:%
 %:%28=3%:%

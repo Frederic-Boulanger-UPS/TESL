@@ -18,7 +18,8 @@ text\<open>
   the composition of specifications: adding an instant where no clock ticks to 
   a run that satisfies a formula should yield another run that satisfies the 
   same formula. However, when constructing runs that satisfy a formula, we
-  need to be able to refer to the time or hamlet of a clock at a given instant.
+  need to be able to refer to the time or ticking predicate of a clock at a given
+  instant.
 \<close>
 
 text\<open>
@@ -31,16 +32,15 @@ datatype cnt_expr =
 
 subsection\<open> Symbolic Primitives for Runs \<close>
 
-text\<open>
-  Tag values are used to refer to the time on a clock at a given instant index.
-\<close>
-datatype tag_val =
-  TSchematic \<open>clock * instant_index\<close> (\<open>\<tau>\<^sub>v\<^sub>a\<^sub>r\<close>)
-
 datatype '\<tau> constr =
 \<comment> \<open>@{term \<open>c \<Down> n @ \<tau>\<close>} constrains clock @{term \<open>c\<close>} to have time @{term \<open>\<tau>\<close>}
     at instant @{term \<open>n\<close>} of the run.\<close>
   Timestamp     \<open>clock\<close>   \<open>instant_index\<close> \<open>'\<tau> tag_const\<close>         (\<open>_ \<Down> _ @ _\<close>)
+(* TODO: text *)
+\<comment> \<open>@{term \<open>c \<Down> n @\<sharp> \<tau>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<close>} constrains clock @{term \<open>c\<close>} to have time @{term \<open>\<tau>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<close>}
+    at instant @{term \<open>n\<close>} of the run.
+    @{term \<open>\<tau>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<close>} refers to the time at some previous instant on a clock\<close>
+| TimestampTvar    \<open>clock\<close>   \<open>instant_index\<close> \<open>'\<tau> tag_expr\<close>          (\<open>_ \<Down> _ @\<sharp> _\<close>)
 \<comment> \<open>@{term \<open>m @ n \<oplus> \<delta>t \<Rightarrow> s\<close>} constrains clock @{term \<open>s\<close>} to tick at the
     first instant at which the time on @{term \<open>m\<close>} has increased by @{term \<open>\<delta>t\<close>}
     from the value it had at instant @{term \<open>n\<close>} of the run.\<close>
@@ -59,7 +59,7 @@ datatype '\<tau> constr =
 | NotTicksFrom  \<open>clock\<close>   \<open>instant_index\<close>                        (\<open>_ \<not>\<Up> \<ge> _\<close>)
 \<comment> \<open>@{term \<open>\<lfloor>\<tau>\<^sub>1, \<tau>\<^sub>2\<rfloor> \<in> R\<close>} constrains tag variables @{term \<open>\<tau>\<^sub>1\<close>} and  @{term \<open>\<tau>\<^sub>2\<close>} 
     to be in relation @{term \<open>R\<close>}.\<close>
-| TagArith      \<open>tag_val\<close> \<open>tag_val\<close> \<open>('\<tau> tag_const \<times> '\<tau> tag_const) \<Rightarrow> bool\<close> (\<open>\<lfloor>_, _\<rfloor> \<in> _\<close>)
+| TagArith      \<open>tag_var\<close> \<open>tag_var\<close> \<open>('\<tau> tag_const \<times> '\<tau> tag_const) \<Rightarrow> bool\<close> (\<open>\<lfloor>_, _\<rfloor> \<in> _\<close>)
 \<comment> \<open>@{term \<open>\<lceil>k\<^sub>1, k\<^sub>2\<rceil> \<in> R\<close>} constrains counter expressions @{term \<open>k\<^sub>1\<close>} and  @{term \<open>k\<^sub>2\<close>} 
     to be in relation @{term \<open>R\<close>}.\<close>
 | TickCntArith  \<open>cnt_expr\<close> \<open>cnt_expr\<close> \<open>(nat \<times> nat) \<Rightarrow> bool\<close>      (\<open>\<lceil>_, _\<rceil> \<in> _\<close>)
@@ -99,16 +99,17 @@ where
 fun symbolic_run_interpretation_primitive
   ::\<open>('\<tau>::linordered_field) constr \<Rightarrow> '\<tau> run set\<close> (\<open>\<lbrakk> _ \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m\<close>)
 where
-  \<open>\<lbrakk> K \<Up> n  \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m     = {\<rho>. hamlet ((Rep_run \<rho>) n K) }\<close>
+  \<open>\<lbrakk> K \<Up> n  \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m     = {\<rho>. ticks ((Rep_run \<rho>) n K) }\<close>
 | \<open>\<lbrakk> K @ n\<^sub>0 \<oplus> \<delta>t \<Rightarrow> K' \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m =
                   {\<rho>. \<forall>n \<ge> n\<^sub>0. first_time \<rho> K n (time ((Rep_run \<rho>) n\<^sub>0 K) + \<delta>t)
-                               \<longrightarrow> hamlet ((Rep_run \<rho>) n K')}\<close>
-| \<open>\<lbrakk> K \<not>\<Up> n \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m     = {\<rho>. \<not>hamlet ((Rep_run \<rho>) n K) }\<close>
-| \<open>\<lbrakk> K \<not>\<Up> < n \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m   = {\<rho>. \<forall>i < n. \<not> hamlet ((Rep_run \<rho>) i K)}\<close>
-| \<open>\<lbrakk> K \<not>\<Up> \<ge> n \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m   = {\<rho>. \<forall>i \<ge> n. \<not> hamlet ((Rep_run \<rho>) i K) }\<close>
+                               \<longrightarrow> ticks ((Rep_run \<rho>) n K')}\<close>
+| \<open>\<lbrakk> K \<not>\<Up> n \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m     = {\<rho>. \<not>ticks ((Rep_run \<rho>) n K) }\<close>
+| \<open>\<lbrakk> K \<not>\<Up> < n \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m   = {\<rho>. \<forall>i < n. \<not> ticks ((Rep_run \<rho>) i K)}\<close>
+| \<open>\<lbrakk> K \<not>\<Up> \<ge> n \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m   = {\<rho>. \<forall>i \<ge> n. \<not> ticks ((Rep_run \<rho>) i K) }\<close>
 | \<open>\<lbrakk> K \<Down> n @ \<tau> \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m = {\<rho>. time ((Rep_run \<rho>) n K) = \<tau> }\<close>
-| \<open>\<lbrakk> \<lfloor>\<tau>\<^sub>v\<^sub>a\<^sub>r(K\<^sub>1, n\<^sub>1), \<tau>\<^sub>v\<^sub>a\<^sub>r(K\<^sub>2, n\<^sub>2)\<rfloor> \<in> R \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m =
-    { \<rho>. R (time ((Rep_run \<rho>) n\<^sub>1 K\<^sub>1), time ((Rep_run \<rho>) n\<^sub>2 K\<^sub>2)) }\<close>
+| \<open>\<lbrakk> K \<Down> n @\<sharp> \<lparr>\<tau>\<^sub>v\<^sub>a\<^sub>r(K', n') \<oplus> \<delta>\<tau>\<rparr> \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m = {\<rho>. time ((Rep_run \<rho>) n K) = time ((Rep_run \<rho>) n' K') + \<delta>\<tau> }\<close>
+| \<open>\<lbrakk> \<lfloor>\<tau>\<^sub>v\<^sub>a\<^sub>r(C\<^sub>1, n\<^sub>1), \<tau>\<^sub>v\<^sub>a\<^sub>r(C\<^sub>2, n\<^sub>2)\<rfloor> \<in> R \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m =
+    { \<rho>. R (time ((Rep_run \<rho>) n\<^sub>1 C\<^sub>1), time ((Rep_run \<rho>) n\<^sub>2 C\<^sub>2)) }\<close>
 | \<open>\<lbrakk> \<lceil>e\<^sub>1, e\<^sub>2\<rceil> \<in> R \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m = { \<rho>. R (\<lbrakk> \<rho> \<turnstile> e\<^sub>1 \<rbrakk>\<^sub>c\<^sub>n\<^sub>t\<^sub>e\<^sub>x\<^sub>p\<^sub>r, \<lbrakk> \<rho> \<turnstile> e\<^sub>2 \<rbrakk>\<^sub>c\<^sub>n\<^sub>t\<^sub>e\<^sub>x\<^sub>p\<^sub>r) }\<close>
 | \<open>\<lbrakk> cnt_e\<^sub>1 \<preceq> cnt_e\<^sub>2 \<rbrakk>\<^sub>p\<^sub>r\<^sub>i\<^sub>m = { \<rho>. \<lbrakk> \<rho> \<turnstile> cnt_e\<^sub>1 \<rbrakk>\<^sub>c\<^sub>n\<^sub>t\<^sub>e\<^sub>x\<^sub>p\<^sub>r \<le> \<lbrakk> \<rho> \<turnstile> cnt_e\<^sub>2 \<rbrakk>\<^sub>c\<^sub>n\<^sub>t\<^sub>e\<^sub>x\<^sub>p\<^sub>r }\<close>
 
@@ -149,7 +150,7 @@ fun time_update
       \<Rightarrow> (nat \<Rightarrow> '\<tau> instant)\<close>
 where
   \<open>time_update n K \<tau> \<rho> = (\<lambda>n' K'. if K = K' \<and> n \<le> n'
-                                  then (hamlet (\<rho> n K), \<tau>)
+                                  then (ticks (\<rho> n K), \<tau>)
                                   else \<rho> n' K')\<close>
 
 

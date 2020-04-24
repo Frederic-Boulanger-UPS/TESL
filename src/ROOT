@@ -10,7 +10,7 @@ session "TESL" = "HOL"
     Denotational
     Operational
     SymbolicPrimitive Corecursive_Prop
-    Hygge_Theory
+    Operational_SoundComplete
     StutteringDefs StutteringLemmas Stuttering
   document_files
     "root.tex"

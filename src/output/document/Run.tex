@@ -40,13 +40,13 @@
 Runs are sequences of instants, and each instant maps a clock to a pair 
   \isa{{\isacharparenleft}h{\isacharcomma}\ t{\isacharparenright}} where \isa{h} indicates whether the clock ticks or not, 
   and \isa{t} is the current time on this clock.
-  The first element of the pair is called the \emph{hamlet} of the clock (to tick or 
+  The first element of the pair is called the \emph{ticks} of the clock (to tick or 
   not to tick), the second element is called the \emph{time}.%
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{abbreviation}\isamarkupfalse%
-\ hamlet\ \isakeyword{where}\ {\isacartoucheopen}hamlet\ {\isasymequiv}\ fst{\isacartoucheclose}\isanewline
+\ ticks\ \isakeyword{where}\ {\isacartoucheopen}ticks\ {\isasymequiv}\ fst{\isacartoucheclose}\isanewline
 \isacommand{abbreviation}\isamarkupfalse%
-\ time\ \ \ \isakeyword{where}\ {\isacartoucheopen}time\ {\isasymequiv}\ snd{\isacartoucheclose}\isanewline
+\ time\ \ \isakeyword{where}\ {\isacartoucheopen}time\ {\isasymequiv}\ snd{\isacartoucheclose}\isanewline
 \isanewline
 \isacommand{type{\isacharunderscore}synonym}\isamarkupfalse%
 \ {\isacharprime}{\isasymtau}\ instant\ {\isacharequal}\ {\isacartoucheopen}clock\ {\isasymRightarrow}\ {\isacharparenleft}bool\ {\isasymtimes}\ {\isacharprime}{\isasymtau}\ tag{\isacharunderscore}const{\isacharparenright}{\isacartoucheclose}%
@@ -104,7 +104,7 @@ A \emph{dense} run is a run in which something happens (at least one clock ticks
   at every instant.%
 \end{isamarkuptext}\isamarkuptrue%
 \isacommand{definition}\isamarkupfalse%
-\ {\isacartoucheopen}dense{\isacharunderscore}run\ {\isasymrho}\ {\isasymequiv}\ {\isacharparenleft}{\isasymforall}n{\isachardot}\ {\isasymexists}c{\isachardot}\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ n\ c{\isacharparenright}{\isacharparenright}{\isacartoucheclose}%
+\ {\isacartoucheopen}dense{\isacharunderscore}run\ {\isasymrho}\ {\isasymequiv}\ {\isacharparenleft}{\isasymforall}n{\isachardot}\ {\isasymexists}c{\isachardot}\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ n\ c{\isacharparenright}{\isacharparenright}{\isacartoucheclose}%
 \begin{isamarkuptext}%
 \isa{run{\isacharunderscore}tick{\isacharunderscore}count\ {\isasymrho}\ K\ n} counts the number of ticks on clock \isa{K} 
   in the interval \isatt{[0{\char`\,}\ n]} of run \isa{{\isasymrho}}.%
@@ -113,10 +113,10 @@ A \emph{dense} run is a run in which something happens (at least one clock ticks
 \ run{\isacharunderscore}tick{\isacharunderscore}count\ {\isacharcolon}{\isacharcolon}\ {\isacartoucheopen}{\isacharparenleft}{\isacharprime}{\isasymtau}{\isacharcolon}{\isacharcolon}linordered{\isacharunderscore}field{\isacharparenright}\ run\ {\isasymRightarrow}\ clock\ {\isasymRightarrow}\ nat\ {\isasymRightarrow}\ nat{\isacartoucheclose}\isanewline
 \ \ {\isacharparenleft}{\isacartoucheopen}{\isacharhash}\isactrlsub {\isasymle}\ {\isacharunderscore}\ {\isacharunderscore}\ {\isacharunderscore}{\isacartoucheclose}{\isacharparenright}\isanewline
 \isakeyword{where}\isanewline
-\ \ {\isacartoucheopen}{\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ {\isadigit{0}}{\isacharparenright}\ \ \ \ \ \ \ {\isacharequal}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isadigit{0}}\ K{\isacharparenright}\isanewline
+\ \ {\isacartoucheopen}{\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ {\isadigit{0}}{\isacharparenright}\ \ \ \ \ \ \ {\isacharequal}\ {\isacharparenleft}if\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isadigit{0}}\ K{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ then\ {\isadigit{1}}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ {\isadigit{0}}{\isacharparenright}{\isacartoucheclose}\isanewline
-{\isacharbar}\ {\isacartoucheopen}{\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ hamlet\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ K{\isacharparenright}\isanewline
+{\isacharbar}\ {\isacartoucheopen}{\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ {\isacharparenleft}Suc\ n{\isacharparenright}{\isacharparenright}\ {\isacharequal}\ {\isacharparenleft}if\ ticks\ {\isacharparenleft}{\isacharparenleft}Rep{\isacharunderscore}run\ {\isasymrho}{\isacharparenright}\ {\isacharparenleft}Suc\ n{\isacharparenright}\ K{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ then\ {\isadigit{1}}\ {\isacharplus}\ {\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ n{\isacharparenright}\isanewline
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ {\isacharparenleft}{\isacharhash}\isactrlsub {\isasymle}\ {\isasymrho}\ K\ n{\isacharparenright}{\isacharparenright}{\isacartoucheclose}\isanewline
 \isanewline
@@ -510,7 +510,7 @@ This leads to an alternate definition of \isa{first{\isacharunderscore}time}:%
 %
 \end{isabellebody}%
 \endinput
-%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL/src/Run.thy%:%
+%:%file=~/Documents/Recherche/Thesards/2014_Hai_NGUYEN_VAN/Heron_git/reiher2/TESL_Fred/src/Run.thy%:%
 %:%11=1%:%
 %:%27=3%:%
 %:%28=3%:%

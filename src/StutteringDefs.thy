@@ -36,7 +36,7 @@ definition dilating_fun
 where
   \<open>dilating_fun (f::nat \<Rightarrow> nat) (r::'a::linordered_field run)
     \<equiv> strict_mono f \<and> (f 0 = 0) \<and> (\<forall>n. f n \<ge> n
-    \<and> ((\<nexists>n\<^sub>0. f n\<^sub>0 = n) \<longrightarrow> (\<forall>c. \<not>(hamlet ((Rep_run r) n c))))
+    \<and> ((\<nexists>n\<^sub>0. f n\<^sub>0 = n) \<longrightarrow> (\<forall>c. \<not>(ticks ((Rep_run r) n c))))
     \<and> ((\<nexists>n\<^sub>0. f n\<^sub>0 = (Suc n)) \<longrightarrow> (\<forall>c. time ((Rep_run r) (Suc n) c)
                                       = time ((Rep_run r) n c)))
    )\<close>
@@ -46,13 +46,13 @@ text\<open>
   function @{term f} if:
   \<^item> @{term f} is a dilating function for @{term r} 
   \<^item> the time in @{term r} is the time in @{term sub} dilated by @{term f}
-  \<^item> the hamlet in @{term r} is the hamlet in sub dilated by @{term f}
+  \<^item> the ticks in @{term r} is the ticks in sub dilated by @{term f}
 \<close>
 definition dilating
 where
   \<open>dilating f sub r \<equiv> dilating_fun f r
                     \<and> (\<forall>n c. time ((Rep_run sub) n c) = time ((Rep_run r) (f n) c))
-                    \<and> (\<forall>n c. hamlet ((Rep_run sub) n c) = hamlet ((Rep_run r) (f n) c))\<close>
+                    \<and> (\<forall>n c. ticks ((Rep_run sub) n c) = ticks ((Rep_run r) (f n) c))\<close>
 
 text \<open>
   A \<^emph>\<open>run\<close> is a \<^emph>\<open>subrun\<close> of another run if there exists a dilation between them.
@@ -120,7 +120,7 @@ where
                           \<and> (\<forall>n c k. f (g n) \<le> k \<and> k \<le> n
                               \<longrightarrow> time ((Rep_run r) k c) = time ((Rep_run sub) (g n) c))
                           \<and> (\<forall>n c k. f (g n) < k \<and> k \<le> n
-                              \<longrightarrow> \<not> hamlet ((Rep_run r) k c))\<close>
+                              \<longrightarrow> \<not> ticks ((Rep_run r) k c))\<close>
 
 text \<open>
   For any dilating function, we can build its \<^emph>\<open>inverse\<close>, as illustrated on
@@ -142,7 +142,7 @@ text \<open>
 \<close>
 definition tick_count :: \<open>'a::linordered_field run \<Rightarrow> clock \<Rightarrow> nat \<Rightarrow> nat\<close>
 where
-  \<open>tick_count r c n = card {i. i \<le> n \<and> hamlet ((Rep_run r) i c)}\<close>
+  \<open>tick_count r c n = card {i. i \<le> n \<and> ticks ((Rep_run r) i c)}\<close>
 
 text \<open>
   @{term \<open>tick_count_strict r c n\<close>} is the number of ticks of clock @{term c} 
@@ -150,7 +150,7 @@ text \<open>
 \<close> 
 definition tick_count_strict :: \<open>'a::linordered_field run \<Rightarrow> clock \<Rightarrow> nat \<Rightarrow> nat\<close>
 where
-  \<open>tick_count_strict r c n = card {i. i < n \<and> hamlet ((Rep_run r) i c)}\<close>
+  \<open>tick_count_strict r c n = card {i. i < n \<and> ticks ((Rep_run r) i c)}\<close>
 
 
 end

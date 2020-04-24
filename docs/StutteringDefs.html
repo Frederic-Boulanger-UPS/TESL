@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Theory StutteringDefs (Isabelle2019: June 2019)</title>
+<title>Theory StutteringDefs (Isabelle2020: April 2020)</title>
 <link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
 </head>
 
@@ -53,7 +53,7 @@
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
 </span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;dilating_fun (f::nat &#8658; nat) (r::&#39;a::linordered_field run)
     &#8801; strict_mono f &#8743; (f 0 = 0) &#8743; (&#8704;n. f n &#8805; n
-    &#8743; ((&#8708;n<span class="hidden">&#8681;</span><sub>0</sub>. f n<span class="hidden">&#8681;</span><sub>0</sub> = n) &#10230; (&#8704;c. &#172;(hamlet ((Rep_run r) n c))))
+    &#8743; ((&#8708;n<span class="hidden">&#8681;</span><sub>0</sub>. f n<span class="hidden">&#8681;</span><sub>0</sub> = n) &#10230; (&#8704;c. &#172;(ticks ((Rep_run r) n c))))
     &#8743; ((&#8708;n<span class="hidden">&#8681;</span><sub>0</sub>. f n<span class="hidden">&#8681;</span><sub>0</sub> = (Suc n)) &#10230; (&#8704;c. time ((Rep_run r) (Suc n) c)
                                       = time ((Rep_run r) n c)))
    )&#8250;</span></span></span><span>
@@ -63,13 +63,13 @@
   function @{term f} if:
   &#9642; @{term f} is a dilating function for @{term r} 
   &#9642; the time in @{term r} is the time in @{term sub} dilated by @{term f}
-  &#9642; the hamlet in @{term r} is the hamlet in sub dilated by @{term f}
+  &#9642; the ticks in @{term r} is the ticks in sub dilated by @{term f}
 &#8250;</span></span></span><span>
 </span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>dilating</span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
 </span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;dilating f sub r &#8801; dilating_fun f r
                     &#8743; (&#8704;n c. time ((Rep_run sub) n c) = time ((Rep_run r) (f n) c))
-                    &#8743; (&#8704;n c. hamlet ((Rep_run sub) n c) = hamlet ((Rep_run r) (f n) c))&#8250;</span></span></span><span>
+                    &#8743; (&#8704;n c. ticks ((Rep_run sub) n c) = ticks ((Rep_run r) (f n) c))&#8250;</span></span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
   A &#8727;&#8249;run&#8250; is a &#8727;&#8249;subrun&#8250; of another run if there exists a dilation between them.
@@ -137,7 +137,7 @@
                           &#8743; (&#8704;n c k. f (g n) &#8804; k &#8743; k &#8804; n
                               &#10230; time ((Rep_run r) k c) = time ((Rep_run sub) (g n) c))
                           &#8743; (&#8704;n c k. f (g n) &lt; k &#8743; k &#8804; n
-                              &#10230; &#172; hamlet ((Rep_run r) k c))&#8250;</span></span></span><span>
+                              &#10230; &#172; ticks ((Rep_run r) k c))&#8250;</span></span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
   For any dilating function, we can build its &#8727;&#8249;inverse&#8250;, as illustrated on
@@ -159,7 +159,7 @@
 &#8250;</span></span></span><span>
 </span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>tick_count</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;a::linordered_field run &#8658; clock &#8658; nat &#8658; nat&#8250;</span></span></span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
-</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;tick_count r c n = card {i. i &#8804; n &#8743; hamlet ((Rep_run r) i c)}&#8250;</span></span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;tick_count r c n = card {i. i &#8804; n &#8743; ticks ((Rep_run r) i c)}&#8250;</span></span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;
   @{term &#8249;tick_count_strict r c n&#8250;} is the number of ticks of clock @{term c} 
@@ -167,7 +167,7 @@
 &#8250;</span></span></span><span> 
 </span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>tick_count_strict</span><span> </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#39;a::linordered_field run &#8658; clock &#8658; nat &#8658; nat&#8250;</span></span></span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
-</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;tick_count_strict r c n = card {i. i &lt; n &#8743; hamlet ((Rep_run r) i c)}&#8250;</span></span></span><span>
+</span><span>  </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;tick_count_strict r c n = card {i. i &lt; n &#8743; ticks ((Rep_run r) i c)}&#8250;</span></span></span><span>
 </span><span>
 </span><span>
 </span><span class="keyword2"><span class="keyword">end</span></span><span>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Theory Denotational (Isabelle2019: June 2019)</title>
+<title>Theory Denotational (Isabelle2020: April 2020)</title>
 <link media="all" rel="stylesheet" type="text/css" href="isabelle.css"/>
 </head>
 
@@ -42,22 +42,22 @@
 </span><span class="keyword1"><span class="command">fun</span></span><span> </span><span>TESL_interpretation_atomic</span><span>
 </span><span>    </span><span class="delimiter">::</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;(&#39;&#964;::linordered_field) TESL_atomic &#8658; &#39;&#964; run set&#8250;</span></span></span><span> </span><span class="delimiter">(</span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; _ &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub>&#8250;</span></span></span><span class="delimiter">)</span><span>
 </span><span class="keyword2"><span class="keyword">where</span></span><span>
-</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that @{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} should tick at an 
-      instant where the time on @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} is @{term &#8249;&#964;&#8250;}.&#8250;</span><span>
-</span><span>    </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; K<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on K<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
-        {&#961;. &#8707;n::nat. hamlet ((Rep_run &#961;) n K<span class="hidden">&#8681;</span><sub>1</sub>) &#8743; time ((Rep_run &#961;) n K<span class="hidden">&#8681;</span><sub>2</sub>) = &#964;}&#8250;</span></span></span><span>
-</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;time-relation &#8970;K<span class="hidden">&#8681;</span><sub>1</sub>, K<span class="hidden">&#8681;</span><sub>2</sub>&#8971; &#8712; R&#8250;} means that at each instant, the time 
-      on @{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} and the time on @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} are in relation~@{term &#8249;R&#8250;}.&#8250;</span><span>
-</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; time-relation &#8970;K<span class="hidden">&#8681;</span><sub>1</sub>, K<span class="hidden">&#8681;</span><sub>2</sub>&#8971; &#8712; R &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
-        {&#961;. &#8704;n::nat. R (time ((Rep_run &#961;) n K<span class="hidden">&#8681;</span><sub>1</sub>), time ((Rep_run &#961;) n K<span class="hidden">&#8681;</span><sub>2</sub>))}&#8250;</span></span></span><span>
+</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that @{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} should tick at an 
+      instant where the time on @{term &#8249;C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} is @{term &#8249;&#964;&#8250;}.&#8250;</span><span>
+</span><span>    </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; C<span class="hidden">&#8681;</span><sub>1</sub> sporadic &#964; on C<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
+        {&#961;. &#8707;n::nat. ticks ((Rep_run &#961;) n C<span class="hidden">&#8681;</span><sub>1</sub>) &#8743; time ((Rep_run &#961;) n C<span class="hidden">&#8681;</span><sub>2</sub>) = &#964;}&#8250;</span></span></span><span>
+</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;time-relation &#8970;C<span class="hidden">&#8681;</span><sub>1</sub>, C<span class="hidden">&#8681;</span><sub>2</sub>&#8971; &#8712; R&#8250;} means that at each instant, the time 
+      on @{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} and the time on @{term &#8249;C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} are in relation~@{term &#8249;R&#8250;}.&#8250;</span><span>
+</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; time-relation &#8970;C<span class="hidden">&#8681;</span><sub>1</sub>, C<span class="hidden">&#8681;</span><sub>2</sub>&#8971; &#8712; R &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
+        {&#961;. &#8704;n::nat. R (time ((Rep_run &#961;) n C<span class="hidden">&#8681;</span><sub>1</sub>), time ((Rep_run &#961;) n C<span class="hidden">&#8681;</span><sub>2</sub>))}&#8250;</span></span></span><span>
 </span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;master implies slave&#8250;} means that at each instant at which 
       @{term &#8249;master&#8250;} ticks, @{term &#8249;slave&#8250;} also ticks.&#8250;</span><span>
 </span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; master implies slave &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
-        {&#961;. &#8704;n::nat. hamlet ((Rep_run &#961;) n master) &#10230; hamlet ((Rep_run &#961;) n slave)}&#8250;</span></span></span><span>
+        {&#961;. &#8704;n::nat. ticks ((Rep_run &#961;) n master) &#10230; ticks ((Rep_run &#961;) n slave)}&#8250;</span></span></span><span>
 </span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;master implies not slave&#8250;} means that at each instant at which 
       @{term &#8249;master&#8250;} ticks, @{term &#8249;slave&#8250;} does not tick.&#8250;</span><span>
 </span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; master implies not slave &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
-        {&#961;. &#8704;n::nat. hamlet ((Rep_run &#961;) n master) &#10230; &#172;hamlet ((Rep_run &#961;) n slave)}&#8250;</span></span></span><span>
+        {&#961;. &#8704;n::nat. ticks ((Rep_run &#961;) n master) &#10230; &#172;ticks ((Rep_run &#961;) n slave)}&#8250;</span></span></span><span>
 </span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;master time-delayed by &#948;&#964; on measuring implies slave&#8250;} means that 
       at each instant at which  @{term &#8249;master&#8250;} ticks, @{term &#8249;slave&#8250;} will
       tick after a delay @{term &#8249;&#948;&#964;&#8250;} measured on the time scale 
@@ -68,46 +68,62 @@
       at the first instant when the date on measuring is @{term &#8249;t<span class="hidden">&#8681;</span><sub>0</sub>+&#948;t&#8250;}, 
       slave has to tick.
     &#8250;
-        {&#961;. &#8704;n. hamlet ((Rep_run &#961;) n master) &#10230;
+        {&#961;. &#8704;n. ticks ((Rep_run &#961;) n master) &#10230;
                  (let measured_time = time ((Rep_run &#961;) n measuring) in
                   &#8704;m &#8805; n.  first_time &#961; measuring m (measured_time + &#948;&#964;)
-                            &#10230; hamlet ((Rep_run &#961;) m slave)
+                            &#10230; ticks ((Rep_run &#961;) m slave)
                  )
         }&#8250;</span></span></span><span>
+</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; master time-delayed&#10781; by &#948;&#964; on measuring implies slave &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
+    &#8213; &#8249;
+      When master ticks, let&#39;s call @{term &#8249;t<span class="hidden">&#8681;</span><sub>0</sub>&#8250;} the current date on measuring. Then, 
+      slave will be ticking at some instant(s) when the time on measuring is @{term &#8249;t<span class="hidden">&#8681;</span><sub>0</sub>+&#948;t&#8250;}.
+    &#8250;
+        { &#961;. &#8704;n. ticks ((Rep_run &#961;) n master) &#10230;
+                 (let measured_time = time ((Rep_run &#961;) n measuring) in
+                  &#8707;m &#8805; n. ticks ((Rep_run &#961;) m slave)
+                          &#8743; time ((Rep_run &#961;) m measuring) = measured_time + &#948;&#964;
+                 )
+        }&#8250;</span></span></span><span>
+</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub> weakly precedes C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that each tick on @{term &#8249;C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;}
+        must be preceded by or coincide with at least one tick on @{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub>&#8250;}.
+        Therefore, at each instant @{term &#8249;n&#8250;}, the number of ticks on @{term &#8249;C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} 
+        must be less or equal to the number of ticks on @{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub>&#8250;}.&#8250;</span><span>
+</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; C<span class="hidden">&#8681;</span><sub>1</sub> weakly precedes C<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
+        {&#961;. &#8704;n::nat. (run_tick_count &#961; C<span class="hidden">&#8681;</span><sub>2</sub> n) &#8804; (run_tick_count &#961; C<span class="hidden">&#8681;</span><sub>1</sub> n)}&#8250;</span></span></span><span>
+</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub> strictly precedes C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that each tick on @{term &#8249;C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;}
+        must be preceded by at least one tick on @{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} at a previous instant.
+        Therefore, at each instant n, the number of ticks on @{term &#8249;C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;}
+        must be less or equal to the number of ticks on @{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} 
+        at instant n - 1.&#8250;</span><span>
+</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; C<span class="hidden">&#8681;</span><sub>1</sub> strictly precedes C<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
+        {&#961;. &#8704;n::nat. (run_tick_count &#961; C<span class="hidden">&#8681;</span><sub>2</sub> n) &#8804; (run_tick_count_strictly &#961; C<span class="hidden">&#8681;</span><sub>1</sub> n)}&#8250;</span></span></span><span>
+</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub> kills C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that when @{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} ticks, @{term &#8249;C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;}
+        cannot tick and is not allowed to tick at any further instant.&#8250;</span><span>
+</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; C<span class="hidden">&#8681;</span><sub>1</sub> kills C<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
+        {&#961;. &#8704;n::nat. ticks ((Rep_run &#961;) n C<span class="hidden">&#8681;</span><sub>1</sub>)
+                        &#10230; (&#8704;m&#8805;n. &#172; ticks ((Rep_run &#961;) m C<span class="hidden">&#8681;</span><sub>2</sub>))}&#8250;</span></span></span><span>
 </span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; master delayed by d on counter implies slave &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
     &#8213; &#8249;
       When master ticks, we count d ticks on measuring and we must have a tick on slave.
     &#8250;
-        {&#961;. &#8704;n. hamlet ((Rep_run &#961;) n master) &#10230;
+        {&#961;. &#8704;n. ticks ((Rep_run &#961;) n master) &#10230;
                  (
                   &#8704;m &#8805; n.  counted_ticks &#961; counter n m d
-                            &#10230; hamlet ((Rep_run &#961;) m slave)
+                            &#10230; ticks ((Rep_run &#961;) m slave)
                  )
         }&#8250;</span></span></span><span>
-</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub> weakly precedes K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that each tick on @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;}
-        must be preceded by or coincide with at least one tick on @{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub>&#8250;}.
-        Therefore, at each instant @{term &#8249;n&#8250;}, the number of ticks on @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} 
-        must be less or equal to the number of ticks on @{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub>&#8250;}.&#8250;</span><span>
-</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; K<span class="hidden">&#8681;</span><sub>1</sub> weakly precedes K<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
-        {&#961;. &#8704;n::nat. (run_tick_count &#961; K<span class="hidden">&#8681;</span><sub>2</sub> n) &#8804; (run_tick_count &#961; K<span class="hidden">&#8681;</span><sub>1</sub> n)}&#8250;</span></span></span><span>
-</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub> strictly precedes K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that each tick on @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;}
-        must be preceded by at least one tick on @{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} at a previous instant.
-        Therefore, at each instant n, the number of ticks on @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;}
-        must be less or equal to the number of ticks on @{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} 
-        at instant n - 1.&#8250;</span><span>
-</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; K<span class="hidden">&#8681;</span><sub>1</sub> strictly precedes K<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
-        {&#961;. &#8704;n::nat. (run_tick_count &#961; K<span class="hidden">&#8681;</span><sub>2</sub> n) &#8804; (run_tick_count_strictly &#961; K<span class="hidden">&#8681;</span><sub>1</sub> n)}&#8250;</span></span></span><span>
-</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that when @{term &#8249;K<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} ticks, @{term &#8249;K<span class="hidden">&#8681;</span><sub>2</sub>&#8250;}
-        cannot tick and is not allowed to tick at any further instant.&#8250;</span><span>
-</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; K<span class="hidden">&#8681;</span><sub>1</sub> kills K<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
-        {&#961;. &#8704;n::nat. hamlet ((Rep_run &#961;) n K<span class="hidden">&#8681;</span><sub>1</sub>)
-                        &#10230; (&#8704;m&#8805;n. &#172; hamlet ((Rep_run &#961;) m K<span class="hidden">&#8681;</span><sub>2</sub>))}&#8250;</span></span></span><span>
+</span><span> 	</span><span class="comment">&#8213; &#8249;Additional constraints for the operational semantics&#8250;</span><span>
+</span><span>  </span><span class="comment">&#8213; &#8249;@{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub> sporadic&#9839; &#10631;&#964;<span class="hidden">&#8681;</span><sub>v</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>r</sub>(C<span class="hidden">&#8681;</span><sub>p</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>s</sub><span class="hidden">&#8681;</span><sub>t</sub>, n<span class="hidden">&#8681;</span><sub>p</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>s</sub><span class="hidden">&#8681;</span><sub>t</sub>) &#8853; &#948;&#964;&#10632; on C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} means that @{term &#8249;C<span class="hidden">&#8681;</span><sub>1</sub>&#8250;} should tick at an 
+      instant where the time on @{term &#8249;C<span class="hidden">&#8681;</span><sub>2</sub>&#8250;} is @{term &#8249;&#10631;&#964;<span class="hidden">&#8681;</span><sub>v</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>r</sub>(C<span class="hidden">&#8681;</span><sub>p</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>s</sub><span class="hidden">&#8681;</span><sub>t</sub>, n<span class="hidden">&#8681;</span><sub>p</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>s</sub><span class="hidden">&#8681;</span><sub>t</sub>) &#8853; &#948;&#964;&#10632;&#8250;}.&#8250;</span><span>
+</span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; C<span class="hidden">&#8681;</span><sub>1</sub> sporadic&#9839; &#10631;&#964;<span class="hidden">&#8681;</span><sub>v</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>r</sub>(C<span class="hidden">&#8681;</span><sub>p</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>s</sub><span class="hidden">&#8681;</span><sub>t</sub>, n<span class="hidden">&#8681;</span><sub>p</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>s</sub><span class="hidden">&#8681;</span><sub>t</sub>) &#8853; &#948;&#964;&#10632; on C<span class="hidden">&#8681;</span><sub>2</sub> &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
+        {&#961;. &#8707;n::nat. ticks ((Rep_run &#961;) n C<span class="hidden">&#8681;</span><sub>1</sub>) &#8743; time ((Rep_run &#961;) n C<span class="hidden">&#8681;</span><sub>2</sub>) = time ((Rep_run &#961;) n<span class="hidden">&#8681;</span><sub>p</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>s</sub><span class="hidden">&#8681;</span><sub>t</sub> C<span class="hidden">&#8681;</span><sub>p</sub><span class="hidden">&#8681;</span><sub>a</sub><span class="hidden">&#8681;</span><sub>s</sub><span class="hidden">&#8681;</span><sub>t</sub>) + &#948;&#964; }&#8250;</span></span></span><span>
 </span><span>  </span><span class="delimiter">|</span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;&#10214; from n delay count d on counter implies slave &#10215;<span class="hidden">&#8681;</span><sub>T</sub><span class="hidden">&#8681;</span><sub>E</sub><span class="hidden">&#8681;</span><sub>S</sub><span class="hidden">&#8681;</span><sub>L</sub> =
     &#8213; &#8249;
      Count d ticks on counter from instant n and put a tick on slave.
     &#8250;
         {&#961;. &#8704;m &#8805; n. counted_ticks &#961; counter n m d
-                       &#10230; hamlet ((Rep_run &#961;) m slave)}&#8250;</span></span></span><span>
+                       &#10230; ticks ((Rep_run &#961;) m slave)}&#8250;</span></span></span><span>
 </span><span>
 </span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">&#8249;Denotational interpretation for TESL formulae&#8250;</span></span></span><span>
 </span><span>
