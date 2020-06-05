@@ -17,27 +17,18 @@ abbreviation time  where \<open>time \<equiv> snd\<close>
 
 type_synonym '\<tau> instant = \<open>clock \<Rightarrow> (bool \<times> '\<tau> tag_const)\<close>
 
-text\<open>
-  Runs have the additional constraint that time cannot go backwards on any clock
-  in the sequence of instants.
-  Therefore, for any clock, the time projection of a run is monotonous.
-\<close>
-typedef (overloaded) '\<tau>::linordered_field run =
-  \<open>{ \<rho>::nat \<Rightarrow> '\<tau> instant. \<forall>c. mono (\<lambda>n. time (\<rho> n c)) }\<close>
-proof
-  show \<open>(\<lambda>_ _. (True, \<tau>\<^sub>c\<^sub>s\<^sub>t 0)) \<in> {\<rho>. \<forall>c. mono (\<lambda>n. time (\<rho> n c))}\<close> 
-    unfolding mono_def by blast
-qed
+type_synonym '\<tau> run = \<open>nat \<Rightarrow> '\<tau> instant\<close>
 
-lemma Abs_run_inverse_rewrite:
-  \<open>\<forall>c. mono (\<lambda>n. time (\<rho> n c)) \<Longrightarrow> Rep_run (Abs_run \<rho>) = \<rho>\<close>
-by (simp add: Abs_run_inverse)
+text\<open>
+  A chronometric clock has monotonic values.
+\<close>
+definition \<open>is_chrono \<rho> c \<equiv> mono (\<lambda>n. time (\<rho> n c))\<close>
 
 text \<open>
   A \<^emph>\<open>dense\<close> run is a run in which something happens (at least one clock ticks) 
   at every instant.
 \<close>
-definition \<open>dense_run \<rho> \<equiv> (\<forall>n. \<exists>c. ticks ((Rep_run \<rho>) n c))\<close>
+definition \<open>dense_run \<rho> \<equiv> (\<forall>n. \<exists>c. ticks \<rho> n c)\<close>
 
 text\<open>
   @{term \<open>run_tick_count \<rho> K n\<close>} counts the number of ticks on clock @{term \<open>K\<close>} 
@@ -46,10 +37,10 @@ text\<open>
 fun run_tick_count :: \<open>('\<tau>::linordered_field) run \<Rightarrow> clock \<Rightarrow> nat \<Rightarrow> nat\<close>
   (\<open>#\<^sub>\<le> _ _ _\<close>)
 where
-  \<open>(#\<^sub>\<le> \<rho> K 0)       = (if ticks ((Rep_run \<rho>) 0 K)
+  \<open>(#\<^sub>\<le> \<rho> K 0)       = (if ticks (\<rho> 0 K)
                        then 1
                        else 0)\<close>
-| \<open>(#\<^sub>\<le> \<rho> K (Suc n)) = (if ticks ((Rep_run \<rho>) (Suc n) K)
+| \<open>(#\<^sub>\<le> \<rho> K (Suc n)) = (if ticks (\<rho> (Suc n) K)
                        then 1 + (#\<^sub>\<le> \<rho> K n)
                        else (#\<^sub>\<le> \<rho> K n))\<close>
 
@@ -73,8 +64,8 @@ text\<open>
 definition first_time :: \<open>'a::linordered_field run \<Rightarrow> clock \<Rightarrow> nat \<Rightarrow> 'a tag_const
                           \<Rightarrow> bool\<close>
 where
-  \<open>first_time \<rho> K n \<tau> \<equiv> (time ((Rep_run \<rho>) n K) = \<tau>)
-                      \<and> (\<nexists>n'. n' < n \<and> time ((Rep_run \<rho>) n' K) = \<tau>)\<close>
+  \<open>first_time \<rho> K n \<tau> \<equiv> (time (\<rho> n K) = \<tau>)
+                      \<and> (\<nexists>n'. n' < n \<and> time (\<rho> n' K) = \<tau>)\<close>
 
 text \<open>
   @{term \<open>counted_ticks \<rho> K n m d\<close>} tells whether clock K has ticked d times for the
@@ -160,16 +151,16 @@ text\<open>
 lemma before_first_time:
   assumes \<open>first_time \<rho> K n \<tau>\<close>
       and \<open>m < n\<close>
-    shows \<open>time ((Rep_run \<rho>) m K) < \<tau>\<close>
+      and \<open>is_chrono \<rho> K\<close>
+    shows \<open>time (\<rho> m K) < \<tau>\<close>
 proof -
-  have \<open>mono (\<lambda>n. time (Rep_run \<rho> n K))\<close> using Rep_run by blast
+  have \<open>mono (\<lambda>n. time (\<rho> n K))\<close> using assms(3) by (simp add: is_chrono_def)
   moreover from assms(2) have \<open>m \<le> n\<close> using less_imp_le by simp
-  moreover have \<open>mono (\<lambda>n. time (Rep_run \<rho> n K))\<close> using Rep_run by blast
-  ultimately have  \<open>time ((Rep_run \<rho>) m K) \<le> time ((Rep_run \<rho>) n K)\<close>
+  ultimately have  \<open>time (\<rho> m K) \<le> time (\<rho> n K)\<close>
     by (simp add:mono_def)
-  moreover from assms(1) have \<open>time ((Rep_run \<rho>) n K) = \<tau>\<close>
+  moreover from assms(1) have \<open>time (\<rho> n K) = \<tau>\<close>
     using first_time_def by blast
-  moreover from assms have \<open>time ((Rep_run \<rho>) m K) \<noteq> \<tau>\<close>
+  moreover from assms have \<open>time (\<rho> m K) \<noteq> \<tau>\<close>
     using first_time_def by blast
   ultimately show ?thesis by simp
 qed
@@ -178,11 +169,11 @@ text\<open>
   This leads to an alternate definition of @{term \<open>first_time\<close>}:
 \<close>
 lemma alt_first_time_def:
-  assumes \<open>\<forall>m < n. time ((Rep_run \<rho>) m K) < \<tau>\<close>
-      and \<open>time ((Rep_run \<rho>) n K) = \<tau>\<close>
+  assumes \<open>\<forall>m < n. time (\<rho> m K) < \<tau>\<close>
+      and \<open>time (\<rho> n K) = \<tau>\<close>
     shows \<open>first_time \<rho> K n \<tau>\<close>
 proof -
-  from assms(1) have \<open>\<forall>m < n. time ((Rep_run \<rho>) m K) \<noteq> \<tau>\<close>
+  from assms(1) have \<open>\<forall>m < n. time (\<rho> m K) \<noteq> \<tau>\<close>
     by (simp add: less_le)
   with assms(2) show ?thesis by (simp add: first_time_def)
 qed
