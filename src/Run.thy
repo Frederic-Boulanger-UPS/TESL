@@ -20,9 +20,9 @@ type_synonym '\<tau> instant = \<open>clock \<Rightarrow> (bool \<times> '\<tau>
 type_synonym '\<tau> run = \<open>nat \<Rightarrow> '\<tau> instant\<close>
 
 text\<open>
-  A chronometric clock has monotonic values.
+  A chronometric clock has strictly monotonic values.
 \<close>
-definition \<open>is_chrono \<rho> c \<equiv> mono (\<lambda>n. time (\<rho> n c))\<close>
+definition \<open>is_chrono \<rho> c \<equiv> strict_mono (\<lambda>n. time (\<rho> n c))\<close>
 
 text \<open>
   A \<^emph>\<open>dense\<close> run is a run in which something happens (at least one clock ticks) 
